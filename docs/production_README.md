@@ -17,6 +17,3 @@ state container.
 
   The UI should be very similar to TeaWithStrangers, with some small changes such as the option to
   choose a home city upon registration.
-
-Component Overview (No Containers)
-![component-overview](components/component-overview.png)
