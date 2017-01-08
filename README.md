@@ -1,70 +1,62 @@
-# SportsWithStrangers
-
-[Heroku link][heroku]
-
-[Trello link][trello]
+# Development Overview
 
 [heroku]: http://www.herokuapp.com
 [trello]: https://trello.com/
 
-## Minimum Viable Product
+## MVP Requirements
 
-FresherNote is a web application inspired by Evernote built using Ruby on Rails
-and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the
-following criteria with smooth, bug-free navigation, adequate seed data and
-sufficient CSS styling:
+SportsWithStrangers is a web application with inspiration from TeaWithStrangers.
+Application built using Ruby on Rails and React-Redux. At minimum, the following criteria
+will be met:
 
-- [ ] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
-- [ ] Notes
-- [ ] Notebooks for organizing notes
-- [ ] Tags
-- [ ] Rich Text Editing
-- [ ] Infinite Scroll
-- [ ] Production README [sample](docs/production_readme.md)
+- Hosted on Heroku
+- Account creation, login, and demo account
+- Choose city to view local meet-ups
+- View and meet-ups in your area
+- Host new meet-ups in your area  
+- User dashboard of joined and hosted meet-ups
+- Display collection of local users on city page
+- Adequate CSS Styling
+- Appropriate seed data to display features
+- Bug-free navigation  
+- Production README [production_readme](docs/production_README.md)
 
-## Design Docs
-* [View Wireframes][wireframes]
-* [React Components][components]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-* [Sample State][sample-state]
+## Docs
+* [Wireframes](docs/wireframes)
+* [React Components](components/components.md)
+* [DB schema](docs/schema.md)
+* [Sample State](docs/sample-state.md)
+* [API endpoints](api-endpoints.md)
 
-[wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+## Timeline for Development
 
-## Implementation Timeline
+### Phase 1: Backend User Handling and Frontend Authentication (2 days)
 
-### Phase 1: Backend setup and Front End User Authentication (2 days)
+**Goal:** Functioning application with session handling, login/signup forms, and basic home page.
 
-**Objective:** Functioning rails project with front-end Authentication
+### Phase 2: City Model, CityList Component, API (2 days)
 
-### Phase 2: Notes Model, API, and components (2 days)
+**Goal:** User can choose, update home city, cities index will render and navigate to cities show page. NavBar reflects current user's home city.
 
-**Objective:** Notes can be created, read, edited and destroyed through
-the API.
 
-### Phase 3: Notebooks (2 day)
+### Phase 3: Events and Event Lists (2 days)
 
-**Objective:** Notes belong to Notebooks that can be created, read, edited and destroyed through the API.
+**Goal:** Event lists appear on city show page. Event List Items to have reference to host user (text or image, link in future). Events show user (host) detail and make requests to add/remove current user until events reach capacity. Make full events have signifier, not give validation error!  
 
-### Phase 4: Tags (1 days)
+### Phase 4: User Dashboard (1 day)
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+**Goal:** Both joined and hosted events appear in a User's dashboard in separate lists. User detail appears in dashboard.
 
-### Phase 5: Allow Complex Styling in Notes (1 days, W2 Th 6pm)
+### Phase 5: User Add Events (1 day)
 
-**objective:** Allow rich text editing of notes.
+**Goal:** Allow users to host new events. Update events to link to user show page of host.
 
-### Phase 6: - Pagination / infinite scroll for Notes Index (1 day, W2 F 6pm)
+### Phase 6: - Pagination / infinite scroll for Notes Index (1 day)
 
-**objective:** Add infinite scroll to Notes Index
+**Goal:** Complete any unfinished CSS styling. Complete simple
 
 ### Bonus Features (TBD)
-- [ ] Search notes by content
-- [ ] Set reminders on notes
-- [ ] Changelogs for Notes
+- [ ] Add actual live scores/schedules from public APIs 
+- [ ] Create detailed profile page for hosts, reachable from all their event pages.
+- [ ] Arrange Event Lists By Sport
 - [ ] Multiple sessions
