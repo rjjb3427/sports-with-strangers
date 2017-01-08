@@ -1,3 +1,4 @@
+```
 {
   currentUser: {
     username: 'nick',
@@ -37,3 +38,5 @@
 }
 
 //Store host object in state?
+
+```

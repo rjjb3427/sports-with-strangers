@@ -23,10 +23,10 @@ will be met:
 
 ## Docs
 * [Wireframes](docs/wireframes)
-* [React Components](components/components.md)
+* [React Components](docs/components)
 * [DB schema](docs/schema.md)
 * [Sample State](docs/sample-state.md)
-* [API endpoints](api-endpoints.md)
+* [API endpoints](docs/api-endpoints.md)
 
 ## Timeline for Development
 
@@ -45,18 +45,18 @@ will be met:
 
 ### Phase 4: User Dashboard (1 day)
 
-**Goal:** Both joined and hosted events appear in a User's dashboard in separate lists. User detail appears in dashboard.
+**Goal:** Create User Dashboard. Both joined and hosted events appear in a User's dashboard in separate lists. User detail appears in dashboard. (Editable)
 
 ### Phase 5: User Add Events (1 day)
 
 **Goal:** Allow users to host new events. Update events to link to user show page of host.
 
-### Phase 6: - Pagination / infinite scroll for Notes Index (1 day)
+### Phase 6: - Wrap Up and Polish (1 day)
 
-**Goal:** Complete any unfinished CSS styling. Complete simple
+**Goal:** Complete any unfinished CSS styling, make any unpolished features working and presentable.
 
 ### Bonus Features (TBD)
-- [ ] Add actual live scores/schedules from public APIs 
+- [ ] Add actual live scores/schedules from public APIs
 - [ ] Create detailed profile page for hosts, reachable from all their event pages.
 - [ ] Arrange Event Lists By Sport
-- [ ] Multiple sessions
+- [ ] Add Favorite Teams or Team Events

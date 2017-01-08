@@ -6,6 +6,7 @@ column name     | data type | details
 id              | integer   | not null, primary key
 city_id         | integer   | indexed, foreign key
 first_name      | string    | not null, indexed, unique
+last_name       | string    | (optional)
 location        | string    | not null
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
@@ -27,7 +28,7 @@ id          | integer   | not null, primary key
 city_id     | integer   | not null, foreign key (belongs to city), indexed
 host_id     | integer   | not null, foreign key (belongs to user), indexed
 time        | integer   | not null
-capacity    | integer   | not null 
+capacity    | integer   | not null
 title       | string    | not null
 location    | string    | not null
 sport       | string    | not null
