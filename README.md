@@ -57,6 +57,6 @@ will be met:
 
 ### Bonus Features (TBD)
 - [ ] Add actual live scores/schedules from public APIs
-- [ ] Create detailed profile page for hosts, reachable from all their event pages.
+- [ ] Add small map for event location
 - [ ] Arrange Event Lists By Sport
 - [ ] Add Favorite Teams or Team Events

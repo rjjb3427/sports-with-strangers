@@ -1,7 +1,7 @@
 ```
 {
   currentUser: {
-    username: 'nick',
+    first_name: 'nick',
     city_id: 3,
     id: 1
   },

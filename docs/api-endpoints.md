@@ -33,10 +33,10 @@
 - `POST /api/cities/:cityId`
   - post new event to city index
 
-### Events
+### Event Hosts
 
-- `GET /api/cities/:cityId/:eventId`
-- `POST /api/cities/:cityId/:eventId`
+- `GET /api/cities/:cityId/:HostId`
+- `POST /api/cities/:cityId/:HostId`
   - add to attendees
-- `PATCH /api/cities/:cityId/:eventId`
-- `DELETE /api/cities/:cityId/:eventId`
+- `PATCH /api/cities/:cityId/:HostId`
+- `DELETE /api/cities/:cityId/:HostId`
