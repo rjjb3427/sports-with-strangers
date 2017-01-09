@@ -15,7 +15,6 @@ will be met:
 - View and meet-ups in your area
 - Host new meet-ups in your area  
 - User dashboard of joined and hosted meet-ups
-- Display collection of local users on city page
 - Adequate CSS Styling
 - Appropriate seed data to display features
 - Bug-free navigation  
@@ -41,15 +40,15 @@ will be met:
 
 ### Phase 3: Events and Event Lists (2 days)
 
-**Goal:** Event lists appear on city show page. Event List Items to have reference to host user (text or image, link in future). Events show user (host) detail and make requests to add/remove current user until events reach capacity. Make full events have signifier, not give validation error!  
+**Goal:** Event lists appear on city show page. Event List Items to have reference to host user (text or image, link in future). Events show user (host) detail and make requests to add/remove current user. (Bonus: Event Capacity + signifier)
 
-### Phase 4: User Dashboard (1 day)
-
-**Goal:** Create User Dashboard. Both joined and hosted events appear in a User's dashboard in separate lists. User detail appears in dashboard. (Editable)
-
-### Phase 5: User Add Events (1 day)
+### Phase 4: User Add Events (1 day)
 
 **Goal:** Allow users to host new events. Update events to link to user show page of host.
+
+### Phase 5: User Dashboard (1 day)
+
+**Goal:** Both joined and hosted events appear in a User's dashboard in separate lists. User detail appears in dashboard. (Editable)
 
 ### Phase 6: - Wrap Up and Polish (1 day)
 

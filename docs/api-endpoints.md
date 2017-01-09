@@ -28,15 +28,17 @@
 ### Cities
 
 - `GET /api/cities`
-  - visit city home page with list of cities
+  - visit city home page to select city
 - `GET /api/cities/:cityId`
-- `POST /api/cities/:cityId`
-  - post new event to city index
 
-### Event Hosts
+### Events
 
-- `GET /api/cities/:cityId/:HostId`
-- `POST /api/cities/:cityId/:HostId`
-  - add to attendees
-- `PATCH /api/cities/:cityId/:HostId`
-- `DELETE /api/cities/:cityId/:HostId`
+- `GET /api/events`
+- `POST /api/events`
+- `PATCH /api/events`
+- `DELETE /api/events`
+
+### Attendees
+
+- `POST /api/attendees`
+- `DELETE /api/attendees`
