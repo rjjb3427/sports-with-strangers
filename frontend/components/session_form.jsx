@@ -13,14 +13,17 @@ class SessionForm extends React.Component {
   }
 
   componentWillMount() {
+    console.log(this.props);
     if (this.props.loggedIn) {
       hashHistory.push('/');
     }
     this.loginPage = this.props.route.path === 'login' ? true : false;
+    // this.loginPage = true;
   }
 
   componentWillReceiveProps() {
     this.loginPage = this.props.route.path === 'login' ? true : false;
+    // this.loginPage = true;
     if (this.props.errors[0]) {
       this.props.clearErrors();
     }

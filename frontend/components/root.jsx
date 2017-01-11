@@ -2,6 +2,7 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import SessionFormContainer from './session_form_container';
 import HomeComponent from './home_component';
+import ModalTest from './modal';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import App from './app';
 
@@ -19,6 +20,7 @@ const Root = ({store}) => {
       <Route path="/" component={App}>
         <IndexRoute component={HomeComponent} />
       <Route path="login" onEnter={_redirectIfLogin} component={SessionFormContainer} />
+      <Route path='modal' component={ModalTest} />
       <Route path="signup" onEnter={_redirectIfLogin} component={SessionFormContainer} />
       </Route>
     </Router>
