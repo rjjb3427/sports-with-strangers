@@ -9,25 +9,17 @@ body {
   margin-left: auto;
 }
 
-.wrapper {
-  margin: 0 auto;
-}
-
 .NavBar {
-  padding: 20px;
+  height: 80px;
   border: 3px solid blue;
+  padding-right: 10px;
   display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
-.NavBar .link {
-  padding-left: 5px;
-  padding-right: 5px;
-  font-family: sans-serif;
-  align-self: flex-end;
+.NavBar a {
+  margin: auto 0 auto 0;
+  padding: 20px;
   display: block;
-}
-
- .NavBar button {
-   float: right;
-   align-self: center;
 }
