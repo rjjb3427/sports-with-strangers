@@ -29,9 +29,13 @@ class SessionForm extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     if (this.loginPage) {
-      this.props.login(this.state);
+      this.props.login(this.state).then(
+        hashHistory.push('/')
+      );
     } else {
-      this.props.signup(this.state);
+      this.props.signup(this.state).then(
+        hashHistory.push('/')
+      );
     }
   }
 

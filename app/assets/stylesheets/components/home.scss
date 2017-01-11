@@ -1,0 +1,18 @@
+.wrapper {
+  background-image: image-url('football.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Slabo 27px';
+  height: 700px;
+  width: auto;
+}
+
+.home-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.home-wrapper a {
+  background-color: red;
+
+}
