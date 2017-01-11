@@ -11,7 +11,7 @@ class NavBar extends React.Component {
   userNavBar() {
     return (
       <div className="NavBar">
-        <h3>Welcome, {this.props.currentUser.first_name} </h3>
+        <h3>Hi, {this.props.currentUser.first_name} </h3>
         <button onClick={this.props.logout}>Logout</button>
       </div>
     );
@@ -24,6 +24,7 @@ class NavBar extends React.Component {
   defaultNavBar() {
     return (
       <div className="NavBar">
+        <span className="nav-logo">Sports with Strangers</span>
         <Link className="link" to='signup'>Sign-Up</Link><br />
         <Link className="link" to='login'>Login</Link>
       </div>

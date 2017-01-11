@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
     this.update = this.update.bind(this);
     this.renderSignIn = this.renderSignIn.bind(this);
     this.renderLogin = this.renderLogin.bind(this);
+    this.errors = this.errors.bind(this);
   }
 
   componentWillMount() {
@@ -17,16 +18,17 @@ class SessionForm extends React.Component {
 
   componentWillReceiveProps() {
     this.loginPage = this.props.route.path === 'login' ? true : false;
+    if (this.props.errors[0]) {
+      this.props.clearErrors();
+    }
   }
 
   handleSubmit(e){
     e.preventDefault();
     if (this.loginPage) {
       this.props.login(this.state);
-      hashHistory.push('/');
     } else {
       this.props.signup(this.state);
-      hashHistory.push('/');
     }
   }
 
@@ -34,6 +36,15 @@ class SessionForm extends React.Component {
     return e => {
       this.setState({ [field]: e.target.value });
     };
+  }
+
+  errors() {
+    if (this.props.errors){
+    return (
+      <span className='errors'>{this.props.errors.map(
+          (err, idx) => <li key={idx}>{err}</li>)}
+      </span>
+    );}
   }
 
   renderLogin() {
@@ -45,6 +56,7 @@ class SessionForm extends React.Component {
           <input type='password' placeholder='Password' onChange={this.update('password')} />
           <input type='submit' value='Login' />
         </form>
+        {this.errors()}
       </div>
     );
   }
@@ -66,6 +78,7 @@ class SessionForm extends React.Component {
           <input type='password' placeholder='Password' onChange={this.update('password')} />
           <input type='submit' value='Sign Up' />
         </form>
+        {this.errors()}
       </div>
     );
   }
