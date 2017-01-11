@@ -20,7 +20,6 @@ class SessionForm extends React.Component {
   }
 
   componentWillReceiveProps() {
-    console.log(this.props);
     this.loginPage = this.props.route.path === 'login' ? true : false;
     if (this.props.errors[0]) {
       this.props.clearErrors();

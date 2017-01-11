@@ -1,0 +1,41 @@
+body {
+  margin: 0 auto;
+}
+
+.wrapper {
+  font-family: 'Slabo 27px';
+}
+
+.home-welcome {
+  background-color: black;
+}
+
+.NavBar {
+  height: 80px;
+  background-color: #ff9933;
+  padding: 10px;
+  padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.NavBar .nav-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.NavBar a {
+  font-family: 'Slabo 27px', serif;
+  padding: 10px;
+  font-size: 20px;
+  color: white;
+}
+
+#nav-logo {
+  height: auto;
+  width: 220px;
+  background-image: image-url("logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}

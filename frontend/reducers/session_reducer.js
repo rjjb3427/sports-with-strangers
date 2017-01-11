@@ -19,7 +19,7 @@ const sessionReducer = (state=_initialState, action) => {
       newState.currentUser = action.user;
       return newState;
     case LOGOUT_USER:
-      return newState;
+      return _initialState;
     case CLEAR_ERRORS:
       newState.errors = [];
       return newState;

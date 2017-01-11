@@ -11,8 +11,11 @@ class NavBar extends React.Component {
   userNavBar() {
     return (
       <div className="NavBar">
+        <div id='nav-logo' />
+        <div className='nav-links'>
         <h3>Hi, {this.props.currentUser.first_name} </h3>
         <button onClick={this.props.logout}>Logout</button>
+        </div>
       </div>
     );
   }
@@ -25,8 +28,10 @@ class NavBar extends React.Component {
     return (
       <div className="NavBar">
         <div id='nav-logo' />
-        <Link className="link" to='signup'>Sign-Up</Link><br />
-        <Link className="link" to='login'>Login</Link>
+        <div className='nav-links'>
+        <Link to='signup'>Sign-Up</Link><br />
+        <Link to='login'>Login</Link>
+        </div>
       </div>
     );
   }
