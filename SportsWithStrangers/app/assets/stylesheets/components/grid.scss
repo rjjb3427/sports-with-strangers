@@ -1,0 +1,33 @@
+body {
+  margin: 0 auto;
+}
+
+.home-welcome {
+  border: 2px solid black;
+  height: 500px;
+  display: inline;
+  margin-left: auto;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+.NavBar {
+  padding: 20px;
+  border: 3px solid blue;
+  display: flex;
+}
+
+.NavBar .link {
+  padding-left: 5px;
+  padding-right: 5px;
+  font-family: sans-serif;
+  align-self: flex-end;
+  display: block;
+}
+
+ .NavBar button {
+   float: right;
+   align-self: center;
+}

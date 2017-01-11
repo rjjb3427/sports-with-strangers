@@ -1,1 +1,1 @@
-json.extract! @user, :first_name, :last_name, :location, :image, :blurb
+# jason.partial! "api/users/user.json.jbuilder", user: @user

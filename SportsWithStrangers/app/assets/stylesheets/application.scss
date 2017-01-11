@@ -13,5 +13,5 @@
  *= require_tree .
  *= require_self
  */
-@import "index/reset.scss";
-@import "index/grid.scss";
+@import "index/colors.scss";
+@import "components/*";
