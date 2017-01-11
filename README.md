@@ -1,6 +1,6 @@
 # Development Overview
 
-[heroku]: https://sports-with-strangers.herokuapp.com/
+[heroku]: https://sportswithstrangers.herokuapp.com/
 [trello]: https://trello.com/b/ozHmjpoz/sportswithstrangers
 
 ## MVP Requirements

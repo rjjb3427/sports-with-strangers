@@ -1,0 +1,45 @@
+# Logfile created on 2017-01-10 21:45:03 -0800 by logger.rb/54362
+[2017-01-10 21:45:03 -0800 njvizzutti-TP550LA (24921)] INFO : Starting the New Relic agent in "development" environment.
+[2017-01-10 21:45:03 -0800 njvizzutti-TP550LA (24921)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2017-01-10 21:45:03 -0800 njvizzutti-TP550LA (24921)] WARN : No configuration file found. Working directory = /home/njvizzutti/Dropbox/SWSProject
+[2017-01-10 21:45:03 -0800 njvizzutti-TP550LA (24921)] WARN : Looked in these locations (based on defaults): /home/njvizzutti/Dropbox/SWSProject/config/newrelic.yml, /home/njvizzutti/Dropbox/SWSProject/newrelic.yml, /home/njvizzutti/Dropbox/SWSProject/config/newrelic.yml, /home/njvizzutti/Dropbox/SWSProject/newrelic.yml, /home/njvizzutti/.newrelic/newrelic.yml, /home/njvizzutti/newrelic.yml
+[2017-01-10 21:45:03 -0800 njvizzutti-TP550LA (24921)] INFO : Environment: development
+[2017-01-10 21:45:03 -0800 njvizzutti-TP550LA (24921)] INFO : Dispatcher: webrick
+[2017-01-10 21:45:03 -0800 njvizzutti-TP550LA (24921)] INFO : Application: development
+[2017-01-10 21:45:03 -0800 njvizzutti-TP550LA (24921)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2017-01-10 21:45:03 -0800 njvizzutti-TP550LA (24921)] INFO : Installing Net instrumentation
+[2017-01-10 21:45:03 -0800 njvizzutti-TP550LA (24921)] INFO : Installing ActiveRecord 4 instrumentation
+[2017-01-10 21:45:03 -0800 njvizzutti-TP550LA (24921)] INFO : Installing deferred Rack::Builder instrumentation
+[2017-01-10 21:45:03 -0800 njvizzutti-TP550LA (24921)] INFO : Installing Rack::Builder middleware instrumentation
+[2017-01-10 21:45:03 -0800 njvizzutti-TP550LA (24921)] INFO : Installing ActiveJob instrumentation
+[2017-01-10 21:45:03 -0800 njvizzutti-TP550LA (24921)] INFO : Installing Rails 3+ middleware instrumentation
+[2017-01-10 21:45:03 -0800 njvizzutti-TP550LA (24921)] INFO : Installing Rails 4 Error instrumentation
+[2017-01-10 21:45:03 -0800 njvizzutti-TP550LA (24921)] INFO : Installing Rails 4 Controller instrumentation
+[2017-01-10 21:45:03 -0800 njvizzutti-TP550LA (24921)] INFO : Installing Rails 4 view instrumentation
+[2017-01-10 21:45:03 -0800 njvizzutti-TP550LA (24921)] INFO : Finished instrumentation
+[2017-01-10 21:45:04 -0800 njvizzutti-TP550LA (24921)] INFO : Doing deferred dependency-detection before Rack startup
+[2017-01-10 21:45:20 -0800 njvizzutti-TP550LA (24921)] ERROR : Invalid license key, please contact support@newrelic.com
+[2017-01-10 21:45:20 -0800 njvizzutti-TP550LA (24921)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2017-01-10 21:45:23 -0800 njvizzutti-TP550LA (24921)] INFO : Starting Agent shutdown
+[2017-01-10 21:46:18 -0800 njvizzutti-TP550LA (25150)] INFO : Starting the New Relic agent in "development" environment.
+[2017-01-10 21:46:18 -0800 njvizzutti-TP550LA (25150)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2017-01-10 21:46:18 -0800 njvizzutti-TP550LA (25150)] WARN : No configuration file found. Working directory = /home/njvizzutti/Dropbox/SWSProject
+[2017-01-10 21:46:18 -0800 njvizzutti-TP550LA (25150)] WARN : Looked in these locations (based on defaults): /home/njvizzutti/Dropbox/SWSProject/config/newrelic.yml, /home/njvizzutti/Dropbox/SWSProject/newrelic.yml, /home/njvizzutti/Dropbox/SWSProject/config/newrelic.yml, /home/njvizzutti/Dropbox/SWSProject/newrelic.yml, /home/njvizzutti/.newrelic/newrelic.yml, /home/njvizzutti/newrelic.yml
+[2017-01-10 21:46:18 -0800 njvizzutti-TP550LA (25150)] INFO : Environment: development
+[2017-01-10 21:46:18 -0800 njvizzutti-TP550LA (25150)] INFO : Dispatcher: webrick
+[2017-01-10 21:46:18 -0800 njvizzutti-TP550LA (25150)] INFO : Application: development
+[2017-01-10 21:46:18 -0800 njvizzutti-TP550LA (25150)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2017-01-10 21:46:18 -0800 njvizzutti-TP550LA (25150)] INFO : Installing Net instrumentation
+[2017-01-10 21:46:18 -0800 njvizzutti-TP550LA (25150)] INFO : Installing ActiveRecord 4 instrumentation
+[2017-01-10 21:46:18 -0800 njvizzutti-TP550LA (25150)] INFO : Installing deferred Rack::Builder instrumentation
+[2017-01-10 21:46:18 -0800 njvizzutti-TP550LA (25150)] INFO : Installing Rack::Builder middleware instrumentation
+[2017-01-10 21:46:19 -0800 njvizzutti-TP550LA (25150)] INFO : Installing ActiveJob instrumentation
+[2017-01-10 21:46:19 -0800 njvizzutti-TP550LA (25150)] INFO : Installing Rails 3+ middleware instrumentation
+[2017-01-10 21:46:19 -0800 njvizzutti-TP550LA (25150)] INFO : Installing Rails 4 Error instrumentation
+[2017-01-10 21:46:19 -0800 njvizzutti-TP550LA (25150)] INFO : Installing Rails 4 Controller instrumentation
+[2017-01-10 21:46:19 -0800 njvizzutti-TP550LA (25150)] INFO : Installing Rails 4 view instrumentation
+[2017-01-10 21:46:19 -0800 njvizzutti-TP550LA (25150)] INFO : Finished instrumentation
+[2017-01-10 21:46:19 -0800 njvizzutti-TP550LA (25150)] INFO : Doing deferred dependency-detection before Rack startup
+[2017-01-10 21:46:23 -0800 njvizzutti-TP550LA (25150)] ERROR : Invalid license key, please contact support@newrelic.com
+[2017-01-10 21:46:23 -0800 njvizzutti-TP550LA (25150)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2017-01-10 21:48:56 -0800 njvizzutti-TP550LA (25150)] INFO : Starting Agent shutdown
