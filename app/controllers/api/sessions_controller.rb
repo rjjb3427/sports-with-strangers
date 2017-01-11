@@ -6,12 +6,12 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render :show
     else
-      render json: 'Invalid Username or Password', status: 422
+      render json: ['Invalid Username or Password'], status: 422
     end
   end
 
   def destroy
-    render json: 'No user logged in', status: 422 unless current_user
+    render json: ['No user logged in'], status: 422 unless current_user
     @user = current_user
     logout(@user)
     render json: {}

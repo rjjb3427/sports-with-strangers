@@ -5,13 +5,7 @@ import SessionForm from './session_form';
 
 const mapStateToProps = state => {
   let loggedIn = state.session.currentUser ? true : false;
-  let user;
-  if (loggedIn) {
-    user = state.session.currentUser;
-  } else {
-    user = { first_name: '', last_name: '', location: '', image: '', blurb: ''};
-  }
-  return { user, loggedIn, errors: state.session.errors };
+  return { loggedIn, errors: (state.session.errors || []) };
 };
 
 const mapDispatchToProps = dispatch => ({

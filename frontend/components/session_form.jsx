@@ -4,7 +4,7 @@ import { hashHistory} from 'react-router';
 class SessionForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = this.props.user;
+    this.state = { first_name: '', last_name: '', location: '', image: '', blurb: ''};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.renderSignIn = this.renderSignIn.bind(this);
@@ -13,10 +13,14 @@ class SessionForm extends React.Component {
   }
 
   componentWillMount() {
+    if (this.props.loggedIn) {
+      hashHistory.push('/');
+    }
     this.loginPage = this.props.route.path === 'login' ? true : false;
   }
 
   componentWillReceiveProps() {
+    console.log(this.props);
     this.loginPage = this.props.route.path === 'login' ? true : false;
     if (this.props.errors[0]) {
       this.props.clearErrors();
@@ -50,7 +54,7 @@ class SessionForm extends React.Component {
   renderLogin() {
     const user = this.state;
     return (
-      <div>
+      <div className='form-wrapper'>
         <form onSubmit={this.handleSubmit}>
           <input type='text' placeholder='First Name' value={user.first_name} onChange={this.update('first_name')}/>
           <input type='password' placeholder='Password' onChange={this.update('password')} />
@@ -64,7 +68,7 @@ class SessionForm extends React.Component {
   renderSignIn() {
     const user = this.state;
     return (
-      <div>
+      <div className='form-wrapper'>
         <form onSubmit={this.handleSubmit} >
           <input type='text' placeholder='First Name' value={user.first_name} onChange={this.update('first_name')}/>
           <input type='text' placeholder='Last Name (Optional)' value={user.last_name} onChange={this.update('last_name')}/>

@@ -24,7 +24,7 @@ class NavBar extends React.Component {
   defaultNavBar() {
     return (
       <div className="NavBar">
-        <span className="nav-logo">Sports with Strangers</span>
+        <div id='nav-logo' />
         <Link className="link" to='signup'>Sign-Up</Link><br />
         <Link className="link" to='login'>Login</Link>
       </div>
