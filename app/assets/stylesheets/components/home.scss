@@ -5,14 +5,23 @@
   font-family: 'Slabo 27px';
   height: 700px;
   width: auto;
+  color: white;
 }
 
 .home-wrapper {
+  height: 80%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .home-wrapper a {
-  background-color: red;
-
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  margin: auto;
+  height: auto;
+  width: 350px;
+  background-color: rgba(128, 0, 0, 0.9);
+  font-size: 25px;
+  font-weight: bold;
 }
