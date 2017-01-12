@@ -1,7 +1,7 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import SessionFormContainer from './session_form_container';
 import HomeComponent from './home_component';
+import CitiesIndexContainer from './cities_index_container';
 import ModalTest from './modal';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import App from './app';
@@ -19,6 +19,7 @@ const Root = ({store}) => {
     <Router history={hashHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={HomeComponent} />
+        <Route path="/cities" component={CitiesIndexContainer} />
       </Route>
     </Router>
   </Provider>
