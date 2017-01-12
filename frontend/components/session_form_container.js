@@ -1,5 +1,6 @@
 import React from 'react';
 import {login, logout, signup, clearErrors} from '../actions/session_actions';
+import {fetchCurrentCity} from '../actions/city_actions';
 import {connect} from 'react-redux';
 import SessionForm from './session_form';
 

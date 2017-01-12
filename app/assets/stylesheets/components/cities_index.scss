@@ -1,8 +1,13 @@
 .cities-index {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.85);
   background-size: cover;
   background-repeat: no-repeat;
   font-family: 'Slabo 27px';
   height: 600px;
   color: black;
+}
+
+.city-index-img {
+  width: 70%;
+  height: auto;
 }

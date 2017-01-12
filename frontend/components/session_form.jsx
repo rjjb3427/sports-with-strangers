@@ -13,9 +13,6 @@ class SessionForm extends React.Component {
   }
 
   componentWillMount() {
-    if (this.props.loggedIn) {
-      hashHistory.push('/');
-    }
     this.loginPage = this.props.page === 'login' ? true : false;
   }
 
@@ -29,13 +26,9 @@ class SessionForm extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     if (this.loginPage) {
-      this.props.login(this.state).then(
-        hashHistory.push('/')
-      );
+      this.props.login(this.state);
     } else {
-      this.props.signup(this.state).then(
-        hashHistory.push('/')
-      );
+      this.props.signup(this.state);
     }
   }
 

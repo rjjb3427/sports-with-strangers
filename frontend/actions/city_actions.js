@@ -2,17 +2,10 @@ import * as CitiesApiUtil from '../util/cities_api_util';
 import store from '../store/store';
 import {receiveErrors} from './session_actions';
 
-export const RECEIVE_CITIES = 'RECEIVE_CITIES';
-export const RECEIVE_CITY = 'RECEIVE_CITY';
-export const RECEIVE_CURRENT_CITY = 'RECEIVE_CURRENT_CITY';
+export const RECEIVE_CITIES = 'RECEIVE_CITIES';export const RECEIVE_CURRENT_CITY = 'RECEIVE_CURRENT_CITY';
 
 const receiveCurrentCity = city => ({
   type: RECEIVE_CURRENT_CITY,
-  city
-});
-
-const receiveCity = (city) => ({
-  type: RECEIVE_CITY,
   city
 });
 
@@ -20,11 +13,6 @@ const receiveCities = (cities) => ({
   type: RECEIVE_CITIES,
   cities
 });
-
-export const fetchCity = id => dispatch => (
-  CitiesApiUtil.fetchCity(id).then(res => dispatch(receiveCity(res)),
-  res => dispatch(receiveErrors(res)))
-);
 
 export const fetchCities = () => dispatch => (
   CitiesApiUtil.fetchCities().then(res => dispatch(receiveCities(res)),

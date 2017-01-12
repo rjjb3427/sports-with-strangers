@@ -11,27 +11,27 @@ class NavBar extends React.Component {
   }
 
   cityLink() {
-    if (this.props.currentUser.location) {
-      return (<Link>{this.props.currentUser.location}</Link>);
-    } else {
-      return (<Link to='/cities'>Cities</Link>);
+    const homeCity = this.props.currentUser.city;
+    if (homeCity) {
+      return (
+        <Link to={`/cities/${homeCity.id}`}>{homeCity.name}</Link> );
     }
   }
 
   userNavBar() {
-    console.log(this.props);
     return (
       <div className="NavBar">
         <div id='nav-logo' />
         <div className='nav-links'>
-        <a>{this.cityLink()}</a>
+        {this.cityLink()}
+        <Link to='/cities'>Cities</Link>
         <Link onClick={this.props.logout}>Logout</Link>
         </div>
       </div>
     );
   }
 
-  componentWillMount() {
+  componentWillReceiveProps() {
 
   }
 

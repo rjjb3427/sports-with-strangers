@@ -7,9 +7,9 @@ import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import App from './app';
 
 const Root = ({store}) => {
-  const _redirectIfLogin = (nextState, replace) => {
+  const _checkIfLogin = (nextState, replace) => {
     let usr = store.getState().session.currentUser;
-    if (usr) {
+    if (!usr) {
       replace('/');
     }
   };
@@ -19,7 +19,7 @@ const Root = ({store}) => {
     <Router history={hashHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={HomeComponent} />
-        <Route path="/cities" component={CitiesIndexContainer} />
+        <Route path="/cities" onEnter={_checkIfLogin} component={CitiesIndexContainer} />
       </Route>
     </Router>
   </Provider>
