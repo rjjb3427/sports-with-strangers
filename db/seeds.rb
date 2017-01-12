@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+City.create([{ name: 'Seattle', image: 'seattle.jpg', tagline: 'The Rain City'},
+  { name: 'SF Bay Area', image: 'sfbay.jpg', tagline: 'City by the Bay'},
+  {name: 'New York', image: 'newyork.jpg', tagline: 'New York tagline'},
+  {name: 'Boston', image: 'boston.jpg', tagline: 'Boston tagline'}])

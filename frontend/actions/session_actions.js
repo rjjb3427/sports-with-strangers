@@ -12,7 +12,7 @@ const receiveCurrentUser = (user) => ({
   user
 });
 
-const receiveErrors = (errors) => ({
+export const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
   errors
 });
@@ -35,5 +35,3 @@ export const signup = user => dispatch => (
   SessionApiUtil.signup(user).then(res => dispatch(receiveCurrentUser(user)),
   res => dispatch(receiveErrors(res)))
 );
-
-window.clearErrors = clearErrors;

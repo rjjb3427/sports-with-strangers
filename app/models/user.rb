@@ -2,8 +2,10 @@ class User < ActiveRecord::Base
   validates :first_name, :password_digest, :location, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
-  before_validation :ensure_session_token_uniqueness
+  before_validation :ensure_session_token_uniqueness, :set_city_id
+
   attr_reader :password
+  belongs_to :city
 
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
@@ -33,9 +35,14 @@ class User < ActiveRecord::Base
   end
 
   def ensure_session_token_uniqueness
-  while User.find_by(session_token: self.session_token)
-    self.session_token = new_session_token
+    while User.find_by(session_token: self.session_token)
+      self.session_token = new_session_token
+    end
   end
-end
+
+  def set_city_id
+    city = City.find_by(name: self.location)
+    self.city_id = city.id if city 
+  end
 
 end

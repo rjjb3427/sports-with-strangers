@@ -77,8 +77,8 @@ class SessionForm extends React.Component {
           <input type='text' placeholder='Last Name (Optional)' value={user.last_name} onChange={this.update('last_name')}/>
           <select className='dropdown' onChange={this.update('location')}>
             <option>Choose A City</option>
-            <option value='San Francisco'>San Francisco Bay Area</option>
-            <option value='Los Angeles'>Los Angeles</option>
+            <option value='SF Bay Area'>San Francisco Bay Area</option>
+            <option value='Boston'>Los Angeles</option>
             <option value='New York'>New York</option>
             <option value='Seattle'>Seattle</option>
           </select>

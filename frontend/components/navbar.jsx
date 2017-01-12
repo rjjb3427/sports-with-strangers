@@ -7,6 +7,15 @@ class NavBar extends React.Component {
     super(props);
     this.userNavBar = this.userNavBar.bind(this);
     this.defaultNavBar = this.defaultNavBar.bind(this);
+    this.cityLink = this.cityLink.bind(this);
+  }
+
+  cityLink() {
+    if (this.props.currentUser.location) {
+      return (<Link>{this.props.currentUser.location}</Link>);
+    } else {
+      return (<Link to='/cities'>Cities</Link>);
+    }
   }
 
   userNavBar() {
@@ -15,7 +24,7 @@ class NavBar extends React.Component {
       <div className="NavBar">
         <div id='nav-logo' />
         <div className='nav-links'>
-        <h3>Hi, {this.props.currentUser.first_name} </h3>
+        <a>{this.cityLink()}</a>
         <Link onClick={this.props.logout}>Logout</Link>
         </div>
       </div>
