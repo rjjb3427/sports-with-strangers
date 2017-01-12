@@ -8,6 +8,14 @@
   color: white;
 }
 
+.home-main {
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Slabo 27px';
+  height: 750px;
+  color: white;
+}
+
 .home-wrapper {
   height: 80%;
   display: flex;
@@ -17,6 +25,7 @@
 .home-wrapper a {
   padding: 10px;
   border-radius: 10px;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.5);
   text-align: center;
   margin: auto;
   height: auto;
@@ -28,4 +37,22 @@
 
 .home-wrapper a:hover {
   background-color: rgba(0, 0, 0, 0.9);
+}
+
+.home-footer {
+  padding: 20px;
+  width: 95%;
+  display: flex;
+  color: rgba(128, 0, 0, 0.9);
+  font-family: 'Oswald', sans-serif;
+  float: left;
+  align-items: center;
+  justify-content: space-between;
+}
+
+[class*='col'] {
+  margin: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
 }
