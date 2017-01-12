@@ -21,9 +21,8 @@ class ModalTest extends React.Component {
     super();
 
     this.state = { modalIsOpen: false };
-
     this.openModal = this.openModal.bind(this);
-    this.modalDidOpen = this.modalDidOpen.bind(this);
+    this.changeForm = this.changeForm.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.alternateText = this.alternateText.bind(this);
   }
@@ -34,17 +33,25 @@ class ModalTest extends React.Component {
 
   componentWillMount() {
     Modal.setAppElement('body');
+    this.setState({formType: this.props.formType});
   }
 
-  modalDidOpen() {
-
+  changeForm() {
+    if (this.state.formType === 'login') {
+    this.setState({formType: 'update'});
+  } else {
+    this.setState({formType: 'login'});
+  }
   }
 
   alternateText() {
-    if (this.props.formType === 'login') {
+    if (this.state.formType === 'login') {
       return (
-        <p>Don't have an account?
-        <Link to='/signup'>Sign Up</Link></p>
+        <h4 onClick={this.changeForm}>No Account? Join Us!</h4>
+      );
+    } else {
+      return (
+        <h4 onClick={this.changeForm}>Already have an account?</h4>
       );
     }
   }
@@ -54,9 +61,9 @@ class ModalTest extends React.Component {
   }
 
   render() {
-    const text = this.props.formType === 'login' ? 'Login' : 'Join Us';
+    const text = this.state.formType === 'login' ? 'Login' : 'Join Us';
     return (
-      <div>
+      <div id='modal'>
         <Link onClick={this.openModal}>{text}</Link>
         <Modal
           isOpen={this.state.modalIsOpen}
@@ -65,8 +72,8 @@ class ModalTest extends React.Component {
           style={styleSkeleton}
           contentLabel={text}
         >
-        <SessionFormContainer page={this.props.formType}/>
-          {this.alternateText()}
+        <SessionFormContainer page={this.state.formType}/>
+        {this.alternateText()}
         </Modal>
       </div>
     );
