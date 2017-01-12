@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import ModalTest from './modal';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -29,8 +30,8 @@ class NavBar extends React.Component {
       <div className="NavBar">
         <div id='nav-logo' />
         <div className='nav-links'>
-        <Link to='signup'>Sign-Up</Link><br />
-        <Link to='login'>Login</Link>
+        <ModalTest formType='signup' /><br />
+        <ModalTest formType='login'/>
         </div>
       </div>
     );

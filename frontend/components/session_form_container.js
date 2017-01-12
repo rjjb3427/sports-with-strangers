@@ -3,9 +3,10 @@ import {login, logout, signup, clearErrors} from '../actions/session_actions';
 import {connect} from 'react-redux';
 import SessionForm from './session_form';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
+  let page = ownProps.page;
   let loggedIn = state.session.currentUser ? true : false;
-  return { loggedIn, errors: (state.session.errors || []) };
+  return { loggedIn, errors: (state.session.errors || []), page };
 };
 
 const mapDispatchToProps = dispatch => ({

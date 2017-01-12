@@ -1,14 +1,17 @@
 import React from 'react';
 import Modal from 'react-modal';
 import SessionFormContainer from './session_form_container';
-const modalStyle = {
+import {Link} from 'react-router';
+
+const styleSkeleton = {
   content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    top : '50%',
+    height : "250px",
+    left : '50%',
+    bottom : 'auto',
+    right : 'auto',
+    marginRight : '-50%',
+    transform : 'translate(-50%, -50%)'
   }
 };
 
@@ -35,8 +38,7 @@ class ModalTest extends React.Component {
   }
 
   modalDidOpen() {
-    // references are now sync'd and can be accessed.
-    this.refs.subtitle.style.color = '#f00';
+
   }
 
   closeModal() {
@@ -44,17 +46,18 @@ class ModalTest extends React.Component {
   }
 
   render() {
+    console.log(this);
     return (
       <div>
-        <button onClick={this.openModal}>Open Modal</button>
+        <Link onClick={this.openModal}>{this.props.formType}</Link>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.modalDidOpen}
           onRequestClose={this.closeModal}
-          style={modalStyle}
-          contentLabel="Example Modal"
+          style={styleSkeleton}
+          contentLabel="Session Form"
         >
-        <SessionFormContainer />
+        <SessionFormContainer page={this.props.formType}/>
         </Modal>
       </div>
     );
