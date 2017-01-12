@@ -12,6 +12,7 @@
   height: 80%;
   display: flex;
   justify-content: space-around;
+  box-shadow: 10px 10px 10px black;
 }
 
 .home-wrapper a {
@@ -21,7 +22,11 @@
   margin: auto;
   height: auto;
   width: 350px;
-  background-color: rgba(128, 0, 0, 0.9);
+  background-color: rgba(128, 0, 0, 0.7);
   font-size: 25px;
   font-weight: bold;
+}
+
+.home-wrapper a:hover {
+  background-color: rgba(0, 0, 0, 0.9);
 }

@@ -13,7 +13,6 @@ class SessionForm extends React.Component {
   }
 
   componentWillMount() {
-    console.log(this.props);
     if (this.props.loggedIn) {
       hashHistory.push('/');
     }
@@ -63,10 +62,10 @@ class SessionForm extends React.Component {
       <div className='form-wrapper'>
         <form onSubmit={this.handleSubmit}>
           <input type='text' placeholder='First Name' value={user.first_name} onChange={this.update('first_name')}/>
-          <input type='password' placeholder='Password' onChange={this.update('password')} />
+          <input type='password' placeholder='Password' onChange={this.update('password')} /><br />
           <input type='submit' value='Login' />
-        </form>
-        {this.errors()}
+        </form><br />
+        <span>{this.errors()}</span>
       </div>
     );
   }
@@ -78,17 +77,17 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} >
           <input type='text' placeholder='First Name' value={user.first_name} onChange={this.update('first_name')}/>
           <input type='text' placeholder='Last Name (Optional)' value={user.last_name} onChange={this.update('last_name')}/>
-          <select onChange={this.update('location')}>
+          <select className='dropdown' onChange={this.update('location')}>
             <option>Choose A City</option>
             <option value='San Francisco'>San Francisco Bay Area</option>
             <option value='Los Angeles'>Los Angeles</option>
             <option value='New York'>New York</option>
             <option value='Seattle'>Seattle</option>
           </select>
-          <input type='password' placeholder='Password' onChange={this.update('password')} />
+          <input type='password' placeholder='Password' onChange={this.update('password')} /><br />
           <input type='submit' value='Sign Up' />
-        </form>
-        {this.errors()}
+        </form><br />
+      <span>{this.errors()}</span>
       </div>
     );
   }

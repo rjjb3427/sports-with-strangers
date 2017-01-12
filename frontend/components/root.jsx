@@ -19,9 +19,6 @@ const Root = ({store}) => {
     <Router history={hashHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={HomeComponent} />
-      <Route path="login" onEnter={_redirectIfLogin} component={SessionFormContainer} />
-      <Route path='modal' component={ModalTest} />
-      <Route path="signup" onEnter={_redirectIfLogin} component={SessionFormContainer} />
       </Route>
     </Router>
   </Provider>

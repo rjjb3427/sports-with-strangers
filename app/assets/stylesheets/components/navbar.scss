@@ -25,6 +25,11 @@ body {
   color: white;
 }
 
+.NavBar a:hover {
+  cursor: pointer;
+  color: black;
+}
+
 #nav-logo {
   height: auto;
   width: 220px;

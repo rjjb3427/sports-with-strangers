@@ -10,6 +10,7 @@ class NavBar extends React.Component {
   }
 
   userNavBar() {
+    console.log(this.props);
     return (
       <div className="NavBar">
         <div id='nav-logo' />

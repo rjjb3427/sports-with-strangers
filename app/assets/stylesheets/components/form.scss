@@ -1,0 +1,31 @@
+// Figure out how to style Modal here instead of in file
+
+
+
+
+.form-wrapper {
+  height: 80%;
+  width: 80%;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: rgba(128, 0, 0, 0.9);
+}
+
+  form {
+    display: flex;
+  }
+
+.form-wrapper input {
+  margin: 10px, 10px;
+}
+
+.form-wrapper select {
+  height: 20px;
+}
+
+.form-wrapper input[type=text], input[type=password] {
+    background-color: white;
+    border-radius: 4px;
+    width: 80%;
+    margin: 0 auto;
+}
