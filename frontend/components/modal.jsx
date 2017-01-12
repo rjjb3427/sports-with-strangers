@@ -6,7 +6,7 @@ import {Link} from 'react-router';
 const styleSkeleton = {
   content : {
     top : '50%',
-    height : "250px",
+    height : "auto",
     left : '50%',
     bottom : 'auto',
     right : 'auto',

@@ -3,29 +3,47 @@
 
 
 
+
 .form-wrapper {
   height: 80%;
-  width: 80%;
+  width: 400px;
   padding: 10px;
   margin: 0 auto;
+  font-family: 'Slabo 27px', serif;
   background-color: rgba(128, 0, 0, 0.9);
+  font-size: 20px;
 }
 
   form {
     display: flex;
+    flex-direction: column;
   }
 
 .form-wrapper input {
-  margin: 10px, 10px;
+  padding: 10px;
+  margin: 20px;
+  font-weight: bold;
 }
 
 .form-wrapper select {
-  height: 20px;
+  text-align-last: center;
+  height: 40px;
+  margin: 20px;
+  font-size: 20px;
 }
 
 .form-wrapper input[type=text], input[type=password] {
     background-color: white;
     border-radius: 4px;
     width: 80%;
-    margin: 0 auto;
+}
+
+.form-wrapper input[type='submit']:hover {
+   color: white;
+}
+
+.errors {
+  padding: 5px;
+  color: white;
+  font-weight: bolder;
 }
