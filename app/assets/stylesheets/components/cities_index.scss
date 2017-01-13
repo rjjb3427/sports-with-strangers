@@ -1,5 +1,5 @@
 .cities-index {
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.45);
   background-size: cover;
   background-repeat: no-repeat;
   font-family: 'Slabo 27px';
@@ -7,7 +7,37 @@
   color: black;
 }
 
-.city-index-img {
-  width: 70%;
+.cities-header-text {
+  background-color: rgba(255,255,255,0.8);
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 50px;
+  height: 70px;
+}
+
+.cities-index img {
+  display: flex;
   height: auto;
+  -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+      -o-transition: all 0.8s ease;
+     -ms-transition: all 0.8s ease;
+         transition: all 0.8s ease;
+}
+
+.cities-index img:hover {
+  border-radius: 80%;
+}
+
+.cities-index li {
+  text-align: center;
+  height: auto;
+  width: 50%;
+  float: left;
+
+}
+h3.cities-title {
+  font-size: 22px;
+  display: inline-block;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import ModalTest from './modal';
 
 class NavBar extends React.Component {
@@ -8,6 +8,11 @@ class NavBar extends React.Component {
     this.userNavBar = this.userNavBar.bind(this);
     this.defaultNavBar = this.defaultNavBar.bind(this);
     this.cityLink = this.cityLink.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
+  }
+
+  handleLogout() {
+    this.props.logout().then(hashHistory.push('/'));
   }
 
   cityLink() {
@@ -25,14 +30,10 @@ class NavBar extends React.Component {
         <div className='nav-links'>
         {this.cityLink()}
         <Link to='/cities'>Cities</Link>
-        <Link onClick={this.props.logout}>Logout</Link>
+        <Link onClick={this.handleLogout}>Logout</Link>
         </div>
       </div>
     );
-  }
-
-  componentWillReceiveProps() {
-
   }
 
   defaultNavBar() {

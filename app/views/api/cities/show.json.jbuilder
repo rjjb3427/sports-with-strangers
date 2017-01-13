@@ -1,1 +1,1 @@
-json.extract! @city, :name, :image, :tagline
+json.extract! @city, :name, :image, :tagline, :id
