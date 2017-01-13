@@ -587,3 +587,5 @@ Checked in these paths:
 [2017-01-13 10:45:02 -0800 njvizzutti-TP550LA (26628)] INFO : Installing Rails 4 view instrumentation
 [2017-01-13 10:45:02 -0800 njvizzutti-TP550LA (26628)] INFO : Finished instrumentation
 [2017-01-13 10:45:02 -0800 njvizzutti-TP550LA (26628)] INFO : Doing deferred dependency-detection before Rack startup
+[2017-01-13 10:53:01 -0800 njvizzutti-TP550LA (26628)] ERROR : Invalid license key, please contact support@newrelic.com
+[2017-01-13 10:53:01 -0800 njvizzutti-TP550LA (26628)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.

@@ -56,7 +56,20 @@
    background-color: rgba(0, 0, 0, 0.4);
    color: black;
 }
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
 
+span.modal-footer > h4 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+span.modal-footer > h4:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
 
 .errors {
   padding: 5px;

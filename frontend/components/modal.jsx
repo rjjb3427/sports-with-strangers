@@ -25,6 +25,7 @@ class ModalTest extends React.Component {
     this.changeForm = this.changeForm.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.alternateText = this.alternateText.bind(this);
+    this.loginDemo = this.loginDemo.bind(this);
   }
 
   openModal() {
@@ -37,21 +38,31 @@ class ModalTest extends React.Component {
   }
 
   changeForm() {
-    if (this.state.formType === 'login') {
-    this.setState({formType: 'update'});
-  } else {
-    this.setState({formType: 'login'});
+      if (this.state.formType === 'login') {
+      this.setState({formType: 'update'});
+    } else {
+      this.setState({formType: 'login'});
+    }
   }
+
+  loginDemo() {
+    this.setState({demo: 'yes'});
   }
 
   alternateText() {
     if (this.state.formType === 'login') {
       return (
+        <span className='modal-footer'>
         <h4 onClick={this.changeForm}>No Account? Join Us!</h4>
+        <h4 onClick={this.loginDemo}>Log In With Demo</h4>
+        </span>
       );
     } else {
       return (
+        <span className='modal-footer'>
         <h4 onClick={this.changeForm}>Already have an account?</h4>
+        <h4 onClick={this.loginDemo}>Log In With Demo</h4>
+        </span>
       );
     }
   }
@@ -72,7 +83,8 @@ class ModalTest extends React.Component {
           style={styleSkeleton}
           contentLabel={text}
         >
-        <SessionFormContainer page={this.state.formType}/>
+        <SessionFormContainer page={this.state.formType}
+                            demoLogin={this.state.demo}/>
         {this.alternateText()}
         </Modal>
       </div>

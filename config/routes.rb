@@ -4,5 +4,6 @@ Rails.application.routes.draw do
     resources :users, only: [:create ]
     resource :session, only: [:create, :destroy]
     resources :cities, only: [:index, :show]
+    resources :events, only: [:index, :create, :update, :destroy]
   end
 end

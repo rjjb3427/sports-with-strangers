@@ -23,6 +23,3 @@ export const fetchCurrentCity = id => dispatch => (
   CitiesApiUtil.fetchCity(id).then(res => dispatch(receiveCurrentCity(res)),
   res => dispatch(receiveErrors(res)))
 );
-
-window.fetchCurrentCity = fetchCurrentCity;
-window.fetchCities = fetchCities;

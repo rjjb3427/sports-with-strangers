@@ -7,7 +7,7 @@ class SessionForm extends React.Component {
     this.state = { first_name: '', last_name: '', location: '', image: '', blurb: ''};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
-    this.renderSignIn = this.renderSignIn.bind(this);
+    this.renderSignUp = this.renderSignUp.bind(this);
     this.renderLogin = this.renderLogin.bind(this);
     this.errors = this.errors.bind(this);
   }
@@ -17,6 +17,8 @@ class SessionForm extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
+    const demoUser = {first_name: 'Demo', password: 'guestpassword'};
+    newProps.demoLogin ? this.props.login(demoUser) : null;
     this.loginPage = newProps.page === 'login' ? true : false;
     if (this.props.errors[0]) {
       this.props.clearErrors();
@@ -61,7 +63,7 @@ class SessionForm extends React.Component {
     );
   }
 
-  renderSignIn() {
+  renderSignUp() {
     const user = this.state;
     return (
       <div className='form-wrapper'>
@@ -87,7 +89,7 @@ class SessionForm extends React.Component {
     if (this.loginPage) {
       return this.renderLogin();
     } else {
-      return this.renderSignIn();
+      return this.renderSignUp();
     }
   }
 }

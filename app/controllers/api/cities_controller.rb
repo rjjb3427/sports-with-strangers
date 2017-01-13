@@ -4,7 +4,6 @@ class Api::CitiesController < ApplicationController
   end
 
   def show
-    # debugger
     @city = City.find(params[:id])
     if @city
       render :show
