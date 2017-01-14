@@ -5,7 +5,13 @@ import {receiveErrors} from './session_actions';
 export const RECEIVE_EVENTS = "RECEIVE_EVENTS";
 export const RECEIVE_EVENT = "RECEIVE_EVENT";
 export const RECEIVE_EVENT_ERRORS = "RECEIVE_EVENT_ERRORS";
-const receiveEvents = (events) => ({
+export const REMOVE_EVENTS = "REMOVE_EVENTS";
+
+export const clearEvents = () => dispatch => (
+  dispatch({type: REMOVE_EVENTS})
+);
+
+export const receiveEvents = (events) => ({
   type: RECEIVE_EVENTS,
   events
 });
@@ -29,5 +35,3 @@ export const fetchCityEvents = id => dispatch => (
   EventsApiUtil.fetchCityEvents(id).then(res => dispatch(receiveEvents(res)),
   res => dispatch(receiveEventErrors(res)))
 );
-
-window.fetchUserEvents = fetchUserEvents;
