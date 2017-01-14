@@ -632,3 +632,6 @@ Checked in these paths:
 [2017-01-13 19:27:35 -0800 njvizzutti-TP550LA (2461)] INFO : Installing Rails 4 view instrumentation
 [2017-01-13 19:27:35 -0800 njvizzutti-TP550LA (2461)] INFO : Finished instrumentation
 [2017-01-13 19:27:37 -0800 njvizzutti-TP550LA (2461)] INFO : Doing deferred dependency-detection before Rack startup
+[2017-01-13 19:29:18 -0800 njvizzutti-TP550LA (2461)] ERROR : Invalid license key, please contact support@newrelic.com
+[2017-01-13 19:29:18 -0800 njvizzutti-TP550LA (2461)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2017-01-13 22:05:23 -0800 njvizzutti-TP550LA (2461)] INFO : Starting Agent shutdown
