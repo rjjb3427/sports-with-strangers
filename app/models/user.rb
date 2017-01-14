@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
   attr_reader :password
   belongs_to :city
 
+  has_many :events,
+  foreign_key: :host_id
+
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
   end
@@ -42,7 +45,7 @@ class User < ActiveRecord::Base
 
   def set_city_id
     city = City.find_by(name: self.location)
-    self.city_id = city.id if city 
+    self.city_id = city.id if city
   end
 
 end

@@ -2,7 +2,8 @@ import * as CitiesApiUtil from '../util/cities_api_util';
 import store from '../store/store';
 import {receiveErrors} from './session_actions';
 
-export const RECEIVE_CITIES = 'RECEIVE_CITIES';export const RECEIVE_CURRENT_CITY = 'RECEIVE_CURRENT_CITY';
+export const RECEIVE_CITIES = 'RECEIVE_CITIES';
+export const RECEIVE_CURRENT_CITY = 'RECEIVE_CURRENT_CITY';
 
 const receiveCurrentCity = city => ({
   type: RECEIVE_CURRENT_CITY,

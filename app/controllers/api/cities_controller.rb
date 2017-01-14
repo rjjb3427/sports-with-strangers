@@ -8,7 +8,7 @@ class Api::CitiesController < ApplicationController
     if @city
       render :show
     else
-      render json: ['City not found check show method']
+      render json: ['City not found check show method'], status: 404
     end
   end
 end
