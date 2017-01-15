@@ -11,7 +11,7 @@ div.cities-index {
 }
 
 .cities-header-text {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: bold;
   text-align: center;
   padding-top: 50px;
@@ -22,24 +22,26 @@ div.cities-index {
   display: inline-flex;
   height: auto;
   align-self: center;
-  -webkit-transition: all 0.8s ease;
-    -moz-transition: all 0.8s ease;
-      -o-transition: all 0.8s ease;
-     -ms-transition: all 0.8s ease;
-         transition: all 0.8s ease;
-}
-
-ul.cities-index {
-  margin: 0 auto;
+  filter: contrast(80%);
+  -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+      -o-transition: all 0.4s ease;
+     -ms-transition: all 0.4s ease;
+         transition: all 0.4s ease;
 }
 
 .cities-index img:hover {
-  border-radius: 80%;
+  filter: contrast(100%);
+  box-shadow: 5px 10px 5px #888888;
 }
 
-.cities-index li {
-  padding: 10px;
+ul.cities-index {
   text-align: center;
+}
+.cities-index li {
+  position: relative;
+  left: 5%;
+  padding: 10px;
   height: auto;
   width: 40%;
   float: left;

@@ -1,8 +1,10 @@
 class User < ActiveRecord::Base
-  validates :first_name, :password_digest, :location, presence: true
+  validates :email, :password_digest, :location, presence: true
+  validates :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
+  validate :valid_email_address
   after_initialize :ensure_session_token
-  before_validation :ensure_session_token_uniqueness, :set_city_id
+  before_validation :ensure_session_token_uniqueness, :set_city_id, :format_email
 
   attr_reader :password
   belongs_to :city
@@ -14,13 +16,26 @@ class User < ActiveRecord::Base
     SecureRandom.urlsafe_base64(16)
   end
 
-  def self.find_by_credentials(first_name, password)
-    @user = User.find_by(first_name: first_name)
+  def self.find_by_credentials(email, password)
+    email.downcase!
+    @user = User.find_by(email: email)
     if @user && @user.is_password?(password)
       return @user
     else
       return nil
     end
+  end
+
+  def valid_email_address
+    email = self.email.downcase
+    validity = email.scan(/\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b/)
+    if (validity.empty?)
+      errors.add(:email, 'must be valid')
+    end
+  end
+
+  def format_email
+    self.email.downcase!
   end
 
   def password=(password)

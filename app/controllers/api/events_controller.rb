@@ -1,6 +1,5 @@
 class Api::EventsController < ApplicationController
   def index
-    # debugger
     if event_params[:city_id]
       city = City.find(event_params[:city_id])
       render json: ['City not found'], status: 404 if city.nil?
@@ -10,7 +9,7 @@ class Api::EventsController < ApplicationController
       host = User.find(event_params[:host_id])
       render json: ['User not found'], status: 404 if host.nil?
       @events = host.events
-      render json: ["#{user.first_name} isn't hosting any events yet."], status: 422 if @events.empty?
+      render json: ["#{user.name} isn't hosting any events yet."], status: 422 if @events.empty?
     end
   end
 
@@ -18,7 +17,6 @@ class Api::EventsController < ApplicationController
     @event = Event.new(event_params)
     if @event.save
       render :index
-      # render template: 'api/users/show' TODO pass in host
     else
       render json: @event.errors.full_messages, status: 422
     end
@@ -34,7 +32,6 @@ class Api::EventsController < ApplicationController
   end
 
   def destroy
-    debugger
     @event = Event.find(params[:id])
     @event.destroy
     render :template => 'api/cities/show'

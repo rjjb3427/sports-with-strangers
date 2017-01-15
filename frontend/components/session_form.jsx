@@ -4,7 +4,7 @@ import { hashHistory } from 'react-router';
 class SessionForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = { first_name: '', last_name: '', location: '', image: '', blurb: ''};
+    this.state = { email: '', name: '', location: '', image: '', blurb: ''};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.renderSignUp = this.renderSignUp.bind(this);
@@ -16,8 +16,12 @@ class SessionForm extends React.Component {
     this.loginPage = this.props.page === 'login' ? true : false;
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
   componentWillReceiveProps(newProps) {
-    const demoUser = {first_name: 'Demo', password: 'guestpassword'};
+    const demoUser = {email: 'Demo@demo.com', password: 'guestpassword'};
     newProps.demoLogin ? this.props.login(demoUser) : null;
     this.loginPage = newProps.page === 'login' ? true : false;
     if (this.props.errors[0]) {
@@ -54,7 +58,7 @@ class SessionForm extends React.Component {
     return (
       <div className='form-wrapper'>
         <form onSubmit={this.handleSubmit}>
-          <input type='text' placeholder='First Name' value={user.first_name} onChange={this.update('first_name')}/>
+          <input type='text' placeholder='Email Address' value={user.email} onChange={this.update('email')}/>
           <input type='password' placeholder='Password' onChange={this.update('password')} /><br />
           <input type='submit' value='Login' />
         </form><br />
@@ -68,12 +72,12 @@ class SessionForm extends React.Component {
     return (
       <div className='form-wrapper'>
         <form onSubmit={this.handleSubmit} >
-          <input type='text' placeholder='First Name' value={user.first_name} onChange={this.update('first_name')}/>
-          <input type='text' placeholder='Last Name (Optional)' value={user.last_name} onChange={this.update('last_name')}/>
+          <input type='text' placeholder='Email Address' value={user.email} onChange={this.update('email')}/>
+          <input type='text' placeholder='Name (Required for Hosts)' value={user.name} onChange={this.update('name')}/>
           <select className='dropdown' onChange={this.update('location')}>
             <option>Choose A City</option>
             <option value='SF Bay Area'>San Francisco Bay Area</option>
-            <option value='Boston'>Los Angeles</option>
+            <option value='Boston'>Boston</option>
             <option value='New York'>New York</option>
             <option value='Seattle'>Seattle</option>
           </select>
