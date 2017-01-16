@@ -19,15 +19,15 @@ class CityShow extends React.Component {
   }
 
   renderEvent(event, idx) {
-    console.log(event);
     return (
       <li key={idx}>
-        <h2>{event.title}</h2>
-        <h3>{event.sport}</h3>
-        <p></p>
-        <p>{event.time}</p>
-        <p>{event.address}</p>
-        <p>{event.capacity}</p>
+        <h3>{event.title}</h3>
+        <h2>{event.sport}</h2>
+        <p><b>Host: </b>{event.host.name}</p>
+        <p><b>Time: </b>{event.time}</p>
+        <p><b>Address: </b>{event.address}</p>
+        <p><b>Capacity: </b>{event.capacity}</p>
+        <input type='submit' value={`Join ${event.host.name}`} className='join-button'/>
       </li>
     );
   }
@@ -47,6 +47,7 @@ class CityShow extends React.Component {
         <ul>
           {events.map((event, idx) => this.renderEvent(event, idx))}
         </ul>
+        <h2 className='tagline'>Discover our great community in the {city.tagline}.</h2>
       </div>
     );
   }

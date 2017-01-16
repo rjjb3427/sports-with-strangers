@@ -1,4 +1,6 @@
 .NavBar {
+  position: relative;
+  z-index: 2;
   height: 80px;
   background-color: rgba(128, 0, 0, 0.7);
   padding: 10px;

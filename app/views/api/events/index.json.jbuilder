@@ -1,6 +1,6 @@
 json.array! @events do |event|
   json.title event.title
-  json.time event.time
+  json.time event.time.to_s
   json.address event.address
   json.capacity event.capacity
   json.sport event.sport
