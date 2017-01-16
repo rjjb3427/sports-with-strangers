@@ -109,12 +109,12 @@ users = User.create([{email: 'Demo@demo.com', name: 'Demo User',
 #   t.integer  "capacity"
 #   t.datetime "time",     null: false
 # end
+# DateTime to parsed string
 
 titles = ["Sports on a Saturday", "Come to Tom's Cafe!", "Watching in the park", "Going to the bar",
 "Several Games at Once!", "Small Group Game", "Going to the Game!", "The playoffs are near", "Come watch with us!",
  "Title game this weekend", "Rivalry Game, Will be Good", "College Basketball this Weekend", "Are you into Hockey?", "Lacrosse Fans!" ]
  sports = ['football', 'basketball', 'baseball', 'soccer']
- debugger
 # Seattle: 0, SF: 1, New York: 2, Boston: 3
 # DemoSF: 0, KenSF: 1, MarvinBoston: 2 CiennaBoston: 3 KatBoston: 4
 # CaraSF: 5 MeganNY: 6, PaulNY: 7, RobbieNY: 8, ChrisSEA: 9, MarcusSEA: 10, TylerSEA: 11
