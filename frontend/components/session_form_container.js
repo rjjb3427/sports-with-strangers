@@ -5,9 +5,13 @@ import {connect} from 'react-redux';
 import SessionForm from './session_form';
 
 const mapStateToProps = (state, ownProps) => {
+  let errors = [];
+  if (state.session.errors) {
+    errors = state.session.errors;
+  }
   let page = ownProps.page;
   let loggedIn = state.session.currentUser ? true : false;
-  return { loggedIn, errors: (state.session.errors || []), page };
+  return { loggedIn, errors };
 };
 
 const mapDispatchToProps = dispatch => ({
