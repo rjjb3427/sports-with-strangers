@@ -6,9 +6,10 @@ export const addAttendee = attendee => (
   })
 );
 
-export const removeAttendee = id => (
+export const removeAttendee = attendee => (
   $.ajax({
     method: 'DELETE',
-    url: `api/attendees/${id}`
+    url: `api/attendees/1`,
+    data: {attendee}
   })
 );

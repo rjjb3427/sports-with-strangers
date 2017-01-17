@@ -9,6 +9,9 @@ class Api::AttendeesController < ApplicationController
   end
 
   def destroy
+    @attendee = Attendee.find_by(attendee_params)
+    @attendee.delete
+    render :destroy
   end
 
   private

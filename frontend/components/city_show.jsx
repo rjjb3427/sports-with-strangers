@@ -8,13 +8,13 @@ class CityShow extends React.Component {
     this.renderEvent = this.renderEvent.bind(this);
     this.renderButton = this.renderButton.bind(this);
     this.joinEvent = this.joinEvent.bind(this);
+    this.leaveEvent = this.leaveEvent.bind(this);
   }
   componentDidMount() {
     this.props.fetchCurrentCity(this.props.params.city_id);
   }
 
   componentWillReceiveProps(newProps){
-    console.log('new', newProps);
     let currentId = this.props.city ? this.props.city.id : null;
     if (currentId != newProps.params.city_id) {
       this.props.fetchCurrentCity(newProps.params.city_id);
@@ -26,17 +26,24 @@ class CityShow extends React.Component {
     this.props.addAttendee(obj);
   }
 
+  leaveEvent(user_id, event_id) {
+    this.props.removeAttendee({user_id, event_id});
+  }
+
   renderButton(event, idx) {
       if (this.props.attending.includes(event.id)) {
         return (
+          <div>
           <input type='submit' value={`Leave this Event`}
-            className='join-button' />
+            className='join-button'
+            onClick={() => this.leaveEvent(this.props.currentUserId, event.id)} />
+          <p>You are attending this event</p></div>
         );
       }
     return (
       <input type='submit' value={`Join ${event.host.name}`}
         className='join-button'
-        onClick={() => this.joinEvent(event.id)}/>
+        onClick={() => this.joinEvent(event.id)} />
     );
   }
 
@@ -56,7 +63,6 @@ class CityShow extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const city = this.props.city;
     const events = this.props.events;
     if (!city || !events) { return (
