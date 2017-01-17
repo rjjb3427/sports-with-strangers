@@ -21,7 +21,7 @@ class SessionForm extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    const demoUser = {email: 'Demo@demo.com', password: 'guestpassword'};
+    const demoUser = {email: 'demo@demo.com', password: 'guestpassword'};
     newProps.demoLogin ? this.props.login(demoUser) : null;
     this.loginPage = newProps.page === 'login' ? true : false;
     if (this.props.errors[0]) {
@@ -45,7 +45,7 @@ class SessionForm extends React.Component {
   }
 
   errors() {
-    if (this.props.errors){
+    if (Array.isArray(this.props.errors)){
     return (
       <span className='errors'>{this.props.errors.map(
           (err, idx) => <li key={idx}>{err}</li>)}
