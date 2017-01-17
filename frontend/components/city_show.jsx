@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
+import moment from 'moment';
 
 
 class CityShow extends React.Component {
@@ -31,6 +32,7 @@ class CityShow extends React.Component {
   }
 
   renderButton(event, idx) {
+    let shortName = event.host.name.split(' ')[0];
       if (this.props.attending.includes(event.id)) {
         return (
           <div>
@@ -48,7 +50,7 @@ class CityShow extends React.Component {
         );
       }
     return (
-      <input type='submit' value={`Join ${event.host.name}`}
+      <input type='submit' value={`Join ${shortName}'s Meetup`}
         className='join-button'
         onClick={() => this.joinEvent(event.id)} />
     );
@@ -58,9 +60,11 @@ class CityShow extends React.Component {
     return (
       <li key={idx}>
         <h3>{event.title}</h3>
+        <Link to={`users/${event.host.id}`}>
+          <p><b>Host: </b>{event.host.name}</p>
+          </Link>
         <h2>{event.sport}</h2>
-        <p><b>Host: </b>{event.host.name}</p>
-        <p><b>Time: </b>{event.time}</p>
+        <p><b>Time: </b>{moment(event.time).format('MMMM Do YYYY, h:mm')}</p>
         <p><b>Address: </b>{event.address}</p>
         <p><b>Capacity: </b>{event.capacity}</p>
         {this.renderButton(event, idx)}
@@ -70,7 +74,6 @@ class CityShow extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const city = this.props.city;
     const events = this.props.events;
     if (!city || !events) { return (

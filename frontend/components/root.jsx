@@ -3,6 +3,7 @@ import {Provider} from 'react-redux';
 import HomeComponent from './home_component';
 import CitiesIndexContainer from './cities_index_container';
 import CityShowContainer from './city_show_container';
+import UserShowContainer from './user_show_container';
 import ModalTest from './modal';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import App from './app';
@@ -22,6 +23,7 @@ const Root = ({store}) => {
         <IndexRoute component={HomeComponent} />
         <Route path="/cities" onEnter={_checkIfLogin} component={CitiesIndexContainer} />
         <Route path="/cities/:city_id" component={CityShowContainer} />
+        <Route path="/users/:user_id" component={UserShowContainer} />
       </Route>
     </Router>
   </Provider>
