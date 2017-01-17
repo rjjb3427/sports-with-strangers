@@ -23,6 +23,7 @@ will be met:
 ## Docs
 * [Wireframes](docs/wireframes)
 * [React Components](docs/components)
+  [component-overview](components/component-overview.png)
 * [DB schema](docs/schema.md)
 * [Sample State](docs/sample-state.md)
 * [API endpoints](docs/api-endpoints.md)
