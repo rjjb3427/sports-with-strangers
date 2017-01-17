@@ -36,11 +36,11 @@ class UserShow extends React.Component {
       return (
         <div className='user-show'>
           <h1>{user.name}</h1>
+          <h4>Events {shortName} is Hosting</h4>
+          <ul className='user-show'>{user.hosting.map((evnt, idx) => this.renderHosted(evnt, idx))}</ul>
           <h2>{user.email}</h2>
           <h2>Hosts in {user.location}</h2>
           <p>{user.blurb}</p>
-          <h3>Events {shortName} is Hosting</h3>
-          <ul className='user-show'>{user.hosting.map((evnt, idx) => this.renderHosted(evnt, idx))}</ul>
         </div>
       );
     } else {

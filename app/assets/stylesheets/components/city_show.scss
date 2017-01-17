@@ -40,6 +40,19 @@
   padding: 5px 10px 15px 10px;
 }
 
+.city-show li > a:hover {
+  text-decoration: underline;
+}
+
+.city-show li > h2 {
+  font-size: 25px;
+  font-variant: small-caps;
+}
+
+.city-show p {
+  font-size: 17px;
+}
+
 .city-show li > h3 {
   font-family: 'Oswald';
 }

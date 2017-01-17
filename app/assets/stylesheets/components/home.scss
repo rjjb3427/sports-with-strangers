@@ -1,7 +1,4 @@
 .wrapper {
-  background-image: image-url('football.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
   font-family: 'Slabo 27px';
   height: auto;
   width: auto;
@@ -9,9 +6,14 @@
 }
 
 .home-main {
+  background-image: image-url('football.jpg');
+  background-size: cover;
   font-family: 'Slabo 27px';
   height: 750px;
   color: white;
+  position: absolute;
+  top: -3%;
+  width: 100%;
 }
 
 .home-wrapper {

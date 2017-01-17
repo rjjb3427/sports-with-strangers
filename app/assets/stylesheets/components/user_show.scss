@@ -1,0 +1,31 @@
+.user-show {
+  background-color: #f5ede1;
+  color: black;
+}
+
+.user-show ul {
+  text-align: justify;
+  margin: 15px;
+  background-color: firebrick;
+  width: 300px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-show > li {
+  background-color: #f8f8ff;
+  box-shadow: 3px 3px 10px;
+  margin: 10px;
+  width: 250px;
+  text-align: justify;
+  padding: 5px 10px 15px 10px;
+}
+
+.user-show > h4 {
+  display: inline-block;
+  font-family: 'Oswald';
+  margin-left: 10px;
+  font-size: 20px;
+
+}
