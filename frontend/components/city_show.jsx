@@ -39,6 +39,13 @@ class CityShow extends React.Component {
             onClick={() => this.leaveEvent(this.props.currentUserId, event.id)} />
           <p>You are attending this event</p></div>
         );
+      } else if (event.host.id === this.props.currentUserId) {
+        return (
+          <div>
+          <input type='button' disabled value={`Cannot Join Own Event`}
+            className='join-button-disabled'/>
+          <p><b>You are hosting this event</b></p></div>
+        );
       }
     return (
       <input type='submit' value={`Join ${event.host.name}`}
@@ -63,6 +70,7 @@ class CityShow extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     const city = this.props.city;
     const events = this.props.events;
     if (!city || !events) { return (

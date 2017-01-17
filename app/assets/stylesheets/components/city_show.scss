@@ -74,6 +74,21 @@
   background-color: rgba(0, 0, 0, 0.9);
 }
 
+.join-button-disabled {
+  padding: 7px 15px 7px 15px;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  height: auto;
+  width: auto;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: rgba(128, 0, 0, 0.3);
+  color: white;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+}
+
 .tagline {
   margin-top: 10px;
   margin-bottom: 40px;

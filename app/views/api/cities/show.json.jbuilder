@@ -8,6 +8,6 @@ json.set! :events, @city.events do |event|
   json.city_id event.city_id
   json.id event.id
   json.host do
-    json.extract! event.host, :email, :name, :location, :image, :blurb
+    json.extract! event.host, :email, :name, :location, :image, :blurb, :id
   end
 end
