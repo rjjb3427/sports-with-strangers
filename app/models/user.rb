@@ -17,14 +17,14 @@ class User < ActiveRecord::Base
 
   has_many :attending,
   through: :reservations,
-  source: :event 
+  source: :event
 
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
   end
 
   def self.find_by_credentials(email, password)
-    email.downcase!
+    email.downcase! unless email.nil?
     @user = User.find_by(email: email)
     if @user && @user.is_password?(password)
       return @user
@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
   end
 
   def valid_email_address
-    email = self.email.downcase
+    email = self.email.downcase unless self.email.nil?
     validity = email.scan(/\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b/)
     if (validity.empty?)
       errors.add(:email, 'must be valid')
@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
   end
 
   def format_email
-    self.email.downcase!
+    self.email.downcase! unless self.email.nil?
   end
 
   def password=(password)
