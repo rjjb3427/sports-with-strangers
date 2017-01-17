@@ -6,16 +6,38 @@ class CityShow extends React.Component {
   constructor(props){
     super(props);
     this.renderEvent = this.renderEvent.bind(this);
+    this.renderButton = this.renderButton.bind(this);
+    this.joinEvent = this.joinEvent.bind(this);
   }
   componentDidMount() {
     this.props.fetchCurrentCity(this.props.params.city_id);
   }
 
   componentWillReceiveProps(newProps){
+    console.log('new', newProps);
     let currentId = this.props.city ? this.props.city.id : null;
     if (currentId != newProps.params.city_id) {
       this.props.fetchCurrentCity(newProps.params.city_id);
     }
+  }
+
+  joinEvent(id) {
+    let obj = {user_id: this.props.currentUserId, event_id: id};
+    this.props.addAttendee(obj);
+  }
+
+  renderButton(event, idx) {
+      if (this.props.attending.includes(event.id)) {
+        return (
+          <input type='submit' value={`Leave this Event`}
+            className='join-button' />
+        );
+      }
+    return (
+      <input type='submit' value={`Join ${event.host.name}`}
+        className='join-button'
+        onClick={() => this.joinEvent(event.id)}/>
+    );
   }
 
   renderEvent(event, idx) {
@@ -27,12 +49,14 @@ class CityShow extends React.Component {
         <p><b>Time: </b>{event.time}</p>
         <p><b>Address: </b>{event.address}</p>
         <p><b>Capacity: </b>{event.capacity}</p>
-        <input type='submit' value={`Join ${event.host.name}`} className='join-button'/>
+        {this.renderButton(event, idx)}
+
       </li>
     );
   }
 
   render() {
+    console.log(this.props);
     const city = this.props.city;
     const events = this.props.events;
     if (!city || !events) { return (

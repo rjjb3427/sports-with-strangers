@@ -16,12 +16,12 @@ export const receiveEvents = (events) => ({
   events
 });
 
-const receiveEvent = event => ({
+export const receiveEvent = event => ({
   type: RECEIVE_EVENT,
   event
 });
 
-const receiveEventErrors = errors => ({
+export const receiveEventErrors = errors => ({
   type: RECEIVE_EVENT_ERRORS,
   errors
 });

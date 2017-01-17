@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :cities, only: [:index, :show]
     resources :events, only: [:index, :create, :update, :destroy]
+    resources :attendees, only: [:create, :destroy]
   end
 end

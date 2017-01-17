@@ -109,7 +109,7 @@ users = User.create([{email: 'Demo@demo.com', name: 'Demo User',
 #   t.integer  "capacity"
 #   t.datetime "time",     null: false
 # end
-# DateTime to parsed string
+# DateTime to parsed string/ How to check if you are sure when joining/
 
 titles = ["Sports on a Saturday", "Come to Tom's Cafe!", "Watching in the park", "Going to the bar",
 "Several Games at Once!", "Small Group Game", "Going to the Game!", "The playoffs are near", "Come watch with us!",

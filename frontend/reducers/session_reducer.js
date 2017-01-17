@@ -2,6 +2,7 @@ import merge from 'lodash/merge';
 import {RECEIVE_ERRORS,
         RECEIVE_CURRENT_USER,
         LOGOUT_USER, CLEAR_ERRORS} from '../actions/session_actions';
+import {RECEIVE_CURRENT_USER_EVENT} from '../actions/attendee_actions';
 
 const _initialState = {
     currentUser: null,
@@ -17,6 +18,9 @@ const sessionReducer = (state=_initialState, action) => {
       return newState;
     case RECEIVE_CURRENT_USER:
       newState.currentUser = action.user;
+      return newState;
+    case RECEIVE_CURRENT_USER_EVENT:
+      newState.currentUser.attending.push(action.event);
       return newState;
     case LOGOUT_USER:
       return _initialState;

@@ -1,5 +1,4 @@
 import * as CitiesApiUtil from '../util/cities_api_util';
-import store from '../store/store';
 import {receiveErrors} from './session_actions';
 
 export const RECEIVE_CITIES = 'RECEIVE_CITIES';

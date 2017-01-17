@@ -12,6 +12,13 @@ class User < ActiveRecord::Base
   has_many :events,
   foreign_key: :host_id
 
+  has_many :reservations,
+  class_name: :Attendee
+
+  has_many :attending,
+  through: :reservations,
+  source: :event 
+
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
   end

@@ -19,8 +19,9 @@ const eventsReducer = (state=_initialState, action) => {
       return newState;
     case RECEIVE_EVENT:
       newState.eventList.push(action.event);
+      newState.errors = null;
+      return newState;
     case RECEIVE_EVENT_ERRORS:
-      newState.eventList = [];
       newState.errors = action.errors.responseJSON;
       return newState;
     case REMOVE_EVENTS:
