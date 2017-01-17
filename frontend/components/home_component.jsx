@@ -23,11 +23,13 @@ class HomeComponent extends React.Component {
   }
 
   togglePrompt() {
+    if (!this.props.loggedIn) {
       if (this.state.prompt.length < 1) {
         this.setState({prompt: 'Please Sign Up or Login to View Events'});
       } else {
         this.setState({prompt: ''});
       }
+    }
   }
 
   footer() {

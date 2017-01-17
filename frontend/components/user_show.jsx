@@ -29,7 +29,6 @@ class UserShow extends React.Component {
   }
 
   render() {
-    console.log(this.state.user);
     const user = this.state.user;
     if (user){
       const shortName = user.name.split(' ')[0];
