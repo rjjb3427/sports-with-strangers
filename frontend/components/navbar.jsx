@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
-import ModalTest from './modal';
+import ModalTest from './forms/modal';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -29,6 +29,7 @@ class NavBar extends React.Component {
       <div className="NavBar">
         <div id='nav-logo' />
         <div className='nav-links'>
+        <Link to={'host'}>Hosting</Link>
         <Link to={`dashboard`}>Dashboard</Link>
         {this.cityLink()}
         <Link to='/cities'>Cities</Link>

@@ -1,4 +1,4 @@
-export const fetchUserEvents = id => (
+export const fetchHostEvents = id => (
   $.ajax({
     method: 'GET',
     url: 'api/events',
@@ -11,5 +11,13 @@ export const fetchCityEvents = id => (
     method: 'GET',
     url: 'api/events',
     data: {event: { city_id: id}}
+  })
+);
+
+export const createEvent = event => (
+  $.ajax({
+    method: 'POST',
+    url: 'api/events',
+    data: {event}
   })
 );

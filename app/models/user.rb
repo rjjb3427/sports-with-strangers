@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   validate :valid_email_address
   after_initialize :ensure_session_token
-  before_validation :ensure_session_token_uniqueness, :set_city_id, :format_email
+  before_validation :set_city_id, :format_email
 
   attr_reader :password
   belongs_to :city
@@ -57,12 +57,6 @@ class User < ActiveRecord::Base
 
   def ensure_session_token
     self.session_token ||= User.generate_session_token
-  end
-
-  def ensure_session_token_uniqueness
-    while User.find_by(session_token: self.session_token)
-      self.session_token = new_session_token
-    end
   end
 
   def set_city_id

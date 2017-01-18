@@ -48,7 +48,7 @@ class CityShow extends React.Component {
         return (
           <div>
           <input type='submit' value={`Leave this Event`}
-            className='join-button'
+            className='button'
             onClick={() => this.leaveEvent(this.props.currentUserId, event.id)} />
           <p>You are attending this event</p></div>
         );
@@ -56,13 +56,13 @@ class CityShow extends React.Component {
         return (
           <div>
           <input type='button' disabled value={`Cannot Join Own Event`}
-            className='join-button-disabled'/>
+            className='button-disabled'/>
           <p><b>You are hosting this event</b></p></div>
         );
       }
     return (
       <input type='submit' value={`Join ${shortName}'s Meetup`}
-        className='join-button'
+        className='button'
         onClick={() => this.joinEvent(event.id)} />
     );
   }
@@ -72,12 +72,12 @@ class CityShow extends React.Component {
       <li key={idx}>
         <h3>{event.title}</h3>
           <Link to={`users/${event.host.id}`}>
-          <img className ='user-thumbnail' src='http://orig10.deviantart.net/b1f3/f/2011/258/1/8/profile_picture_by_ff_stock-d49yyse.jpg' />
+          <img className ='user-thumbnail' src={`${event.host.image}`} />
           </Link>
-          <p><b>Host: </b>{event.host.name}</p>
-        <h2>{event.sport}</h2>
-        <p><b>Time: </b>{moment(event.time).format('MMMM Do YYYY, h:mm')}</p>
-        <p><b>Address: </b>{event.address}</p>
+          <p>Hosted by {event.host.name}</p>
+        <p>{event.sport}</p>
+        <p>{moment(event.time).format('MMMM Do YYYY, h:mm')}</p>
+        <p>{event.address}</p>
         <p><b>Capacity: </b>{event.capacity}</p>
         {this.renderButton(event, idx)}
 
@@ -97,9 +97,11 @@ class CityShow extends React.Component {
           <img src={`${city.image}`} className='city-image' />
         </div>
         <h1 className='city-title'>{city.name}</h1>
+        <section className='list-items'>
         <ul>
           {events.map((event, idx) => this.renderEvent(event, idx))}
         </ul>
+        </section>
         <h2 className='tagline'>Discover our great community in the {city.tagline}.</h2>
         {this.footer()}
       </div>

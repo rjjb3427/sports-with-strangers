@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {fetchCities} from '../actions/city_actions';
+import {fetchCities} from '../../actions/city_actions';
 import CitiesIndex from './cities_index';
 
 const mapStateToProps = state => ({

@@ -26,12 +26,17 @@ export const receiveEventErrors = errors => ({
   errors
 });
 
-export const fetchUserEvents = id => dispatch => (
-  EventsApiUtil.fetchUserEvents(id).then(res => dispatch(receiveEvents(res)),
+export const fetchHostEvents = idType => dispatch => (
+  EventsApiUtil.fetchHostEvents(idType).then(res => dispatch(receiveEvents(res)),
   res => dispatch(receiveEventErrors(res)))
 );
 
 export const fetchCityEvents = id => dispatch => (
   EventsApiUtil.fetchCityEvents(id).then(res => dispatch(receiveEvents(res)),
   res => dispatch(receiveEventErrors(res)))
+);
+
+export const createEvent = event => dispatch => (
+  EventsApiUtil.createEvent(event).then(res => dispatch(receiveEvent(res),
+  console.log(res)))
 );

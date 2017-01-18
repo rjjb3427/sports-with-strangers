@@ -20,13 +20,26 @@ class EventList extends React.Component {
     this.props.removeAttendee({user_id, event_id});
   }
 
+  renderDashboard(event, idx) {
+    console.log(event);
+    return (
+      <li key={idx}>
+        <h3>{event.title}</h3>
+        <p>{event.sport}</p>
+        <p><b>Time: </b>{moment(event.time).format('MMMM Do YYYY, h:mm')}</p>
+        <p><b>Address: </b>{event.address}</p>
+        <Link to={`users/${event.host_id}`} className='button'>See All Host's Events</Link>
+      </li>
+    );
+  }
+
   renderEvent(event, idx) {
     return (
       <li key={idx}>
         <h3>{event.title}</h3>
         <h2>{event.sport}</h2>
-        <p><b>Time: </b>{moment(event.time).format('MMMM Do YYYY, h:mm')}</p>
-        <p><b>Address: </b>{event.address}</p>
+        <p>{moment(event.time).format('MMMM Do YYYY, h:mm')}</p>
+        <p>{event.address}</p>
         <p><b>Capacity: </b>{event.capacity}</p>
         {this.renderButton(event, idx)}
       </li>
@@ -39,7 +52,7 @@ class EventList extends React.Component {
         return (
           <div>
           <input type='submit' value={`Leave this Event`}
-            className='join-button'
+            className='button'
             onClick={() => this.leaveEvent(this.props.currentUserId, event.id)} />
           <p>You are attending this event</p></div>
         );
@@ -47,27 +60,33 @@ class EventList extends React.Component {
         return (
           <div>
           <input type='button' disabled value={`Cannot Join Own Event`}
-            className='join-button-disabled'/>
+            className='button-disabled'/>
           <p><b>You are hosting this event</b></p></div>
         );
       }
     return (
       <input type='submit' value={`Join ${shortName}'s Meetup`}
-        className='join-button'
+        className='button'
         onClick={() => this.joinEvent(event.id)} />
     );
   }
 
   render() {
-    console.log(this.props);
     const events = this.props.events;
+    if (this.props.dashboard) {
+      return (
+        <ul className='event-list'>
+          {events.map((event, idx) => this.renderDashboard(event, idx))}
+        </ul>
+      );
+    } else {
     return (
       <ul className='event-list'>
         {events.map((event, idx) => this.renderEvent(event, idx))}
       </ul>
     );
+    }
   }
-
 }
 
 export default EventList;

@@ -56,7 +56,7 @@ class SessionForm extends React.Component {
   renderLogin() {
     const user = this.state;
     return (
-      <div className='form-wrapper'>
+      <div className='form'>
         <form onSubmit={this.handleSubmit}>
           <input type='text' placeholder='Email Address' value={user.email} onChange={this.update('email')}/>
           <input type='password' placeholder='Password' onChange={this.update('password')} /><br />
@@ -70,7 +70,7 @@ class SessionForm extends React.Component {
   renderSignUp() {
     const user = this.state;
     return (
-      <div className='form-wrapper'>
+      <div className='form'>
         <form onSubmit={this.handleSubmit} >
           <input type='text' placeholder='Email Address' value={user.email} onChange={this.update('email')}/>
           <input type='text' placeholder='Name (Required for Hosts)' value={user.name} onChange={this.update('name')}/>

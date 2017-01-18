@@ -4,25 +4,6 @@
   float: left;
 }
 
-.user-show > ul {
-  text-align: justify;
-  margin: 15px;
-  background-color: #8B1817;
-  width: 300px;
-  padding: 10px;
-  border-radius: 4;
-}
-
-.user-show > ul > li {
-  border-radius: 4px;
-  background-color: #f8f8ff;
-  box-shadow: 3px 3px 10px;
-  margin: 10px;
-  width: 250px;
-  text-align: justify;
-  padding: 5px 10px 15px 10px;
-}
-
 .user-show > h4 {
   margin: 0px;
   margin-left: 20px;
@@ -51,12 +32,11 @@
   font-style: italic;
 }
 .profile {
+  border: 6px solid #8B1817;
   float: left;
   width: 300px;
   margin: 15px;
-  padding: 10px;
 }
-
 .profile > h1 {
   padding: 8px;
   position: relative;

@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import CityShow from './city_show';
-import {fetchCurrentCity, fetchCities} from '../actions/city_actions';
-import {addAttendee, removeAttendee} from '../actions/attendee_actions';
+import {fetchCurrentCity, fetchCities} from '../../actions/city_actions';
+import {addAttendee, removeAttendee} from '../../actions/attendee_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let events = state.cities.currentCity ? state.cities.currentCity.events : null;

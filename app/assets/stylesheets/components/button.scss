@@ -1,0 +1,32 @@
+.button {
+  padding: 7px 15px 7px 15px;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  height: auto;
+  width: auto;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: rgba(128, 0, 0, 0.9);
+  color: white;
+}
+
+
+.button:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.button-disabled {
+  padding: 7px 15px 7px 15px;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  height: auto;
+  width: auto;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: rgba(128, 0, 0, 0.3);
+  color: white;
+}

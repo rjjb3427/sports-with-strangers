@@ -1,0 +1,11 @@
+.dashboard-wrapper {
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+}
+
+.dashboard-wrapper > span {
+  font-family: fantasy;
+  color: black;
+  font-size: 300px;
+}

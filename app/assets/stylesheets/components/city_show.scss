@@ -11,48 +11,6 @@
   top: -30%;
 }
 
-.city-show ul {
-  width: 100%;
-  flex-wrap: wrap;
-  margin-top: 70px;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
-  background-color:rgba(128, 0, 0, 1);
-  display: flex;
-  justify-content: space-around;
-  color: black;
-  position: relative;
-  padding: 10px 5px 10px 5px;
-  bottom: -25%;
-}
-
-.city-show li {
-  border-radius: 3px;
-  background-color: #f8f8ff;
-  box-shadow: 3px 3px 10px;
-  margin: 10px;
-  width: 250px;
-  text-align: center;
-  padding: 5px 10px 15px 10px;
-}
-
-.city-show li > a:hover {
-  text-decoration: underline;
-}
-
-.city-show li > h2 {
-  font-size: 25px;
-  font-variant: small-caps;
-}
-
-.city-show p {
-  font-size: 17px;
-}
-
-.city-show li > h3 {
-  font-family: 'Oswald';
-}
-
 .city-title {
   background-color: rgba(255, 255, 255, 0.84);
   box-shadow: 0px 0px 40px 20px rgba(255, 255, 255, 0.9);
@@ -65,40 +23,6 @@
   margin-top: 100px;
   margin-bottom: 100px;
   top: 20%;
-}
-
-.join-button {
-  padding: 7px 15px 7px 15px;
-  border-radius: 10px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  text-align: center;
-  height: auto;
-  width: auto;
-  font-size: 15px;
-  font-weight: bold;
-  background-color: rgba(128, 0, 0, 0.9);
-  color: white;
-  box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
-}
-
-.join-button:hover {
-  background-color: rgba(0, 0, 0, 0.9);
-}
-
-.join-button-disabled {
-  padding: 7px 15px 7px 15px;
-  border-radius: 10px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  text-align: center;
-  height: auto;
-  width: auto;
-  font-size: 15px;
-  font-weight: bold;
-  background-color: rgba(128, 0, 0, 0.3);
-  color: white;
-  box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
 }
 
 .tagline {
@@ -127,23 +51,4 @@
 
 .city-footer > h1 {
   margin: 20px;
-}
-
-.user-thumbnail {
-  width: 45%;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 0%;
-  -webkit-transition: all 500ms ease-out 0s;
-  -moz-transition: all 500ms ease-out 0s;
-  -o-transition: all 500ms ease-out 0s;
-  transition: all 500ms ease-out 0s;
-}
-
-.user-thumbnail:hover {
-  -webkit-transition: all 500ms ease-out 0s;
-  -moz-transition: all 500ms ease-out 0s;
-  -o-transition: all 500ms ease-out 0s;
-  transition: all 500ms ease-out 0s;
-  border-radius: 100%;
 }

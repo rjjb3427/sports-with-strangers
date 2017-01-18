@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, hashHistory} from 'react-router';
 import moment from 'moment';
-import EventListContainer from './event_list_container';
+import EventListContainer from '../events/event_list_container';
 
 class UserShow extends React.Component {
   constructor(props){
@@ -10,7 +10,7 @@ class UserShow extends React.Component {
     }
 
   componentDidMount() {
-    this.props.fetchHost(this.props.params.user_id).then(res => {
+    this.props.fetchUser(this.props.params.user_id).then(res => {
       this.setState({user: res});
     }, () => hashHistory.goBack());
   }
@@ -24,17 +24,19 @@ class UserShow extends React.Component {
         <div className='user-show'>
           <div className='profile'>
             <h1>{user.name}</h1>
-            <img src='http://orig10.deviantart.net/b1f3/f/2011/258/1/8/profile_picture_by_ff_stock-d49yyse.jpg' />
+            <img src={`${user.image}`} />
           </div>
           <section className='blurb'>
             <h2>Hosts in {user.location}</h2><br/>
             <h2 className='user-show-email'>{user.email}</h2><br/>
             <p>{user.blurb}</p>
           </section>
+          <section className='list-items'>
           <h4>Events {shortName} is Hosting</h4>
           <EventListContainer
             events={user.hosting}
             host={this.state.user} />
+          </section>
       </div>
       );
     } else {

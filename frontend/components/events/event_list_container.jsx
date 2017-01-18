@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import EventList from './event_list';
-import {addAttendee, removeAttendee} from '../actions/attendee_actions';
+import {addAttendee, removeAttendee} from '../../actions/attendee_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
