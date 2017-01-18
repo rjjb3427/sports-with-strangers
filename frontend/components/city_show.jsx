@@ -71,9 +71,10 @@ class CityShow extends React.Component {
     return (
       <li key={idx}>
         <h3>{event.title}</h3>
-        <Link to={`users/${event.host.id}`}>
-          <p><b>Host: </b>{event.host.name}</p>
+          <Link to={`users/${event.host.id}`}>
+          <img className ='user-thumbnail' src='http://orig10.deviantart.net/b1f3/f/2011/258/1/8/profile_picture_by_ff_stock-d49yyse.jpg' />
           </Link>
+          <p><b>Host: </b>{event.host.name}</p>
         <h2>{event.sport}</h2>
         <p><b>Time: </b>{moment(event.time).format('MMMM Do YYYY, h:mm')}</p>
         <p><b>Address: </b>{event.address}</p>

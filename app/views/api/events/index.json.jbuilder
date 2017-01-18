@@ -7,6 +7,6 @@ json.array! @events do |event|
   json.city_id event.city_id
   json.id = event.id
   json.host do
-    json.extract! event.host, :email, :name, :location, :image, :city, :blurb
+    json.extract! event.host, :email, :name, :location, :image, :city, :blurb, :id
   end
 end

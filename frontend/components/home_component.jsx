@@ -54,16 +54,4 @@ class HomeComponent extends React.Component {
     );
   }
 }
-
-// const HomeComponent = () => (
-//   <section className='home-main'>
-//   <div className="home-wrapper" >
-//     <Link to='cities' onMouseOver={() => prompt = "Please Login To View Events"}
-//       onMouseLeave={() => prompt = ''}>{currentTag}</Link>
-//     <h2 className='home-prompt'>{prompt}</h2>
-//   </div>
-//     {footer()}
-//   </section>
-// );
-
 export default HomeComponent;
