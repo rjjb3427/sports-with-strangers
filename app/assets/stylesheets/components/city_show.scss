@@ -1,10 +1,10 @@
 .city-show {
   background-color: rgb(245, 237, 225);
-  overflow: hidden;
+  overflow-x: hidden;
   top: 0%;
   background-color: white;
   width: 100%;
-  height: 750px;
+  height: 830px;
 }
 
 .city-header {
@@ -32,6 +32,7 @@
 }
 
 .city-show li {
+  border-radius: 3px;
   background-color: #f8f8ff;
   box-shadow: 3px 3px 10px;
   margin: 10px;
@@ -58,8 +59,8 @@
 }
 
 .city-title {
-  background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0px 0px 40px 20px rgba(0, 0, 0, 0.9);
+  background-color: rgba(255, 255, 255, 0.84);
+  box-shadow: 0px 0px 40px 20px rgba(255, 255, 255, 0.9);
   position: relative;
   text-shadow: 1px 1px 2px black;
   font-size: 50px;
@@ -113,4 +114,19 @@
   color: rgba(0, 0, 0, 0.7);
   text-align: center;
   font-variant: small-caps;
+}
+
+.city-footer {
+  bottom: -30%;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  color: rgba(128, 0, 0, .9);
+}
+
+.city-show h1 {
+  margin-left: 10px;
+  margin-right: 10px;
 }

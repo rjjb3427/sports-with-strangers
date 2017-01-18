@@ -24,10 +24,12 @@ class NavBar extends React.Component {
   }
 
   userNavBar() {
+    const userId = this.props.currentUser.id;
     return (
       <div className="NavBar">
         <div id='nav-logo' />
         <div className='nav-links'>
+        <Link to={`dashboard`}>Dashboard</Link>
         {this.cityLink()}
         <Link to='/cities'>Cities</Link>
         <Link onClick={this.handleLogout}>Logout</Link>

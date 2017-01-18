@@ -23,8 +23,11 @@ const sessionReducer = (state=_initialState, action) => {
       newState.currentUser.attending.push(action.event);
       return newState;
     case DELETE_ATTENDEE:
-      let newAttending = newState.currentUser.attending.filter(obj => {
-        (obj.id !== action.id);
+      let newAttending = [];
+      newState.currentUser.attending.forEach(obj => {
+        if (obj.id !== action.id.event_id) {
+          newAttending.push(obj); 
+        }
       });
       newState.currentUser.attending = newAttending;
       return newState;

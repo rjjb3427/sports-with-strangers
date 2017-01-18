@@ -29,14 +29,17 @@ class UserShow extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     const user = this.state.user;
     if (user){
       const shortName = user.name.split(' ')[0];
       return (
         <div className='user-show'>
           <h1>{user.name}</h1>
+          <ul className='user-show'>
           <h4>Events {shortName} is Hosting</h4>
-          <ul className='user-show'>{user.hosting.map((evnt, idx) => this.renderHosted(evnt, idx))}</ul>
+          {user.hosting.map((evnt, idx) => this.renderHosted(evnt, idx))} 
+          </ul>
           <h2>{user.email}</h2>
           <h2>Hosts in {user.location}</h2>
           <p>{user.blurb}</p>

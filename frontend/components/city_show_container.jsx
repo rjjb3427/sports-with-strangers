@@ -19,6 +19,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
   fetchCurrentCity: id => dispatch(fetchCurrentCity(id)),
   addAttendee: attendee => dispatch(addAttendee(attendee)),
-  removeAttendee: id => dispatch(removeAttendee(id))
+  removeAttendee: userWithHost => dispatch(removeAttendee(userWithHost))
 });
 export default connect(mapStateToProps, mapDispatchToProps)(CityShow);

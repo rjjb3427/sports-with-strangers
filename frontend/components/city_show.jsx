@@ -10,6 +10,7 @@ class CityShow extends React.Component {
     this.renderButton = this.renderButton.bind(this);
     this.joinEvent = this.joinEvent.bind(this);
     this.leaveEvent = this.leaveEvent.bind(this);
+    this.footer = this.footer.bind(this);
   }
   componentDidMount() {
     this.props.fetchCurrentCity(this.props.params.city_id);
@@ -20,6 +21,16 @@ class CityShow extends React.Component {
     if (currentId != newProps.params.city_id) {
       this.props.fetchCurrentCity(newProps.params.city_id);
     }
+  }
+
+  footer() {
+    return (
+      <div className='city-footer'>
+        <h1>Meetup with fellow fans to watch a game.</h1>
+        <h1>You and some others meet a host at a bar restaurant, or venue.</h1>
+        <h1>Eat, drink, hangout! Sports can really bring people together.</h1>
+      </div>
+    );
   }
 
   joinEvent(id) {
@@ -89,6 +100,7 @@ class CityShow extends React.Component {
           {events.map((event, idx) => this.renderEvent(event, idx))}
         </ul>
         <h2 className='tagline'>Discover our great community in the {city.tagline}.</h2>
+        {this.footer()}
       </div>
     );
   }

@@ -9,7 +9,7 @@
   background-image: image-url('football.jpg');
   background-size: cover;
   font-family: 'Slabo 27px';
-  height: 750px;
+  height: 825px;
   color: white;
   position: absolute;
   top: -3%;
@@ -17,6 +17,7 @@
 }
 
 .home-wrapper {
+  background-color: rgba(12, 3, 1, 0.84);
   height: 100%;
   display: flex;
   justify-content: space-around;
@@ -40,8 +41,6 @@
 }
 
 .home-footer {
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
   background-color: white;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -50,9 +49,8 @@
   display: flex;
   color: rgba(128, 0, 0, 0.9);
   font-family: 'Oswald', sans-serif;
-  float: left;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 [class*='col'] {
@@ -63,7 +61,7 @@
 }
 
 .home-prompt {
-  top: 6%;
+  top: 7%;
   font-size: 20px;
   position: absolute;
   z-index: 2;

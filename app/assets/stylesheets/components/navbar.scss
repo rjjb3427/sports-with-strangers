@@ -17,6 +17,7 @@
 }
 
 .NavBar a {
+  margin-left: 10px;
   font-family: 'Slabo 27px', serif;
   padding: 10px;
   font-size: 20px;
@@ -24,6 +25,8 @@
 }
 
 .NavBar a:hover {
+  border-radius: 4px;
+  background-color: white;
   cursor: pointer;
   color: black;
 }

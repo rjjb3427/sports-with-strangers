@@ -11,7 +11,8 @@ const styleSkeleton = {
     bottom : 'auto',
     right : 'auto',
     marginRight : '-50%',
-    transform : 'translate(-50%, -50%)'
+    transform : 'translate(-50%, -50%)',
+    padding : '10px'
   }
 };
 
@@ -29,7 +30,9 @@ class ModalTest extends React.Component {
   }
 
   openModal() {
-    this.setState({modalIsOpen: true});
+    if (this.state.modalIsOpen != true){
+      this.setState({modalIsOpen: true});
+    }
   }
 
   componentWillMount() {
@@ -76,15 +79,11 @@ class ModalTest extends React.Component {
     return (
       <div id='modal'>
         <Link onClick={this.openModal}>{text}</Link>
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.modalDidOpen}
+        <Modal isOpen={this.state.modalIsOpen} onAfterOpen={this.modalDidOpen}
           onRequestClose={this.closeModal}
           style={styleSkeleton}
-          contentLabel={text}
-        >
-        <SessionFormContainer page={this.state.formType}
-                            demoLogin={this.state.demo}/>
+          contentLabel={text} >
+        <SessionFormContainer page={this.state.formType} demoLogin={this.state.demo}/>
         {this.alternateText()}
         </Modal>
       </div>
