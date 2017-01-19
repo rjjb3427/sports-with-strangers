@@ -128,7 +128,6 @@ titles = ["Sports on a Saturday", "Come to Tom's Cafe!", "Watching in the park",
   for i in 0..3
     event = Event.new
     event.city_id = cities[i].id
-    debugger;
     event.host_id = User.where({city_id: event.city_id}).sample.id
     event.time = Faker::Time.forward(32, :afternoon)
     event.address = Faker::Address.street_address
