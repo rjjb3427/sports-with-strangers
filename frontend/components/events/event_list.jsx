@@ -59,7 +59,7 @@ class EventList extends React.Component {
       } else if (this.props.host.id === this.props.currentUserId) {
         return (
           <div>
-          <input type='button' disabled value={`Cannot Join Own Event`}
+          <input type='hidden' disabled value={`Cannot Join Own Event`}
             className='button-disabled'/>
           <p><b>You are hosting this event</b></p></div>
         );

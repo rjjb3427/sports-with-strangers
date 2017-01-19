@@ -7,14 +7,16 @@ class Dashboard extends React.Component {
   }
 
   render() {
+    const text = this.props.attending.length > 1 ? "Upcoming Meet-Ups" : "No Joined Meet-Ups";
     return (
       <div className='dashboard-wrapper'>
-        <h1>Attending</h1>
-        <section className='list-items'>
+        <section className='list-items' id='dashboard-list'>
+          <h1>{text}</h1>
+
           <EventListContainer events={this.props.attending} dashboard={true}/>
         </section>
-        <span>+</span>
-        <h5>Host New Event</h5>
+        <span className='plus'><p>+<p id='host-new'>Host New</p></p>
+        </span>
       </div>
     );
   }

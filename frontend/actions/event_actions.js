@@ -37,6 +37,5 @@ export const fetchCityEvents = id => dispatch => (
 );
 
 export const createEvent = event => dispatch => (
-  EventsApiUtil.createEvent(event).then(res => dispatch(receiveEvent(res),
-  console.log(res)))
+  EventsApiUtil.createEvent(event).then(res => dispatch(receiveEvent(res)))
 );

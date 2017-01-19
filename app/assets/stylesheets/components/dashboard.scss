@@ -1,11 +1,45 @@
 .dashboard-wrapper {
+  background-image: image-url('basketball-1.jpg');
+  background-size: cover;
   justify-content: space-around;
   display: flex;
   flex-direction: row;
+  height: 700px;
 }
 
-.dashboard-wrapper > span {
+.dashboard-wrapper span {
+  display: flex;
+  flex-direction: column;
+}
+
+.plus > p {
+  text-align: center;
+  height: 50%;
+  border: 10px solid white;
+  border-radius: 20px;
+  width: 260px;
+  margin-top: auto;
+  margin-bottom: auto;
   font-family: fantasy;
-  color: black;
+  color: white;
   font-size: 300px;
+}
+
+.plus > p:hover {
+  cursor: pointer;
+  color: rgba(128, 0, 0, 0.9);
+  border-color: rgb(128, 0, 0);
+}
+
+.dashboard-wrapper h1 {
+  font-size: 25px;
+}
+
+#host-new {
+  font-size: 50px;
+}
+
+#dashboard-list {
+  margin-top: auto;
+  margin-bottom: auto;
 }

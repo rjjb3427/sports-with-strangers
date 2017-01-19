@@ -1,4 +1,5 @@
 .form {
+  text-align: center;
   height: 80%;
   width: 400px;
   padding: 10px;
@@ -43,7 +44,7 @@
   width: auto;
   font-size: 25px;
   font-weight: bold;
-  background-color: rgba(128, 0, 0, 0.7);
+  background-color: rgba(110, 0, 0, 1);
   color: white;
 }
 
@@ -72,4 +73,8 @@ span.modal-footer > h4:hover {
   padding: 5px;
   color: white;
   font-weight: bolder;
+}
+
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+  z-index: 2;
 }

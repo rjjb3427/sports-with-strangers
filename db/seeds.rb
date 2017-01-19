@@ -12,16 +12,16 @@ why you like to host others, and what your meet-ups are all about!"
 
 cities = City.create([{ name: 'Seattle',
   image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484426176/seattle_zowxtu.jpg',
-   tagline: 'The Rain City'},
+   tagline: 'Rain City'},
   { name: SAN_FRANCISCO,
     image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/c_crop,h_1076,w_1920/v1484427978/sfbay_y2i7hh.jpg',
      tagline: 'City by the Bay'},
   {name: 'New York',
      image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/c_crop,h_1076,w_1920/v1484426171/newyork_z9hrba.jpg',
-      tagline: 'New York tagline'},
+      tagline: 'City that Never Sleeps'},
   {name: 'Boston',
-    image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/c_crop,h_720,w_1920/v1484426458/boston_qdum43.jpg',
-    tagline: 'Boston tagline'}])
+    image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/c_scale,h_1076,w_1920/v1484426458/boston_qdum43.jpg',
+    tagline: 'Cradle of Liberty'}])
 
 ken_blurb = "My name is Ken and I have been a sports fan all my life. My dad introduced me to the 49ers
 as a kid, and ever since then I have been a huge fan. I love getting out and meeting new people, but as we
@@ -76,28 +76,28 @@ have suggestions for a new team come to one of my basketball meetups and convert
 you that they are a lot of fun and you won't be disappointed! Email if you have any questions."
 
 users = User.create([{email: 'Demo@demo.com', name: 'Demo User',
-    image: 'demo-user.jpg', location: SAN_FRANCISCO, blurb: demo_blurb, password: 'guestpassword'},
-    {email: 'kenm@gmail.com', name: 'Ken Mitchell', image: 'kenM.jpg',
+    image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/c_scale,h_700,w_700/v1484789224/profblank_ionat1.png', location: SAN_FRANCISCO, blurb: demo_blurb, password: 'guestpassword'},
+    {email: 'kenm@gmail.com', name: 'Ken Mitchell', image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484774323/pexels-photo_1_kzh0bf.jpg',
     location: SAN_FRANCISCO, blurb: ken_blurb, password: 'password'},
-    {email: 'marvincallahan@hotmail.com', name: 'Marvin', image:'marvin.jpg',
+    {email: 'marvincallahan@hotmail.com', name: 'Marvin', image:'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484770313/pexels-photo-245049_hdloty.png',
        location: 'Boston', blurb: marvin_blurb, password: 'password'},
-      {email: 'ciennarae@gmail.com', name: 'Cienna Rae', image: '', location: 'Boston',
+      {email: 'ciennarae@gmail.com', name: 'Cienna Rae', image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484774186/pexels-photo-57862_uxr98t.jpg', location: 'Boston',
         password: 'password', blurb: cienna_blurb },
-    {email: 'kaygray22@gmail.com', name: 'Katarina', image: '', location: 'Boston',
+    {email: 'kaygray22@gmail.com', name: 'Katarina', image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484770321/pexels-photo_bxpxhc.jpg', location: 'Boston',
       password: 'password', blurb: katarina_blurb },
-      {email: 'CaraK@usfca.edu', name: 'Cara Kazascinski', image: '', location: SAN_FRANCISCO,
+      {email: 'CaraK@usfca.edu', name: 'Cara Kazascinski', image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484770320/american-football-fan-supporter-girl-163438_slpopn.jpg', location: SAN_FRANCISCO,
         password: 'password', blurb: cara_blurb },
-      {email: 'MeganMeede@bostonuniversity.edu', name: 'Meghan', image: '', location: 'New York',
+      {email: 'MeganMeede@bostonuniversity.edu', name: 'Meghan', image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484770318/pexels-photo-27411_njdsxh.jpg', location: 'New York',
         password: 'password', blurb: megan_blurb},
-      {email: 'paulmed12@hotmail.com', name: 'Paul Medeira', image: '', location: 'New York',
+      {email: 'paulmed12@hotmail.com', name: 'Paul Medeira', image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484774253/pexels-photo-175701_szqxaa.jpg', location: 'New York',
         password: 'password', blurb: paul_blurb},
-        {email: 'robbieh@nyu.edu', name: 'Robert H', image: '', location: 'New York',
+        {email: 'robbieh@nyu.edu', name: 'Robert H', image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484770316/pexels-photo-119705_zlb3tc.jpg', location: 'New York',
         password: 'password', blurb: robbie_blurb },
-      {email: 'ChrisFY@seattleu.edu', name: 'Chris White', image: '', location: 'Seattle',
+      {email: 'ChrisFY@seattleu.edu', name: 'Chris White', image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484773954/pexels-photo-91227_ky6qfx.jpg', location: 'Seattle',
         password: 'password', blurb: chris_blurb},
-        {email: 'MarcusVincent@gmail.com', name: 'Marcus Vincent', image: '', location: 'Seattle',
+        {email: 'MarcusVincent@gmail.com', name: 'Marcus Vincent', image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484774048/pexels-photo-108048_p4pomu.jpg', location: 'Seattle',
           password: 'password', blurb: marcus_blurb},
-        {email: 'tylerskier23@hotmail.com', name: 'Tyler R', image: '', location: 'Seattle',
+        {email: 'tylerskier23@hotmail.com', name: 'Tyler R', image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484770309/pexels-photo-249766_taueqs.jpg', location: 'Seattle',
           password: 'password', blurb: tyler_blurb}])
 
 # create_table "events", force: :cascade do |t|
@@ -111,23 +111,29 @@ users = User.create([{email: 'Demo@demo.com', name: 'Demo User',
 # end
 # DateTime to parsed string/ How to check if you are sure when joining/
 
+
+
+
+
 titles = ["Sports on a Saturday", "Come to Tom's Cafe!", "Watching in the park", "Going to the bar",
 "Several Games at Once!", "Small Group Game", "Going to the Game!", "The playoffs are near", "Come watch with us!",
- "Title game this weekend", "Rivalry Game, Will be Good", "College Basketball this Weekend", "Are you into Hockey?", "Lacrosse Fans!" ]
- sports = ['football', 'basketball', 'baseball', 'soccer']
+ "Title game this weekend", "Rivalry Game, Will be Good", "College Basketball this Weekend", "Are you into Hockey?", "Come Meet Some Fans!",
+"Game at the Roanoke", "Second Time Hosting"]
+ sports = ['Football', 'Basketball', 'Baseball', 'Soccer', 'Hockey']
 # Seattle: 0, SF: 1, New York: 2, Boston: 3
 # DemoSF: 0, KenSF: 1, MarvinBoston: 2 CiennaBoston: 3 KatBoston: 4
 # CaraSF: 5 MeganNY: 6, PaulNY: 7, RobbieNY: 8, ChrisSEA: 9, MarcusSEA: 10, TylerSEA: 11
 
-4.times do
-  for i in 1..4
+6.times do
+  for i in 0..3
     event = Event.new
     event.city_id = cities[i].id
-    event.host_id = users.sample.id
+    debugger;
+    event.host_id = User.where({city_id: event.city_id}).sample.id
     event.time = Faker::Time.forward(32, :afternoon)
     event.address = Faker::Address.street_address
     event.title = titles.pop
-    event.sport = Faker::Team.sport
+    event.sport = sports.sample
     event.capacity = rand(4..20)
     event.save
   end

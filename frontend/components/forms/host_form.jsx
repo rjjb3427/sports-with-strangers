@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import {hashHistory} from 'react-router';
+import EventListContainer from '../events/event_list_container';
 
 class HostForm extends React.Component {
   constructor(props){
@@ -15,6 +16,25 @@ class HostForm extends React.Component {
       city_id: this.props.currentUser.city.id
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.fetchNewEvents = this.fetchNewEvents.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.fetchUser(this.props.currentUser.id).then(res => {
+      this.setState({hosting: res.hosting});
+    }, () => hashHistory.goBack());
+  }
+
+  fetchNewEvents() {
+    this.props.fetchUser(this.props.currentUser.id).then(res => {
+      this.setState({
+            hosting: res.hosting,
+            title: '',
+            sport: '',
+            time: '',
+            address: '',
+            capacity: '', });
+    }, (res) => this.setState({prompt: res.responseJSON}));
   }
 
   update(field) {
@@ -28,16 +48,32 @@ class HostForm extends React.Component {
     this.setState({host_id: this.props.currentUser.id,
       city_id: this.props.currentUser.city.id}, () => {
         this.props.createEvent(this.state).then(
-        () => hashHistory.push('/dashboard'),
-        () => this.setState({prompt: 'Please fill all fields.'}));
+        this.fetchNewEvents,
+        res => this.setState({prompt: res.responseJSON.map(err => `| ${err} `)}));
       });
   }
 
+  renderEvents() {
+    if (this.state.hosting) {
+      return (
+        <section className='list-items'>
+          <EventListContainer events={this.state.hosting} host={this.props.currentUser} />
+        </section>
+      );
+    }
+  }
+
   render() {
-    console.log(this.state);
+    let text;
+    if (this.state.hosting && this.state.hosting.length > 1) {
+      text = `You're hosting ${this.state.hosting.length} so far.`;
+    } else {
+      text = "Join Our Community of Hosts and Meet New Fans";
+    }
     return (
-    <div className='form'>
-      <form onSubmit={this.handleSubmit} >
+    <div className='hosting'>
+      <form onSubmit={this.handleSubmit} className='form' id='host-form'>
+        <h1>{text}</h1>
         <input type='text' placeholder='Meet-Up Name' value={this.state.title}
                              onChange={this.update('title')}/>
                            <input type='text' placeholder='Address of Venue'
@@ -53,12 +89,13 @@ class HostForm extends React.Component {
         </select>
 
         <input type='number' placeholder='How Many Can Attend?'
-          onChange={this.update('capacity')} /><br />
+          onChange={this.update('capacity')} value={this.state.capacity}/><br />
         Please Provide Date and Time <br/>
         <input type="datetime-local" value={this.state.time} onChange={this.update('time')}/>
         <input type='submit' value='Confirm Meet-Up' className='button' /><br />
-      </form><br />
-    {this.state.prompt}
+        <p>{this.state.prompt}</p>
+      </form>
+        {this.renderEvents()}
   </div>  );
   }
 }

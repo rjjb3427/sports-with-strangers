@@ -1,0 +1,19 @@
+.hosting {
+  background-image: image-url('soccer.jpg');
+  background-size: cover;
+}
+
+#host-form {
+  padding-top: 10px;
+  background-color: rgba(0, 0, 0, 0.78);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+}
+
+#host-form h1 {
+  padding: 5px;
+  font-family: 'Oswald';
+  font-size: 25px;
+}
