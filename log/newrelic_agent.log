@@ -1829,3 +1829,21 @@ Checked in these paths:
 [2017-01-20 09:20:59 -0800 njvizzutti-TP550LA (4309)] INFO : Installing Rails 4 Controller instrumentation
 [2017-01-20 09:20:59 -0800 njvizzutti-TP550LA (4309)] INFO : Installing Rails 4 view instrumentation
 [2017-01-20 09:20:59 -0800 njvizzutti-TP550LA (4309)] INFO : Finished instrumentation
+[2017-01-20 12:08:20 -0800 njvizzutti-TP550LA (11621)] INFO : Starting the New Relic agent in "development" environment.
+[2017-01-20 12:08:20 -0800 njvizzutti-TP550LA (11621)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2017-01-20 12:08:20 -0800 njvizzutti-TP550LA (11621)] WARN : No configuration file found. Working directory = /home/njvizzutti/Dropbox/SWSProject
+[2017-01-20 12:08:20 -0800 njvizzutti-TP550LA (11621)] WARN : Looked in these locations (based on defaults): /home/njvizzutti/Dropbox/SWSProject/config/newrelic.yml, /home/njvizzutti/Dropbox/SWSProject/newrelic.yml, /home/njvizzutti/Dropbox/SWSProject/config/newrelic.yml, /home/njvizzutti/Dropbox/SWSProject/newrelic.yml, /home/njvizzutti/.newrelic/newrelic.yml, /home/njvizzutti/newrelic.yml
+[2017-01-20 12:08:20 -0800 njvizzutti-TP550LA (11621)] INFO : Environment: development
+[2017-01-20 12:08:20 -0800 njvizzutti-TP550LA (11621)] INFO : No known dispatcher detected.
+[2017-01-20 12:08:20 -0800 njvizzutti-TP550LA (11621)] INFO : Application: development
+[2017-01-20 12:08:20 -0800 njvizzutti-TP550LA (11621)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2017-01-20 12:08:20 -0800 njvizzutti-TP550LA (11621)] INFO : Installing Net instrumentation
+[2017-01-20 12:08:20 -0800 njvizzutti-TP550LA (11621)] INFO : Installing ActiveRecord 4 instrumentation
+[2017-01-20 12:08:20 -0800 njvizzutti-TP550LA (11621)] INFO : Installing deferred Rack::Builder instrumentation
+[2017-01-20 12:08:20 -0800 njvizzutti-TP550LA (11621)] INFO : Installing Rack::Builder middleware instrumentation
+[2017-01-20 12:08:20 -0800 njvizzutti-TP550LA (11621)] INFO : Installing ActiveJob instrumentation
+[2017-01-20 12:08:20 -0800 njvizzutti-TP550LA (11621)] INFO : Installing Rails 3+ middleware instrumentation
+[2017-01-20 12:08:20 -0800 njvizzutti-TP550LA (11621)] INFO : Installing Rails 4 Error instrumentation
+[2017-01-20 12:08:20 -0800 njvizzutti-TP550LA (11621)] INFO : Installing Rails 4 Controller instrumentation
+[2017-01-20 12:08:20 -0800 njvizzutti-TP550LA (11621)] INFO : Installing Rails 4 view instrumentation
+[2017-01-20 12:08:20 -0800 njvizzutti-TP550LA (11621)] INFO : Finished instrumentation

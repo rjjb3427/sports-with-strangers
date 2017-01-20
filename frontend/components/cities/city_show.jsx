@@ -113,7 +113,7 @@ class CityShow extends React.Component {
           {events.map((event, idx) => this.renderEvent(event, idx))}
         </ul>
         </section>
-        <h2 className='tagline'>Discover our great community in the {city.tagline}.</h2>
+        <h2 className='tagline'>Discover our great community in The {city.tagline}.</h2>
         {this.footer()}
       </div>
     );

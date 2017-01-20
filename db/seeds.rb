@@ -11,16 +11,16 @@ demo_blurb = "Hi! This is a demonstration account, and is a description of who y
 why you like to host others, and what your meet-ups are all about!"
 
 cities = City.create([{ name: 'Seattle',
-  image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484426176/seattle_zowxtu.jpg',
+  image: 'https://res.cloudinary.com/dlxtsqgb3/image/upload/v1484426176/seattle_zowxtu.jpg',
    tagline: 'Rain City'},
   { name: SAN_FRANCISCO,
-    image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/c_crop,e_saturation:-100,h_1076,w_1920/v1484867118/san-francisco_jzcov4.jpg',
+    image: 'https://res.cloudinary.com/dlxtsqgb3/image/upload/c_crop,e_saturation:-100,h_1076,w_1920/v1484867118/san-francisco_jzcov4.jpg',
      tagline: 'City by the Bay'},
   {name: 'New York',
-     image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/c_crop,h_1076,w_1920/v1484426171/newyork_z9hrba.jpg',
+     image: 'https://res.cloudinary.com/dlxtsqgb3/image/upload/c_crop,h_1076,w_1920/v1484426171/newyork_z9hrba.jpg',
       tagline: 'City that Never Sleeps'},
   {name: 'Boston',
-    image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/c_scale,h_1076,w_1920/v1484426458/boston_qdum43.jpg',
+    image: 'https://res.cloudinary.com/dlxtsqgb3/image/upload/c_scale,h_1076,w_1920/v1484426458/boston_qdum43.jpg',
     tagline: 'Cradle of Liberty'}])
 
 ken_blurb = "My name is Ken and I have been a sports fan all my life. My dad introduced me to the 49ers
@@ -76,28 +76,28 @@ have suggestions for a new team come to one of my basketball meetups and convert
 you that they are a lot of fun and you won't be disappointed! Email if you have any questions."
 
 users = User.create([{email: 'Demo@demo.com', name: 'Demo User',
-    image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/c_scale,h_700,w_700/v1484789224/profblank_ionat1.png', location: SAN_FRANCISCO, blurb: demo_blurb, password: 'guestpassword'},
-    {email: 'kenm@gmail.com', name: 'Ken Mitchell', image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484774323/pexels-photo_1_kzh0bf.jpg',
+    image: 'https://res.cloudinary.com/dlxtsqgb3/image/upload/c_scale,h_700,w_700/v1484789224/profblank_ionat1.png', location: SAN_FRANCISCO, blurb: demo_blurb, password: 'guestpassword'},
+    {email: 'kenm@gmail.com', name: 'Ken Mitchell', image: 'https://res.cloudinary.com/dlxtsqgb3/image/upload/v1484774323/pexels-photo_1_kzh0bf.jpg',
     location: SAN_FRANCISCO, blurb: ken_blurb, password: 'password'},
-    {email: 'marvincallahan@hotmail.com', name: 'Marvin', image:'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484770313/pexels-photo-245049_hdloty.png',
+    {email: 'marvincallahan@hotmail.com', name: 'Marvin', image:'https://res.cloudinary.com/dlxtsqgb3/image/upload/v1484770313/pexels-photo-245049_hdloty.png',
        location: 'Boston', blurb: marvin_blurb, password: 'password'},
-      {email: 'ciennarae@gmail.com', name: 'Cienna Rae', image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484774186/pexels-photo-57862_uxr98t.jpg', location: 'Boston',
+      {email: 'ciennarae@gmail.com', name: 'Cienna Rae', image: 'https://res.cloudinary.com/dlxtsqgb3/image/upload/v1484774186/pexels-photo-57862_uxr98t.jpg', location: 'Boston',
         password: 'password', blurb: cienna_blurb },
-    {email: 'kaygray22@gmail.com', name: 'Katarina', image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484770321/pexels-photo_bxpxhc.jpg', location: 'Boston',
+    {email: 'kaygray22@gmail.com', name: 'Katarina', image: 'https://res.cloudinary.com/dlxtsqgb3/image/upload/v1484770321/pexels-photo_bxpxhc.jpg', location: 'Boston',
       password: 'password', blurb: katarina_blurb },
-      {email: 'CaraK@usfca.edu', name: 'Cara Kazascinski', image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484770320/american-football-fan-supporter-girl-163438_slpopn.jpg', location: SAN_FRANCISCO,
+      {email: 'CaraK@usfca.edu', name: 'Cara Kazascinski', image: 'https://res.cloudinary.com/dlxtsqgb3/image/upload/v1484770320/american-football-fan-supporter-girl-163438_slpopn.jpg', location: SAN_FRANCISCO,
         password: 'password', blurb: cara_blurb },
-      {email: 'MeganMeede@bostonuniversity.edu', name: 'Meghan', image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484770318/pexels-photo-27411_njdsxh.jpg', location: 'New York',
+      {email: 'MeganMeede@bostonuniversity.edu', name: 'Meghan', image: 'https://res.cloudinary.com/dlxtsqgb3/image/upload/v1484770318/pexels-photo-27411_njdsxh.jpg', location: 'New York',
         password: 'password', blurb: megan_blurb},
-      {email: 'paulmed12@hotmail.com', name: 'Paul Medeira', image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484774253/pexels-photo-175701_szqxaa.jpg', location: 'New York',
+      {email: 'paulmed12@hotmail.com', name: 'Paul Medeira', image: 'https://res.cloudinary.com/dlxtsqgb3/image/upload/v1484774253/pexels-photo-175701_szqxaa.jpg', location: 'New York',
         password: 'password', blurb: paul_blurb},
-        {email: 'robbieh@nyu.edu', name: 'Robert H', image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484770316/pexels-photo-119705_zlb3tc.jpg', location: 'New York',
+        {email: 'robbieh@nyu.edu', name: 'Robert H', image: 'https://res.cloudinary.com/dlxtsqgb3/image/upload/v1484770316/pexels-photo-119705_zlb3tc.jpg', location: 'New York',
         password: 'password', blurb: robbie_blurb },
-      {email: 'ChrisFY@seattleu.edu', name: 'Chris White', image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484773954/pexels-photo-91227_ky6qfx.jpg', location: 'Seattle',
+      {email: 'ChrisFY@seattleu.edu', name: 'Chris White', image: 'https://res.cloudinary.com/dlxtsqgb3/image/upload/v1484773954/pexels-photo-91227_ky6qfx.jpg', location: 'Seattle',
         password: 'password', blurb: chris_blurb},
-        {email: 'MarcusVincent@gmail.com', name: 'Marcus Vincent', image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484774048/pexels-photo-108048_p4pomu.jpg', location: 'Seattle',
+        {email: 'MarcusVincent@gmail.com', name: 'Marcus Vincent', image: 'https://res.cloudinary.com/dlxtsqgb3/image/upload/v1484774048/pexels-photo-108048_p4pomu.jpg', location: 'Seattle',
           password: 'password', blurb: marcus_blurb},
-        {email: 'tylerskier23@hotmail.com', name: 'Tyler R', image: 'http://res.cloudinary.com/dlxtsqgb3/image/upload/v1484770309/pexels-photo-249766_taueqs.jpg', location: 'Seattle',
+        {email: 'tylerskier23@hotmail.com', name: 'Tyler R', image: 'https://res.cloudinary.com/dlxtsqgb3/image/upload/v1484770309/pexels-photo-249766_taueqs.jpg', location: 'Seattle',
           password: 'password', blurb: tyler_blurb}])
 
 # create_table "events", force: :cascade do |t|
@@ -117,14 +117,14 @@ users = User.create([{email: 'Demo@demo.com', name: 'Demo User',
 
 titles = ["Sports on a Saturday", "Come to Tom's Cafe!", "Watching in the park", "Going to the bar",
 "Several Games at Once!", "Small Group Game", "Going to the Game!", "The playoffs are near", "Come watch with us!",
- "Title game this weekend", "Rivalry Game, Will be Good", "College Basketball this Weekend", "Are you into Hockey?", "Come Meet Some Fans!",
+ "Title game this weekend", "Rivalry Game, Will be Good", "College Game this Weekend", "Are you into Hockey?", "Come Meet Some Fans!",
 "Game at the Roanoke", "Second Time Hosting"]
  sports = ['Football', 'Basketball', 'Baseball', 'Soccer', 'Hockey']
 # Seattle: 0, SF: 1, New York: 2, Boston: 3
 # DemoSF: 0, KenSF: 1, MarvinBoston: 2 CiennaBoston: 3 KatBoston: 4
 # CaraSF: 5 MeganNY: 6, PaulNY: 7, RobbieNY: 8, ChrisSEA: 9, MarcusSEA: 10, TylerSEA: 11
 
-6.times do
+4.times do
   for i in 0..3
     event = Event.new
     event.city_id = cities[i].id
@@ -136,4 +136,13 @@ titles = ["Sports on a Saturday", "Come to Tom's Cafe!", "Watching in the park",
     event.capacity = rand(4..20)
     event.save
   end
+end
+
+events = Event.all
+
+events.each do |event|
+  num = (event.capacity / 2)
+    num.times do
+      Attendee.create({user_id: users.sample.id, event_id: event.id})
+    end
 end

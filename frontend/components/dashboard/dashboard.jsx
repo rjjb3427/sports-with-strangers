@@ -35,7 +35,7 @@ class Dashboard extends React.Component {
 
   handleSubmit() {
     this.props.updateUser(this.state).then(
-      res => this.setState({prompt: 'Successfully Updated'}, () => setTimeout(() => this.setState({prompt: ''}), 3000)),
+      res => this.setState({prompt: 'Successfully Updated'}, () => setTimeout(() => this.setState({prompt: ''}), 5000)),
       res => this.setState({prompt: res.responseJSON.map(err => ` ${err}. `)}));
   }
 
@@ -43,7 +43,7 @@ class Dashboard extends React.Component {
     const user = this.state;
     return (
       <div className='form' id='dashboard-form'
-          onDoubleClick={() => this.setState({disabled: false, prompt: ''})}>
+          onClick={() => this.setState({disabled: false, prompt: ''})}>
           <h2>Edit Profile</h2>
       <form  onSubmit={this.handleSubmit}>
         <input type='text' disabled={this.state.disabled} value={user.email} onChange={this.update('email')}/>
