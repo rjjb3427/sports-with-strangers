@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import {hashHistory} from 'react-router';
+import {Link, hashHistory} from 'react-router';
 import EventListContainer from '../events/event_list_container';
 
 class HostForm extends React.Component {
@@ -64,6 +64,7 @@ class HostForm extends React.Component {
   }
 
   render() {
+    const currentUserId = this.props.currentUser.id;
     let text;
     if (this.state.hosting && this.state.hosting.length > 1) {
       text = `You're hosting ${this.state.hosting.length} meet-ups so far.`;
@@ -74,6 +75,7 @@ class HostForm extends React.Component {
     <div className='hosting'>
       <form onSubmit={this.handleSubmit} className='form' id='host-form'>
         <h1>{text}</h1>
+        <Link to={`/users/${currentUserId}`}>View My Host Profile</Link>
         <input type='text' placeholder='Meet-Up Name' value={this.state.title}
                              onChange={this.update('title')}/>
                            <input type='text' placeholder='Address of Venue'

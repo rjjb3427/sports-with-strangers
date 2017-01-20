@@ -35,11 +35,13 @@ class CityShow extends React.Component {
 
   joinEvent(id) {
     let obj = {user_id: this.props.currentUserId, event_id: id};
-    this.props.addAttendee(obj);
+    this.props.addAttendee(obj).then(
+      () => this.props.fetchCurrentCity(this.props.params.city_id));
   }
 
   leaveEvent(user_id, event_id) {
-    this.props.removeAttendee({user_id, event_id});
+    this.props.removeAttendee({user_id, event_id}).then(
+      () => this.props.fetchCurrentCity(this.props.params.city_id));
   }
 
   renderButton(event, idx) {
@@ -68,6 +70,7 @@ class CityShow extends React.Component {
   }
 
   renderEvent(event, idx) {
+    const spaceLeft = (event.capacity - event.attending);
     return (
       <li key={idx}>
         <h3>{event.title}</h3>
@@ -78,7 +81,8 @@ class CityShow extends React.Component {
         <p>{event.sport}</p>
         <p>{moment(event.time).format('MMMM Do YYYY, h:mm')}</p>
         <p>{event.address}</p>
-        <p><b>Capacity: </b>{event.capacity}</p>
+        <p><b>Attending: </b>{event.attending}</p>
+        <p><b>Spaces Available: </b>{spaceLeft}</p>
         {this.renderButton(event, idx)}
 
       </li>

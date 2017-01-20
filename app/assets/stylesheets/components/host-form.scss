@@ -3,6 +3,20 @@
   background-size: cover;
 }
 
+#host-form > a {
+  margin-top: 20px;
+  font-size: 15px;
+  border-radius: 7px;
+  padding: 10px;
+  background-color: rgba(3, 15, 49, 0.4);
+}
+
+#host-form > a:hover {
+  padding: 10px;
+  font-size: 15px;
+  background-color: $primary-color;
+}
+
 #host-form {
   padding-top: 10px;
   background-color: rgba(0, 0, 0, 0.78);

@@ -1,6 +1,6 @@
 import React from 'react';
 import EventListContainer from '../events/event_list_container';
-import {hashHistory} from 'react-router';
+import {Link, hashHistory} from 'react-router';
 
 class Dashboard extends React.Component {
   constructor(props){
@@ -35,7 +35,7 @@ class Dashboard extends React.Component {
 
   handleSubmit() {
     this.props.updateUser(this.state).then(
-      res => this.setState({prompt: 'Successfully Updated'}, () => setTimeout(() => this.setState({prompt: ''}), 5000)),
+      res => this.setState({prompt: 'Successfully Updated'}, () => setTimeout(() => this.setState({prompt: ''}), 3000)),
       res => this.setState({prompt: res.responseJSON.map(err => ` ${err}. `)}));
   }
 

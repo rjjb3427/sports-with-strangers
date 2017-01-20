@@ -4,43 +4,44 @@
   float: left;
 }
 
-.user-show h4 {
+.user-show > .list-items > h4 {
   text-align: center;
-  font-size: 24px;
+  font-size: 18px;
   padding: 10px;
+  margin-top: 0px;
   margin-bottom: 0px;
+  margin-left: 10px;
 }
 
 .blurb {
-  align-items: center;
-  margin-top: 10px;
-  height: 400px;
-  padding: 10px;
+  background-color: white;
+  border: 13px solid $primary-color;
+  border-radius: 8px;
+  margin-top: 15px;
+  min-height: 300px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
 }
 .blurb p {
-  width: 70%;
   font-size: 20px;
 }
 
 .blurb h2 {
+  margin: 10px;
   font-size: 28px;
 }
 
-.user-show-email {
-  margin: 10px;
-  font-style: italic;
-}
 .profile {
   border: 6px solid $primary-color;
   float: left;
-  width: 300px;
+  width: 315px;
   margin: 15px;
 }
 .profile > h1 {
   padding: 8px;
   position: relative;
+  font-family: 'Syncopate';
   background-color: $primary-color;
   font-size: 20px;
   color: white;
