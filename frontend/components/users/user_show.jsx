@@ -16,7 +16,6 @@ class UserShow extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const user = this.state.user;
     if (user){
       const shortName = user.name.split(' ')[0];
@@ -27,12 +26,13 @@ class UserShow extends React.Component {
             <img src={`${user.image}`} />
           </div>
           <section className='blurb'>
-            <h2>Hosts in {user.location}</h2><br/>
-            <h2 className='user-show-email'>{user.email}</h2><br/>
+            <h2>{shortName} Hosts in {user.location}</h2><br/>
+            <h4 className='user-show-email'>{user.email}</h4><br/>
+            <p><b>What sports or teams do you like, and what to you like about hosting?</b></p>
             <p>{user.blurb}</p>
           </section>
           <section className='list-items'>
-          <h4>Events {shortName} is Hosting</h4>
+          <h4>Game Meet-Ups {shortName} is Hosting</h4>
           <EventListContainer
             events={user.hosting}
             host={this.state.user} />

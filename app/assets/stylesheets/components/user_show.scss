@@ -1,38 +1,39 @@
 .user-show {
-  background-color: #f5ede1;
+  background-color: #cdd0d4;
   color: black;
   float: left;
 }
 
-.user-show > h4 {
-  margin: 0px;
-  margin-left: 20px;
-  color: black;
-  font-family: 'Syncopate';
-  font-size: 20px;
+.user-show h4 {
+  text-align: center;
+  font-size: 24px;
+  padding: 10px;
+  margin-bottom: 0px;
 }
 
 .blurb {
+  align-items: center;
   margin-top: 10px;
   height: 400px;
   padding: 10px;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
 }
 .blurb p {
+  width: 70%;
   font-size: 20px;
 }
 
 .blurb h2 {
-  font-size: 20px;
+  font-size: 28px;
 }
 
 .user-show-email {
+  margin: 10px;
   font-style: italic;
 }
 .profile {
-  border: 6px solid #8B1817;
+  border: 6px solid $primary-color;
   float: left;
   width: 300px;
   margin: 15px;
@@ -40,7 +41,11 @@
 .profile > h1 {
   padding: 8px;
   position: relative;
-  background-color: #8B1817;
+  background-color: $primary-color;
   font-size: 20px;
   color: white;
+}
+
+.user-show > .list-items {
+  padding: 15px;
 }

@@ -24,11 +24,10 @@ const Root = ({store}) => {
       <Route path="/" component={App}>
         <IndexRoute component={HomeContainer} />
         <Route path="/cities" onEnter={_checkIfLogin} component={CitiesIndexContainer} />
-        <Route path="/cities/:city_id" component={CityShowContainer} />
-        <Route path="/users/:user_id" component={UserShowContainer} />
+        <Route path="/cities/:city_id" onEnter={_checkIfLogin} component={CityShowContainer} />
+        <Route path="/users/:user_id" onEnter={_checkIfLogin} component={UserShowContainer} />
         <Route path="/host" component={HostFormContainer} onEnter={_checkIfLogin} />
-        <Route path="/dashboard" component={DashboardContainer}
-                onEnter={_checkIfLogin}/>
+        <Route path="/dashboard" component={DashboardContainer} onEnter={_checkIfLogin}/>
       </Route>
     </Router>
   </Provider>
