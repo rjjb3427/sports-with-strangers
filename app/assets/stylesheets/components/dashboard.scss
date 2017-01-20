@@ -60,11 +60,13 @@
 
 
 #dashboard-form form :disabled:hover {
-  background-color: white
+  background-color: white;
+  cursor: pointer;
 }
 
 #dashboard-form input[type='submit']:disabled:hover {
   background-color: #797979;
+  cursor: default;
 }
 
 #dashboard-list {
@@ -89,4 +91,8 @@
 
 #dashboard-form > p {
   margin: 10px;
+}
+
+#dashboard-form > h2 {
+  font-family: 'Syncopate', sans-serif;
 }

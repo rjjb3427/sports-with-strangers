@@ -44,6 +44,7 @@ class Dashboard extends React.Component {
     return (
       <div className='form' id='dashboard-form'
           onDoubleClick={() => this.setState({disabled: false, prompt: ''})}>
+          <h2>Edit Profile</h2>
       <form  onSubmit={this.handleSubmit}>
         <input type='text' disabled={this.state.disabled} value={user.email} onChange={this.update('email')}/>
         <input type='text' disabled={this.state.disabled} value={user.name} onChange={this.update('name')}/>

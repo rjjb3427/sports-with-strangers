@@ -1749,3 +1749,25 @@ Checked in these paths:
 [2017-01-19 10:12:46 -0800 njvizzutti-TP550LA (22406)] INFO : Will re-attempt in 180 seconds
 [2017-01-19 10:15:48 -0800 njvizzutti-TP550LA (22406)] ERROR : Invalid license key, please contact support@newrelic.com
 [2017-01-19 10:15:48 -0800 njvizzutti-TP550LA (22406)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2017-01-19 19:56:37 -0800 njvizzutti-TP550LA (22406)] INFO : Starting Agent shutdown
+[2017-01-19 20:30:31 -0800 njvizzutti-TP550LA (2814)] INFO : Starting the New Relic agent in "development" environment.
+[2017-01-19 20:30:31 -0800 njvizzutti-TP550LA (2814)] INFO : To prevent agent startup add a NEW_RELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2017-01-19 20:30:31 -0800 njvizzutti-TP550LA (2814)] WARN : No configuration file found. Working directory = /home/njvizzutti/Dropbox/SWSProject
+[2017-01-19 20:30:31 -0800 njvizzutti-TP550LA (2814)] WARN : Looked in these locations (based on defaults): /home/njvizzutti/Dropbox/SWSProject/config/newrelic.yml, /home/njvizzutti/Dropbox/SWSProject/newrelic.yml, /home/njvizzutti/Dropbox/SWSProject/config/newrelic.yml, /home/njvizzutti/Dropbox/SWSProject/newrelic.yml, /home/njvizzutti/.newrelic/newrelic.yml, /home/njvizzutti/newrelic.yml
+[2017-01-19 20:30:31 -0800 njvizzutti-TP550LA (2814)] INFO : Environment: development
+[2017-01-19 20:30:31 -0800 njvizzutti-TP550LA (2814)] INFO : Dispatcher: webrick
+[2017-01-19 20:30:31 -0800 njvizzutti-TP550LA (2814)] INFO : Application: development
+[2017-01-19 20:30:31 -0800 njvizzutti-TP550LA (2814)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2017-01-19 20:30:32 -0800 njvizzutti-TP550LA (2814)] INFO : Installing Net instrumentation
+[2017-01-19 20:30:32 -0800 njvizzutti-TP550LA (2814)] INFO : Installing ActiveRecord 4 instrumentation
+[2017-01-19 20:30:32 -0800 njvizzutti-TP550LA (2814)] INFO : Installing deferred Rack::Builder instrumentation
+[2017-01-19 20:30:32 -0800 njvizzutti-TP550LA (2814)] INFO : Installing Rack::Builder middleware instrumentation
+[2017-01-19 20:30:32 -0800 njvizzutti-TP550LA (2814)] INFO : Installing ActiveJob instrumentation
+[2017-01-19 20:30:32 -0800 njvizzutti-TP550LA (2814)] INFO : Installing Rails 3+ middleware instrumentation
+[2017-01-19 20:30:32 -0800 njvizzutti-TP550LA (2814)] INFO : Installing Rails 4 Error instrumentation
+[2017-01-19 20:30:32 -0800 njvizzutti-TP550LA (2814)] INFO : Installing Rails 4 Controller instrumentation
+[2017-01-19 20:30:32 -0800 njvizzutti-TP550LA (2814)] INFO : Installing Rails 4 view instrumentation
+[2017-01-19 20:30:32 -0800 njvizzutti-TP550LA (2814)] INFO : Finished instrumentation
+[2017-01-19 20:30:32 -0800 njvizzutti-TP550LA (2814)] INFO : Doing deferred dependency-detection before Rack startup
+[2017-01-19 20:31:01 -0800 njvizzutti-TP550LA (2814)] ERROR : Invalid license key, please contact support@newrelic.com
+[2017-01-19 20:31:01 -0800 njvizzutti-TP550LA (2814)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.

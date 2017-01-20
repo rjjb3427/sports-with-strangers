@@ -66,7 +66,7 @@ class HostForm extends React.Component {
   render() {
     let text;
     if (this.state.hosting && this.state.hosting.length > 1) {
-      text = `You're hosting ${this.state.hosting.length} so far.`;
+      text = `You're hosting ${this.state.hosting.length} meet-ups so far.`;
     } else {
       text = "Join Our Community of Hosts and Meet New Fans";
     }
