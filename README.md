@@ -1,62 +1,106 @@
-# Development Overview
+[TeaWithStrangers]: http://www.teawithstrangers.com/
 
-[heroku]: https://sportswithstrangers.herokuapp.com/
-[trello]: https://trello.com/b/ozHmjpoz/sportswithstrangers
+# SportsWithStrangers
+Sports With Strangers is a full-stack web application taking inspiration from [Tea With Strangers][TeaWithStrangers].
+The application was built using Ruby-on-Rails with PostgreSQL for backend data management, and React.js with Redux to contain state on the frontend.
 
-## MVP Requirements
+[Sports With Strangers Live](https://www.sportswithstrangers.online)
 
-SportsWithStrangers is a web application with inspiration from TeaWithStrangers.
-Application built using Ruby on Rails and React-Redux. At minimum, the following criteria
-will be met:
+## Overview
 
-- Hosted on Heroku
-- Account creation, login, and demo account
-- Choose city to view local meet-ups
-- View and meet-ups in your area
-- Host new meet-ups in your area  
-- User dashboard of joined and hosted meet-ups
-- Adequate CSS Styling
-- Appropriate seed data to display features
-- Bug-free navigation  
-- Production README [production_readme](docs/production_README.md)
+Sports With Strangers is a meet-up application based around sporting events, with the aim to give users the ability to find and meet others who share their passion for a given sport, league, or team. The smaller number of cities and events helps to create a tight host-based community, wherein the host users from each city can build a positive reputation and in doing so encourage new users to attend meet-ups for the first time.
 
-## Docs
-* [Wireframes](docs/wireframes)
-* [React Components](docs/components)
-  [component-overview](components/component-overview.png)
-* [DB schema](docs/schema.md)
-* [Sample State](docs/sample-state.md)
-* [API endpoints](docs/api-endpoints.md)
+![home image](docs/screenshots/homepage.png)
 
-## Timeline for Development
+## Implementation of Features
 
-### Phase 1: Backend User Handling and Frontend Authentication (2 days)
+### React & React Router
 
-**Goal:** Functioning application with session handling, login/signup forms, and basic home page.
+Sports with Strangers is served entirely in a single page. Thanks to `react-router`, the application respond to the address bar normally, while never having to make a new HTTP-Request until reload. Restricted paths are still protected, as certain routes can only be accessed when the application state meets a given criteria.
 
-### Phase 2: City Model, CityList Component, API (2 days)
+### Assigning Home Cities To Users
 
-**Goal:** User can choose, update home city, cities index will render and navigate to cities show page. NavBar reflects current user's home city.
+When a user decides chooses a city upon sign-up or changes it upon profile edit, the frontend only has access to the name of the city the user submitted. When the API request reaches the backend, Active Record queries the database for the city matching that name, and assigns ther user's `city_id` prior to database validation.
 
+`before_validation :set_city_id, :format_email, :set_default_image`...
 
-### Phase 3: Events and Event Lists (2 days)
+```ruby
+def set_city_id
+  city = City.find_by(name: self.location)
+  self.city_id = city.id if city
+end
+```
 
-**Goal:** Event lists appear on city show page. Event List Items to have reference to host user (text or image, link in future). Events show user (host) detail and make requests to add/remove current user. (Bonus: Event Capacity + signifier)
+###Listing Events by Host or City
 
-### Phase 4: User Add Events (1 day)
+  In the database events hold a foreign_key of `city_id`, as well as `host_id` which corresponds to a row in the users column. Because `GET` requests to `api/events` are all handled by `EventsController#index`, the controller responds based on the foreign_key it is given. Because events are fetched by their database associations and not their own id, the AJAX GET request sends a long the foreign_key as well. The controller responds with either a city's events or a host's events depending on the foreign_key it recieved.
 
-**Goal:** Allow users to host new events. Update events to link to user show page of host.
+  ```ruby
+  def index
+    if event_params[:city_id]
+      city = City.find(event_params[:city_id])
+      render json: ['City not found'], status: 404 if city.nil?
+      @events = city.events
+      render json: ["No events scheduled in #{city.name}."], status: 422 if @events.empty?
+    elsif event_params[:host_id]
+      host = User.find(event_params[:host_id])
+      render json: ['User not found'], status: 404 if host.nil?
+      @events = host.events
+      render json: ["#{user.name} isn't hosting any events."], status: 422 if @events.empty?
+    end
+  end
+  ```
+### Listing A User's Attended Events
 
-### Phase 5: User Dashboard (1 day)
+Attendance for events is stored in the database using a join table, which holds an `event_id`, and a `user_id` to link users to their attending events. When a user logs in, an AJAX call is made to retrieve and store a user's information as well as the events they are attending. The information is sent back in `JSON` format via jbuilder. The decision to store the current user's events was made to avoid making new requests every time a user visited their dashboard. The `EventList` react component also needs commonly make requests to fetch a new list by host, or by user, but only once upon login for attendance.
 
-**Goal:** Both joined and hosted events appear in a User's dashboard in separate lists. User detail appears in dashboard. (Editable)
+```ruby
+json.extract! @user, :email, :name, :location, :image, :city, :blurb, :id
+json.set! :attending, @user.attending do |event|
+  json.title event.title
+  json.time event.time
+  json.address event.address
+  json.capacity event.capacity
+  json.sport event.sport
+  json.city_id event.city_id
+  json.id event.id
+end
+```
 
-### Phase 6: - Wrap Up and Polish (1 day)
+### Joining Events & Event Capacity
 
-**Goal:** Complete any unfinished CSS styling, make any unpolished features working and presentable.
+  When user visits a city's page, react first checks that the user is logged in before continuing. Then an AJAX call is made using the `react-router` params to fetch the correct events. These events are rendered in a list component. Each event has a `capacity` cell in the database, and is returned from the backend with the number of attendees, so the two can be compared.
+    ```ruby
+    @events.attendees.length
+    ```
+  When the event item is rendered the difference is calculated, and the button is disabled if the capacity has been met. The current user's id is also checked against the host id, in order to disable the button if the current user is hosting that event.
 
-### Bonus Features (TBD)
-- [ ] Add actual live scores/schedules from public APIs
-- [ ] Add small map for event location
-- [ ] Arrange Event Lists By Sport
-- [ ] Add Favorite Teams or Team Events
+  ```javascript
+  if (this.props.attending.includes(event.id)) {
+    return (
+      <div>
+      <input type='submit' value={'Leave this Event'}
+        className='button'
+        onClick={() => this.leaveEvent(this.props.currentUserId, event.id)} />
+      <p>You are attending this event</p></div>
+    );
+  } else if (event.host.id === this.props.currentUserId) {
+    return (
+      <div>
+      <input type='button' disabled value={'Cannot Join Own Event'}
+        className='button-disabled'/>
+      <p>You are hosting this event</p></div>
+    );
+  } else if (event.attending >= event.capacity) {
+    return (
+      <div>
+      <input type='button' disabled value={'No Spaces Left'}
+        className='button-disabled'/>
+    </div>
+  );
+
+  ```
+
+The challenge was to retrieve the information needed to set the state of each event item, but without retrieving and storing unnecessary objects. Only the id's from the attending users are fetched to be compared with the host and the count with capacity.
+
+###  

@@ -91,7 +91,6 @@ class CityShow extends React.Component {
         <p><b>Attending: </b>{event.attending}</p>
         <p><b>Spaces Available: </b>{spaceLeft}</p>
         {this.renderButton(event, idx)}
-
       </li>
     );
   }
