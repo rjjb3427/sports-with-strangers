@@ -75,7 +75,7 @@ class ModalTest extends React.Component {
   }
 
   render() {
-    const text = this.state.formType === 'login' ? 'Login' : 'Join Us';
+    const text = this.state.formType === 'login' ? 'Login' : 'Get Started';
     return (
       <div id='modal'>
         <Link onClick={this.openModal}>{text}</Link>

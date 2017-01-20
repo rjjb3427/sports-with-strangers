@@ -5,6 +5,5 @@ import eventsReducer from './events_reducer';
 
 export default combineReducers({
   session: sessionReducer,
-  cities: citiesReducer,
-  events: eventsReducer
+  cities: citiesReducer
 });

@@ -22,7 +22,6 @@ const eventsReducer = (state=_initialState, action) => {
       newState.errors = null;
       return newState;
     case RECEIVE_EVENT_ERRORS:
-      console.log(action.errors)
       newState.errors = action.errors.responseJSON;
       return newState;
     case REMOVE_EVENTS:

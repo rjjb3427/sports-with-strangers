@@ -21,7 +21,6 @@ class EventList extends React.Component {
   }
 
   renderDashboard(event, idx) {
-    console.log(event);
     return (
       <li key={idx}>
         <h3>{event.title}</h3>

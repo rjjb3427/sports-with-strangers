@@ -6,15 +6,16 @@
   text-align: center;
   height: auto;
   width: auto;
+  font-family: 'Syncopate' sans-serif;
   font-size: 18px;
   font-weight: bold;
-  background-color: rgba(128, 0, 0, 1);
+  background-color: rgba(3, 15, 49, 1);
   color: white;
 }
 
 
 .button:hover {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(3, 15, 49, 0.8);
 }
 
 .button-disabled {
@@ -27,6 +28,6 @@
   width: auto;
   font-size: 18px;
   font-weight: bold;
-  background-color: rgba(128, 0, 0, 0.3);
+  background-color: rgba(3, 15, 49, 0.3);
   color: white;
 }

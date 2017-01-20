@@ -1,13 +1,14 @@
 .list-items > ul {
   width: auto;
   flex-wrap: wrap;
-  background-color:rgba(128, 0, 0, 1);
+  background-color: rgba(3, 15, 49, 1);
   display: flex;
   justify-content: center;
   color: black;
   position: relative;
   padding: 10px 5px 10px 5px;
   bottom: -25%;
+  border-radius: 4px;
 }
 
 .list-items > ul > li {
@@ -45,5 +46,5 @@
 }
 
 .list-items li > h3 {
-  font-family: 'Oswald';
+  font-family: 'Syncopate';
 }

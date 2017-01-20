@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   validate :valid_email_address
   after_initialize :ensure_session_token
-  before_validation :set_city_id, :format_email
+  before_validation :set_city_id, :format_email, :set_default_image
 
   attr_reader :password
   belongs_to :city
@@ -31,6 +31,12 @@ class User < ActiveRecord::Base
     else
       return nil
     end
+  end
+
+  def set_default_image
+    if self.image.length < 1
+      self.image = "http://res.cloudinary.com/dlxtsqgb3/image/upload/c_scale,h_700,w_700/v1484789224/profblank_ionat1.png"
+    end 
   end
 
   def valid_email_address

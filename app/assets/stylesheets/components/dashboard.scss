@@ -1,45 +1,88 @@
 .dashboard-wrapper {
   background-image: image-url('basketball-1.jpg');
   background-size: cover;
-  justify-content: space-around;
+  justify-content: space-between;
   display: flex;
+  align-items: center;
   flex-direction: row;
   height: 700px;
 }
 
+.dashboard-wrapper > .city-footer {
+  position: absolute;
+  bottom: -5%;
+}
 .dashboard-wrapper span {
   display: flex;
   flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.plus > p {
+.plus > span {
+  margin-left: auto;
   text-align: center;
   height: 50%;
-  border: 10px solid white;
+  border: 10px solid #9c9c9c;
   border-radius: 20px;
   width: 260px;
   margin-top: auto;
   margin-bottom: auto;
   font-family: fantasy;
-  color: white;
+  color: #9c9c9c;
   font-size: 300px;
 }
 
-.plus > p:hover {
+.plus > span:hover {
   cursor: pointer;
-  color: rgba(128, 0, 0, 0.9);
-  border-color: rgb(128, 0, 0);
+  color: white;
+  border-color: white;
 }
 
 .dashboard-wrapper h1 {
   font-size: 25px;
 }
 
+.dashboard > footer {
+  margin-top: 10px;
+}
+
 #host-new {
-  font-size: 50px;
+  font-family: 'Syncopate', sans-serif;
+  font-size: 38px;
+}
+#dashboard-form {
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 30%;
+  background-color:rgba(3, 15, 49, 0.7);
+}
+
+
+#dashboard-form form :disabled:hover {
+  background-color: white
+}
+
+#dashboard-form input[type='submit']:disabled:hover {
+  background-color: #797979;
 }
 
 #dashboard-list {
+  text-align: center;
+  width: 30%;
+  margin-left: 20px;
+  margin-right: 10px;
   margin-top: auto;
   margin-bottom: auto;
+}
+
+#dashboard-list > ul {
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  background-color: rgba(3, 15, 49, 0.7);
+}
+
+#dashboard-form > p {
+  margin: 10px;
 }

@@ -1,17 +1,20 @@
 .form {
+  align-items: center;
   text-align: center;
+  border-radius: 5px;
   height: 80%;
   width: 400px;
   padding: 10px;
   margin: 0 auto;
   font-family: 'Slabo 27px', serif;
-  background-color: rgba(128, 0, 0, 0.9);
+  background-color: $primary-color;
   font-size: 20px;
 }
 
   form {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
 .form input, select {
@@ -21,6 +24,7 @@
   font-weight: bold;
 }
 
+
 .form select {
   background-color: white;
   text-align-last: center;
@@ -29,10 +33,23 @@
   font-size: 20px;
 }
 
-.form input {
+.form select.dropdown {
+  width: 85%;
+}
+
+.form input, textarea {
     background-color: white;
     border-radius: 4px;
     width: 80%;
+}
+.form select.dropdown:disabled {
+  color: rgba(0, 0, 0, 0.38);
+  background-color: #929292;
+}
+
+.form input:disabled {
+  background-color: #929292;
+  color: rgba(0, 0, 0, 0.38);
 }
 
 .form input[type='submit'] {
@@ -44,14 +61,38 @@
   width: auto;
   font-size: 25px;
   font-weight: bold;
-  background-color: rgba(110, 0, 0, 1);
+  background-color: black;
   color: white;
 }
 
-.form input[type='submit']:hover {
-  background-color: black;
-  color: white;
+.form input[type='submit']:enabled:hover {
+  background-color: white;
+  color: black;
+}
 
+.form input[type='submit']:disabled {
+  cursor: default;
+  background-color: #797979;
+  color: white;
+}
+
+.form textarea {
+  margin: 10px;
+  padding: 10px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  color: black;
+  text-align: left;
+  background-color: white;
+  height: 150px;
+  font-family: 'Slabo 27px', serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.form textarea:disabled {
+  background-color: #929292;
 }
 
 .modal-footer {

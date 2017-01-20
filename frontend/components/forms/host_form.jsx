@@ -49,7 +49,7 @@ class HostForm extends React.Component {
       city_id: this.props.currentUser.city.id}, () => {
         this.props.createEvent(this.state).then(
         this.fetchNewEvents,
-        res => this.setState({prompt: res.responseJSON.map(err => `| ${err} `)}));
+        res => this.setState({prompt: res.responseJSON.map(err => ` ${err}. `)}));
       });
   }
 
