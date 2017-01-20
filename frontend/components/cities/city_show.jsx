@@ -61,6 +61,13 @@ class CityShow extends React.Component {
             className='button-disabled'/>
           <p><b>You are hosting this event</b></p></div>
         );
+      } else if (event.attending >= event.capacity) {
+        return (
+          <div>
+          <input type='button' disabled value={`No Spaces Left`}
+            className='button-disabled'/>
+        </div>
+        );
       }
     return (
       <input type='submit' value={`Join ${shortName}'s Meetup`}

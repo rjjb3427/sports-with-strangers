@@ -1,12 +1,15 @@
 .user-show {
-  background-color: #cdd0d4;
+  opacity: 90;
+  background-image: image-url('field.jpg');
+  background-size: cover;
   color: black;
   float: left;
 }
 
 .user-show > .list-items > h4 {
   text-align: center;
-  font-size: 18px;
+  font-size: 22px;
+  color: white;
   padding: 10px;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -14,10 +17,11 @@
 }
 
 .blurb {
-  background-color: white;
+  background: white;
   border: 13px solid $primary-color;
   border-radius: 8px;
   margin-top: 15px;
+  margin-right: 10px;
   min-height: 300px;
   padding: 15px;
   display: flex;

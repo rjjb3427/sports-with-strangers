@@ -13,7 +13,7 @@ class EventList extends React.Component {
 
   joinEvent(id) {
     let obj = {user_id: this.props.currentUserId, event_id: id};
-    this.props.addAttendee(obj);
+    this.props.addAttendee(obj).then(() => this.setState({ prompt: ''}));
   }
 
   leaveEvent(user_id, event_id) {
@@ -33,6 +33,7 @@ class EventList extends React.Component {
   }
 
   renderEvent(event, idx) {
+    const spaceLeft = (event.capacity - event.attending);
     return (
       <li key={idx}>
         <h3>{event.title}</h3>
@@ -62,6 +63,13 @@ class EventList extends React.Component {
             className='button-disabled'/>
           <p><b>You are hosting this event</b></p></div>
         );
+      } else if (event.attending >= event.capacity) {
+        return (
+          <div>
+          <input type='button' disabled value={`No Spaces Left`}
+            className='button-disabled'/>
+        </div>
+      );
       }
     return (
       <input type='submit' value={`Join ${shortName}'s Meetup`}
