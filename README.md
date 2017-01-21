@@ -73,6 +73,8 @@ end
     ```ruby
     @events.attendees.length
     ```
+
+![dashboard image](docs/screenshots/city-show.png)
   When the event item is rendered the difference is calculated, and the button is disabled if the capacity has been met. The current user's id is also checked against the host id, in order to disable the button if the current user is hosting that event.
 
   ```javascript
