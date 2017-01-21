@@ -4,7 +4,7 @@
 Sports With Strangers is a full-stack web application taking inspiration from [Tea With Strangers][TeaWithStrangers].
 The application was built using Ruby-on-Rails with PostgreSQL for backend data management, and React.js with Redux to contain state on the frontend.
 
-[Sports With Strangers Live](https://www.sportswithstrangers.online)
+[Sports With Strangers Live](http://www.sportswithstrangers.online)
 
 ## Overview
 
@@ -131,7 +131,7 @@ handleSubmit() {
     () => setTimeout(() => this.setState({prompt: ''}), 5000)));
 }
 ```
-While not typical, utilizing success and failure callbacks in this manner worked well in this particular case since the data would be discarded almost immediately anyway. 
+While not typical, utilizing success and failure callbacks in this manner worked well in this particular case since the data would be discarded almost immediately anyway.
 
 ##Future Directions for Project
 
