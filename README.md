@@ -11,7 +11,6 @@ The application was built using Ruby-on-Rails with PostgreSQL for backend data m
 Sports With Strangers is a meet-up application based around sporting events, with the aim to give users the ability to find and meet others who share their passion for a given sport, league, or team. The smaller number of cities and events helps to create a tight host-based community, wherein the host users from each city can build a positive reputation and in doing so encourage new users to attend meet-ups for the first time.
 
 ![home image](docs/screenshots/homepage.png)
-
 ## Implementation of Features
 
 ### React & React Router
@@ -75,7 +74,7 @@ end
     ```
 
 ![dashboard image](docs/screenshots/city-show.png)
-  When the event item is rendered the difference is calculated, and the button is disabled if the capacity has been met. The current user's id is also checked against the host id, in order to disable the button if the current user is hosting that event.
+  When each event item is rendered the difference is calculated, and the button is disabled if the capacity has been met. The current user's id is also checked against the host id, in order to disable the button if the current user is hosting that event.
 
   ```javascript
   if (this.props.attending.includes(event.id)) {
@@ -100,26 +99,39 @@ end
         className='button-disabled'/>
     </div>
   );
+}
 
 ```
 
-The challenge was to retrieve the information needed to set the state of each event item, but without retrieving and storing unnecessary objects. Only the id's from the attending users are fetched to be compared with the host and the count with capacity.
+The challenge was to retrieve the information needed to achieve each state of each event items, but without retrieving and storing unnecessary objects. Only the id's from the attending users are fetched to be compared with the host and the counted against capacity.
 
 ###  User Dashboard and Editing User Information
 
-One of the great things about react is the ease in having a single path for a user's show page. You are able to display and edit the current user's information without ever having to make another request after initial login. The 'edit profile' form is pre-filled with from the information contained in the `redux-store`, and is reflected in the react component's state, so that when a user makes a request to update, any untouched information will remain as it was in the database.
+One of the great things about react is the ease in having a single path for all users to share. You are able to display and edit the current user's information without ever having to make another request after initial login. The 'edit profile' form is pre-filled with the information contained in the `redux-store`, and is reflected in the react component's state. Upon logout, the data used to fill the personal information is discarded by the frontend, and there is no risk of another user gaining access to someone else's dashboard by URL tampering.
 
 ![dashboard image](docs/screenshots/dashboard.png)
 
-React also allows you to set boolean values in JSX, in order to disable the form until the user decides they want to interact with it, something that cannot be done in HTML so eloquently.
+React also allows you to set boolean values in JSX to be compiled into HTML. I am able to disable a form until the user decides they want to interact with it, something that cannot be done in HTML so eloquently.
 
 ```HTML
-  <input type='text'
+  <input type='email'
   disabled={this.state.disabled}
   value={user.email}
   onChange={this.update('email')}/>
 ```
 
+I chose to handle any errors with the update form without dispatching actions to the redux store. It made it simple to display a success message when the PATCH request was successful, and let the user know what they missed otherwise. I utilized `setTimeout`, and `setState`'s optional callback to display the success/failure message for five seconds.
+
+```javascript
+handleSubmit() {
+  this.props.updateUser(this.state).then(
+    res => this.setState({prompt: 'Successfully Updated'},
+     () => setTimeout(() => this.setState({prompt: ''}), 5000)),
+    res => this.setState({prompt: res.responseJSON.map(err => ` ${err}. `)},
+    () => setTimeout(() => this.setState({prompt: ''}), 5000)));
+}
+```
+While not typical, utilizing success and failure callbacks in this manner worked well in this particular case since the data would be discarded almost immediately anyway. 
 
 ##Future Directions for Project
 

@@ -35,8 +35,10 @@ class Dashboard extends React.Component {
 
   handleSubmit() {
     this.props.updateUser(this.state).then(
-      res => this.setState({prompt: 'Successfully Updated'}, () => setTimeout(() => this.setState({prompt: ''}), 5000)),
-      res => this.setState({prompt: res.responseJSON.map(err => ` ${err}. `)}));
+      res => this.setState({prompt: 'Successfully Updated'},
+       () => setTimeout(() => this.setState({prompt: ''}), 5000)),
+      res => this.setState({prompt: res.responseJSON.map(err => ` ${err}. `)},
+      () => setTimeout(() => this.setState({prompt: ''}), 5000)));
   }
 
   renderForm() {

@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  validates :email, :password, :location, presence: true
+  validates :email, :password_digest, :location, presence: true
   validates :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
   validate :valid_email_address

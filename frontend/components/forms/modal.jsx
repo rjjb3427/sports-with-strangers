@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import SessionFormContainer from './session_form_container';
 import {Link} from 'react-router';
 
-const styleSkeleton = {
+const modalStyle = {
   content : {
     top : '50%',
     height : "auto",
@@ -81,7 +81,7 @@ class ModalTest extends React.Component {
         <Link onClick={this.openModal}>{text}</Link>
         <Modal isOpen={this.state.modalIsOpen} onAfterOpen={this.modalDidOpen}
           onRequestClose={this.closeModal}
-          style={styleSkeleton}
+          style={modalStyle}
           contentLabel={text} >
         <SessionFormContainer page={this.state.formType} demoLogin={this.state.demo}/>
         {this.alternateText()}
