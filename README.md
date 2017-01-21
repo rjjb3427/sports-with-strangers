@@ -55,7 +55,7 @@ end
 Attendance for events is stored in the database using a join table, which holds an `event_id`, and a `user_id` to link users to their attending events. When a user logs in, an AJAX call is made to retrieve and store a user's information as well as the events they are attending. The information is sent back in `JSON` format via jbuilder. The decision to store the current user's events was made to avoid making new requests every time a user visited their dashboard. The `EventList` react component also needs commonly make requests to fetch a new list by host, or by user, but only once upon login for attendance.
 
 ```ruby
-json.extract! @user, :email, :name, :location, :image, :city, :blurb, :id
+json.extract! @user, :email, :name, :location, :image, :city, :blurb
 json.set! :attending, @user.attending do |event|
   json.title event.title
   json.time event.time
@@ -99,8 +99,39 @@ end
     </div>
   );
 
-  ```
+```
 
 The challenge was to retrieve the information needed to set the state of each event item, but without retrieving and storing unnecessary objects. Only the id's from the attending users are fetched to be compared with the host and the count with capacity.
 
-###  
+###  User Dashboard and Editing User Information
+
+One of the great things about react is the ease in having a single path for a user's show page. You are able to display and edit the current user's information without ever having to make another request after initial login. The 'edit profile' form is pre-filled with from the information contained in the `redux-store`, and is reflected in the react component's state, so that when a user makes a request to update, any untouched information will remain as it was in the database.
+
+![dashboard image](docs/screenshots/dashboard.png)
+
+React also allows you to set boolean values in JSX, in order to disable the form until the user decides they want to interact with it, something that cannot be done in HTML so eloquently.
+
+```HTML
+  <input type='text'
+  disabled={this.state.disabled}
+  value={user.email}
+  onChange={this.update('email')}/>
+```
+
+
+##Future Directions for Project
+
+### Personalize Event Lists
+- [ ] Filter Events by Sport
+- [ ] List preferred Sports for Users
+
+### Hosts Search
+- [ ] Search Hosts by Sport
+- [ ] Search Events by Host, or Sport
+
+### API Integration
+- [ ] Integrate a public API to show sports statistics, or schedules if available.
+- [ ] Integrate Google Maps API for event location.
+
+### Smart Events
+- [ ] Suggestions based on favorite team, or previous attendance.
