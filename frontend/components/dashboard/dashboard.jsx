@@ -54,7 +54,10 @@ class Dashboard extends React.Component {
           <option value='New York'>New York</option>
           <option value='Seattle'>Seattle</option>
         </select>
-        <textarea disabled={this.state.disabled} value={user.blurb} onChange={this.update('blurb')} />
+        <textarea disabled={this.state.disabled}
+          value={user.blurb}
+          placeholder='What sports do you enjoy? Why do you want to host?'
+          onChange={this.update('blurb')} />
         <input type='submit' disabled={this.state.disabled} value='Update' />
       </form>
       <p>{this.state.prompt}</p>

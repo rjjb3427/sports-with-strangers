@@ -10,7 +10,7 @@ let prompt;
 const footer = () => (
   <div className='home-footer'>
     <h1 className='col-1'>Meetup with fellow fans to watch a game.</h1>
-    <h2 className='col-1'>You and some others meet a host at a bar restaurant, or venue.</h2>
+    <h2 className='col-1'>You and some others meet a host at a bar restaurant, or other venue.</h2>
     <h1 className='col-1'>Eat, drink, hangout! Sports can really bring people together.</h1>
   </div>
 );

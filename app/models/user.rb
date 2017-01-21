@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  validates :email, :password_digest, :location, presence: true
+  validates :email, :password, :location, presence: true
   validates :email, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
   validate :valid_email_address
@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   def set_default_image
     if self.image.length < 1
       self.image = "http://res.cloudinary.com/dlxtsqgb3/image/upload/c_scale,h_700,w_700/v1484789224/profblank_ionat1.png"
-    end 
+    end
   end
 
   def valid_email_address
