@@ -5,7 +5,7 @@ import moment from 'moment';
 class EventList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {prompt: ''};
+    this.state = {prompt: '', deleted: []};
     this.renderEvent = this.renderEvent.bind(this);
     this.renderButton = this.renderButton.bind(this);
     this.joinEvent = this.joinEvent.bind(this);
@@ -23,7 +23,9 @@ class EventList extends React.Component {
   }
 
   deleteEvent(id) {
-    this.props.deleteEvent(id).then(() => this.setState({prompt: 'Other users can no longer view this.'}));
+    this.props.deleteEvent(id).then(
+      () => this.setState({prompt: 'Other users can no longer view this.',
+         deleted: this.state.deleted.concat([id]) }));
   }
 
   renderDashboard(event, idx) {
@@ -64,7 +66,7 @@ class EventList extends React.Component {
           <p>You are attending this event</p></div>
         );
       } else if (this.props.host.id === this.props.currentUserId) {
-          if (this.state.prompt.length > 0) {
+          if (this.state.deleted.includes(event.id)) {
             return (
               <div>
                 <p><b>{prompt}</b></p>

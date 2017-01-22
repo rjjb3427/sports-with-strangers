@@ -66,8 +66,8 @@ class HostForm extends React.Component {
   render() {
     const currentUserId = this.props.currentUser.id;
     let text;
-    if (this.state.hosting && this.state.hosting.length > 1) {
-      text = `You're hosting ${this.state.hosting.length} meet-ups so far.`;
+    if (this.state.hosting && this.state.hosting.length > 0) {
+      text = `You're hosting ${this.state.hosting.length} so far.`;
     } else {
       text = "Join Our Community of Hosts and Meet New Fans";
     }
@@ -81,8 +81,8 @@ class HostForm extends React.Component {
                            <input type='text' placeholder='Address of Venue'
           value={this.state.address}
           onChange={this.update('address')}/>
-        <select className='dropdown' onChange={this.update('sport')}>
-          <option>What Are You Watching?</option>
+        <select className='dropdown' onChange={this.update('sport')} value={this.state.sport}>
+          <option value='' disabled>What Are You Watching?</option>
           <option value='Basketball'>Basketball</option>
           <option value='Football'>Football</option>
           <option value='Baseball'>Baseball</option>
