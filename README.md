@@ -15,7 +15,7 @@ Sports With Strangers is a meet-up application based around sporting events, wit
 
 ### React & React Router
 
-Sports with Strangers is served entirely in a single page. Thanks to `react-router`, the application respond to the address bar normally, while never having to make a new HTTP-Request until reload. Restricted paths are still protected, as certain routes can only be accessed when the application state meets a given criteria.
+Sports with Strangers is served entirely in a single page. Thanks to `react-router`, the application responds to the address bar normally, while never having to make a new HTTP-Request until reload. Restricted paths are still protected, as certain routes can only be accessed when the application state meets a given criteria.
 
 ### Assigning Home Cities To Users
 
@@ -32,7 +32,7 @@ end
 
 ###Listing Events by Host or City
 
-  In the database events hold a foreign_key of `city_id`, as well as `host_id` which corresponds to a row in the users column. Because `GET` requests to `api/events` are all handled by `EventsController#index`, the controller responds based on the foreign_key it is given. Because events are fetched by their database associations and not their own id, the AJAX GET request sends a long the foreign_key as well. The controller responds with either a city's events or a host's events depending on the foreign_key it recieved.
+  In the database events hold a foreign_key of `city_id`, as well as `host_id` which corresponds to a column in the users table. Because `GET` requests to `api/events` are all handled by `EventsController#index`, the controller responds based on the foreign_key it is given. Because events are fetched by their database associations and not their primary_key, the AJAX GET request sends a long the foreign_key as well. The controller responds with either a city's events or a host's events depending on the foreign_key it receives.
 
   ```ruby
   def index
@@ -51,7 +51,7 @@ end
   ```
 ### Listing A User's Attended Events
 
-Attendance for events is stored in the database using a join table, which holds an `event_id`, and a `user_id` to link users to their attending events. When a user logs in, an AJAX call is made to retrieve and store a user's information as well as the events they are attending. The information is sent back in `JSON` format via jbuilder. The decision to store the current user's events was made to avoid making new requests every time a user visited their dashboard. The `EventList` react component also needs commonly make requests to fetch a new list by host, or by user, but only once upon login for attendance.
+Attendance for events is stored in the database using a join table, which holds an `event_id`, and a `user_id` to link users to their attending events. When a user logs in, an AJAX call is made to retrieve and store a user's information as well as the events they are attending. The information is sent back in `JSON` format via jbuilder. The decision to store the current user's events was made to avoid making new requests every time a user visited their dashboard. The `EventList` react component more frequently makes requests to fetch a new list by host, or by user, but a user's attendance only needs to be fetched once upon login.
 
 ```ruby
 json.extract! @user, :email, :name, :location, :image, :city, :blurb
@@ -68,7 +68,8 @@ end
 
 ### Joining Events & Event Capacity
 
-  When user visits a city's page, react first checks that the user is logged in before continuing. Then an AJAX call is made using the `react-router` params to fetch the correct events. These events are rendered in a list component. Each event has a `capacity` cell in the database, and is returned from the backend with the number of attendees, so the two can be compared.
+  When user visits a city's page, react first checks that the user is logged in before continuing. Then an AJAX call is made using the `react-router` params to fetch the correct events. These events are rendered in a list component. Each event has a capacity cell in the database, and is returned from the backend with the number of attendees, so it may be compared with the capacity.
+
     ```ruby
     @events.attendees.length
     ```
@@ -103,7 +104,7 @@ end
 
 ```
 
-The challenge was to retrieve the information needed to achieve each state of each event items, but without retrieving and storing unnecessary objects. Only the id's from the attending users are fetched to be compared with the host and the counted against capacity.
+The challenge was to retrieve the information needed to achieve each state of each event item, but without retrieving and storing unnecessary objects. Only the an array of id's from the attending users are fetched to be compared with the host and the length counted against capacity, no user objects.
 
 ###  User Dashboard and Editing User Information
 
@@ -131,7 +132,7 @@ handleSubmit() {
     () => setTimeout(() => this.setState({prompt: ''}), 5000)));
 }
 ```
-While not typical, utilizing success and failure callbacks in this manner worked well in this particular case since the data would be discarded almost immediately anyway.
+While normally data from the backend would be stored in state, utilizing success and failure callbacks in this manner worked well in this particular case since the data would be discarded almost immediately anyway.
 
 ##Future Directions for Project
 
