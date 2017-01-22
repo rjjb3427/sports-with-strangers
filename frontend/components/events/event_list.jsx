@@ -5,10 +5,12 @@ import moment from 'moment';
 class EventList extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {prompt: ''};
     this.renderEvent = this.renderEvent.bind(this);
     this.renderButton = this.renderButton.bind(this);
     this.joinEvent = this.joinEvent.bind(this);
     this.leaveEvent = this.leaveEvent.bind(this);
+    this.deleteEvent = this.deleteEvent.bind(this);
   }
 
   joinEvent(id) {
@@ -18,6 +20,10 @@ class EventList extends React.Component {
 
   leaveEvent(user_id, event_id) {
     this.props.removeAttendee({user_id, event_id});
+  }
+
+  deleteEvent(id) {
+    this.props.deleteEvent(id).then(() => this.setState({prompt: 'Other users can no longer view this.'}));
   }
 
   renderDashboard(event, idx) {
@@ -48,6 +54,7 @@ class EventList extends React.Component {
 
   renderButton(event, idx) {
     let shortName = this.props.host.name.split(' ')[0];
+    const prompt = this.state.prompt;
       if (this.props.attending.includes(event.id)) {
         return (
           <div>
@@ -57,12 +64,21 @@ class EventList extends React.Component {
           <p>You are attending this event</p></div>
         );
       } else if (this.props.host.id === this.props.currentUserId) {
-        return (
-          <div>
-          <input type='hidden' disabled value={`Cannot Join Own Event`}
-            className='button-disabled'/>
-          <p><b>You are hosting this event</b></p></div>
-        );
+          if (this.state.prompt.length > 0) {
+            return (
+              <div>
+                <p><b>{prompt}</b></p>
+              </div>
+            );
+          } else {
+          return (
+            <div>
+            <input type='button' value={`Delete Event`}
+              className='button'
+              onClick={() => this.deleteEvent(event.id)}/>
+            </div>
+          );
+          }
       } else if (event.attending >= event.capacity) {
         return (
           <div>

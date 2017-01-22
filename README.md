@@ -66,6 +66,17 @@ json.set! :attending, @user.attending do |event|
 end
 ```
 
+### Security and Privacy
+  When requests are made to the backend to change a user's information, Rails checks the current user's id against the id of the user being updated. This prevents a malicious user from changing another user's information by making an outside PATCH request.
+
+  ```ruby
+  if @user.id != current_user.id
+    errors.add(:user, 'validation failed')
+  end
+  ```
+
+  However, in the case of host users, their information is public on their host page. Therefore prior to having their information being sent to the frontend to render their host page, rails checks if it is either the current user making the request, or the user is a host. This way, a user's email is only made public when they choose to become a host, and is protected against any requests made from the client-side attempting to attain others' email.
+  
 ### Joining Events & Event Capacity
 
   When user visits a city's page, react first checks that the user is logged in before continuing. Then an AJAX call is made using the `react-router` params to fetch the correct events. These events are rendered in a list component. Each event has a capacity cell in the database, and is returned from the backend with the number of attendees, so it may be compared with the capacity.

@@ -33,8 +33,10 @@ class Api::EventsController < ApplicationController
 
   def destroy
     @event = Event.find(params[:id])
-    @event.destroy
-    render :template => 'api/cities/show'
+    if current_user.id === @event.host_id
+      @event.destroy
+      render json: ['Event Deleted'], status: 200
+    end
   end
 
   private

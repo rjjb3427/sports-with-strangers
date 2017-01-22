@@ -1909,3 +1909,4 @@ Checked in these paths:
 [2017-01-20 19:42:37 -0800 njvizzutti-TP550LA (21710)] INFO : Doing deferred dependency-detection before Rack startup
 [2017-01-20 19:42:47 -0800 njvizzutti-TP550LA (21710)] ERROR : Invalid license key, please contact support@newrelic.com
 [2017-01-20 19:42:47 -0800 njvizzutti-TP550LA (21710)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2017-01-22 00:10:39 -0800 njvizzutti-TP550LA (21710)] INFO : Starting Agent shutdown

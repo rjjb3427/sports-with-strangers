@@ -21,3 +21,10 @@ export const createEvent = event => (
     data: {event}
   })
 );
+
+export const deleteEvent = id => (
+  $.ajax({
+    method: 'DELETE',
+    url: `api/events/${id}`
+  })
+);

@@ -1,4 +1,5 @@
 class Api::UsersController < ApplicationController
+
   def create
     @user = User.new(user_params)
     if @user.save
@@ -11,7 +12,9 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
+    if @user.id != current_user.id
+      render json: ['Authentication Failed. Please Login.']
+    elsif @user.update_attributes(user_params)
       render :show
     else
       render json: @user.errors.full_messages, status: 422
@@ -20,7 +23,7 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    if @user
+    if @user && (@user.events.length > 0 || @user.id == current_user.id)
       render :detail
     end
   end
