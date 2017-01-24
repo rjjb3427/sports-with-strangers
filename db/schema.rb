@@ -58,5 +58,5 @@ ActiveRecord::Schema.define(version: 20170116185035) do
   end
 
   add_index "users", ["city_id"], name: "index_users_on_city_id", using: :btree
-
+  
 end
