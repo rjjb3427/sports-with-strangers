@@ -37,7 +37,8 @@ class ModalTest extends React.Component {
 
   componentWillMount() {
     Modal.setAppElement('body');
-    this.setState({formType: this.props.formType});
+    let text = this.props.formType === 'login' ? 'Login' : 'Get Started';
+    this.setState({formType: this.props.formType, text});
   }
 
   changeForm() {
@@ -75,14 +76,13 @@ class ModalTest extends React.Component {
   }
 
   render() {
-    const text = this.state.formType === 'login' ? 'Login' : 'Get Started';
     return (
       <div id='modal'>
-        <Link onClick={this.openModal}>{text}</Link>
+        <Link onClick={this.openModal}>{this.state.text}</Link>
         <Modal isOpen={this.state.modalIsOpen} onAfterOpen={this.modalDidOpen}
           onRequestClose={this.closeModal}
           style={modalStyle}
-          contentLabel={text} >
+          contentLabel={this.state.text} >
         <SessionFormContainer page={this.state.formType} demoLogin={this.state.demo}/>
         {this.alternateText()}
         </Modal>

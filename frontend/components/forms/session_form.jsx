@@ -4,7 +4,13 @@ import { hashHistory } from 'react-router';
 class SessionForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = { email: '', name: '', location: '', image: '', blurb: ''};
+    this.state = { email: '',
+       name: '',
+       location: '',
+       image: '',
+       blurb: '',
+       password: ''
+      };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.renderSignUp = this.renderSignUp.bind(this);
@@ -58,8 +64,14 @@ class SessionForm extends React.Component {
     return (
       <div className='form'>
         <form onSubmit={this.handleSubmit}>
-          <input type='text' placeholder='Email Address' value={user.email} onChange={this.update('email')}/>
-          <input type='password' placeholder='Password' onChange={this.update('password')} /><br />
+          <input type='text'
+            placeholder='Email Address'
+            value={user.email}
+            onChange={this.update('email')}/>
+          <input type='password'
+            placeholder='Password'
+            value={user.password}
+            onChange={this.update('password')} /><br />
           <input type='submit' value='Login' />
         </form><br />
         <span>{this.errors()}</span>
@@ -69,6 +81,7 @@ class SessionForm extends React.Component {
 
   renderSignUp() {
     const user = this.state;
+    console.log(user)
     return (
       <div className='form'>
         <form onSubmit={this.handleSubmit} >
@@ -81,7 +94,10 @@ class SessionForm extends React.Component {
             <option value='New York'>New York</option>
             <option value='Seattle'>Seattle</option>
           </select>
-          <input type='password' placeholder='Password' onChange={this.update('password')} /><br />
+          <input type='text'
+                placeholder='Password'
+                value={user.password}
+                onChange={this.update('password')} /><br />
           <input type='submit' value='Sign Up' />
         </form><br />
       <span>{this.errors()}</span>
