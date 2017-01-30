@@ -51,7 +51,7 @@ end
   ```
 ### Listing A User's Attended Events
 
-Attendance for events is stored in the database using a join table, which holds an `event_id`, and a `user_id` to link users to their attending events. When a user logs in, an AJAX call is made to retrieve and store a user's information as well as the events they are attending. The information is sent back in `JSON` format via jbuilder. The decision to store the current user's events was made to avoid making new requests every time a user visited their dashboard. The `EventList` react component more frequently makes requests to fetch a new list by host, or by user, but a user's attendance only needs to be fetched once upon login.
+Attendance for events is stored in the database using an `attendees` table, which holds an `event_id`, and a `user_id` to link users to their attending events. When a user logs in, an AJAX call is made to retrieve and store a user's information as well as the events they are attending. The information is sent back in `JSON` format via jbuilder. The decision to store the current user's events was made to avoid making new requests every time a user visited their dashboard. The `EventList` react component more frequently makes requests to fetch a new list by host, or by user, but a user's attendance only needs to be fetched once upon login.
 
 ```ruby
 json.extract! @user, :email, :name, :location, :image, :city, :blurb
@@ -132,7 +132,7 @@ React also allows you to set boolean values in JSX to be compiled into HTML. I a
   onChange={this.update('email')}/>
 ```
 
-I chose to handle any errors with the update form without dispatching actions to the redux store. It made it simple to display a success message when the PATCH request was successful, and let the user know what they missed otherwise. I utilized `setTimeout`, and `setState`'s optional callback to display the success/failure message for five seconds.
+I chose to handle any errors with the update form without dispatching actions to the redux store. It made it simple to display a success message when the PATCH request was successful, and let the user know what they missed otherwise. I utilized `setTimeout` with `setState`'s optional callback to display the success/failure message for five seconds.
 
 ```javascript
 handleSubmit() {
