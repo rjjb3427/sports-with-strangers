@@ -94,7 +94,7 @@ class SessionForm extends React.Component {
             <option value='New York'>New York</option>
             <option value='Seattle'>Seattle</option>
           </select>
-          <input type='text'
+          <input type='password'
                 placeholder='Password'
                 value={user.password}
                 onChange={this.update('password')} /><br />

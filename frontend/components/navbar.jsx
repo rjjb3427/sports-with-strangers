@@ -27,7 +27,7 @@ class NavBar extends React.Component {
     const userId = this.props.currentUser.id;
     return (
       <div className="NavBar">
-        <div id='nav-logo' />
+        <div id='nav-logo' onClick={() => hashHistory.push('/')}/>
         <div className='nav-links'>
         <Link to={'host'}>Hosting</Link>
         <Link to={`dashboard`}>Dashboard</Link>
