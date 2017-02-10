@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import ModalTest from './forms/modal';
 const tagLines = ["Get started, let's watch the game",
 "Get out and meet some other fans",
 "Find someone who loves your team as much as you do",
@@ -20,6 +21,7 @@ class HomeComponent extends React.Component {
     super(props);
     this.state = {prompt: ''};
     this.togglePrompt = this.togglePrompt.bind(this);
+    this.homeTagline.bind(this);
   }
 
   togglePrompt() {
@@ -42,11 +44,25 @@ class HomeComponent extends React.Component {
     );
   }
 
+  homeTagline() {
+    if (this.props.loggedIn) {
+      return (
+        <Link to='/cities'>{currentTag}</Link>
+      );
+    } else {
+      return (
+        <a>
+          <ModalTest text={currentTag}/>
+        </a>
+      );
+    }
+  }
+
   render() {
     return (
       <section className='home-main'>
       <div className="home-wrapper" >
-        <Link to='cities' onMouseLeave={this.togglePrompt} onMouseOver={this.togglePrompt}>{currentTag}</Link>
+        {this.homeTagline()}
         <h2 className='home-prompt'>{this.state.prompt}</h2>
       </div>
         {this.footer()}

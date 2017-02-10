@@ -37,7 +37,12 @@ class ModalTest extends React.Component {
 
   componentWillMount() {
     Modal.setAppElement('body');
-    let text = this.props.formType === 'login' ? 'Login' : 'Get Started';
+    let text;
+    if (!this.props.text) {
+      text = this.props.formType === 'login' ? 'Login' : 'Get Started';
+    } else {
+      text = this.props.text;
+    }
     this.setState({formType: this.props.formType, text});
   }
 
@@ -77,7 +82,7 @@ class ModalTest extends React.Component {
 
   render() {
     return (
-      <div id='modal'>
+      <div className='modal'>
         <Link onClick={this.openModal}>{this.state.text}</Link>
         <Modal isOpen={this.state.modalIsOpen} onAfterOpen={this.modalDidOpen}
           onRequestClose={this.closeModal}

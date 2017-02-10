@@ -44,7 +44,7 @@ class NavBar extends React.Component {
       <div className="NavBar">
         <div id='nav-logo' />
         <div className='nav-links'>
-        <ModalTest formType='signup' /><br />
+        <ModalTest formType='signup'/><br />
         <ModalTest formType='login'/>
         </div>
       </div>
