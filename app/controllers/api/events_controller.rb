@@ -9,7 +9,7 @@ class Api::EventsController < ApplicationController
       host = User.find(event_params[:host_id])
       render json: ['User not found'], status: 404 if host.nil?
       @events = host.events
-      render json: ["#{user.name} isn't hosting any events yet."], status: 422 if @events.empty?
+      render json: ["#{current_user.name} isn't hosting any events yet."], status: 422 if @events.empty?
     end
   end
 
