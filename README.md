@@ -32,7 +32,14 @@ end
 
 ###Listing Events by Host or City
 
-  In the database events hold a foreign_key of `city_id`, as well as `host_id` which corresponds to a column in the users table. Because `GET` requests to `api/events` are all handled by `EventsController#index`, the controller responds based on the foreign_key it is given. Because events are fetched by their database associations and not their primary_key, the AJAX GET request sends a long the foreign_key as well. The controller responds with either a city's events or a host's events depending on the foreign_key it receives.
+  In the database events hold an indexed foreign_key of `city_id`, as well as `host_id` which corresponds to a column in the users table. Because `GET` requests to `api/events` are all handled by `EventsController#index`, the controller responds based on the parameters it is given.
+  ```javascript
+  $.ajax({
+    method: 'GET',
+    url: `api/events?event[host_id]=${id}`
+  })
+  ```
+  Because events are fetched by their database associations and not their primary_key, the AJAX GET request sends a long the foreign_key as well in the form of a query string. The controller responds with either a city's events or a host's events depending on the parameters it receives.
 
   ```ruby
   def index
@@ -76,7 +83,7 @@ end
   ```
 
   However, in the case of host users, their information is public on their host page. Therefore prior to having their information being sent to the frontend to render their host page, rails checks if it is either the current user making the request, or the user is a host. This way, a user's email is only made public when they choose to become a host, and is protected against any requests made from the client-side attempting to attain others' email.
-  
+
 ### Joining Events & Event Capacity
 
   When user visits a city's page, react first checks that the user is logged in before continuing. Then an AJAX call is made using the `react-router` params to fetch the correct events. These events are rendered in a list component. Each event has a capacity cell in the database, and is returned from the backend with the number of attendees, so it may be compared with the capacity.
