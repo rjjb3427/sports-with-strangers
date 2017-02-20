@@ -23,7 +23,7 @@
   justify-content: space-around;
 }
 
-.home-wrapper a {
+.tagline > .modal {
   cursor: pointer;
   padding: 15px;
   border-radius: 10px;
@@ -36,7 +36,7 @@
   font-weight: bold;
 }
 
-.home-wrapper a:hover {
+.tagline > .modal:hover {
   background-color: rgba(0, 0, 0, 0.9);
 }
 

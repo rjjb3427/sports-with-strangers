@@ -38,9 +38,9 @@ class HomeComponent extends React.Component {
       );
     } else {
       return (
-        <a>
+        <div className='tagline'>
           <ModalTest text={currentTag}/>
-        </a>
+        </div>
       );
     }
   }
