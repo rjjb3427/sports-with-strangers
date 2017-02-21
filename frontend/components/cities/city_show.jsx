@@ -86,7 +86,7 @@ class CityShow extends React.Component {
           </Link>
           <p>Hosted by {event.host.name}</p>
         <p>{event.sport}</p>
-        <p>{moment(event.time).format('MMMM Do YYYY, h:mm')}</p>
+        <p>{moment(event.time).format('LLLL')}</p>
         <p>{event.address}</p>
         <p><b>Attending: </b>{event.attending}</p>
         <p><b>Spaces Available: </b>{spaceLeft}</p>

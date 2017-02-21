@@ -33,8 +33,8 @@ class EventList extends React.Component {
       <li key={idx}>
         <h3>{event.title}</h3>
         <p>{event.sport}</p>
-        <p><b>Time: </b>{moment(event.time).format('MMMM Do YYYY, h:mm')}</p>
-        <p><b>Address: </b>{event.address}</p>
+        <p>{moment(event.time).format('LLLL')}</p>
+        <p>{event.address}</p>
         <Link to={`users/${event.host_id}`} className='button'>See All Host's Events</Link>
       </li>
     );
@@ -46,7 +46,7 @@ class EventList extends React.Component {
       <li key={idx}>
         <h3>{event.title}</h3>
         <h2>{event.sport}</h2>
-        <p>{moment(event.time).format('MMMM Do YYYY, h:mm')}</p>
+        <p>{moment(event.time).format('LLLL')}</p>
         <p>{event.address}</p>
         <p><b>Capacity: </b>{event.capacity}</p>
         {this.renderButton(event, idx)}
