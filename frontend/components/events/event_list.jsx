@@ -41,14 +41,18 @@ class EventList extends React.Component {
   }
 
   renderEvent(event, idx) {
-    const spaceLeft = (event.capacity - event.attending);
+    let spaceArray = [];
+    for (var i = 0; i < event.capacity; i++) {
+      let current = i <= event.attending ? "▰" : "▱";
+      spaceArray.push(current);
+    }
     return (
       <li key={idx}>
         <h3>{event.title}</h3>
         <h2>{event.sport}</h2>
         <p>{moment(event.time).format('LLL')}</p>
         <p>{event.address}</p>
-        <p><b>Capacity: </b>{event.capacity}</p>
+        <p><b>{spaceArray.join(' ')}</b></p>
         {this.renderButton(event, idx)}
       </li>
     );

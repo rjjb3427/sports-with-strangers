@@ -133,7 +133,7 @@ titles = ["Sports on a Saturday", "Come to Tom's Cafe!", "Watching in the park",
     event.address = Faker::Address.street_address
     event.title = titles.pop
     event.sport = sports.sample
-    event.capacity = rand(4..20)
+    event.capacity = rand(4..15)
     event.save
   end
 end

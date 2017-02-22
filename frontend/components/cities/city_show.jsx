@@ -11,6 +11,7 @@ class CityShow extends React.Component {
     this.joinEvent = this.joinEvent.bind(this);
     this.leaveEvent = this.leaveEvent.bind(this);
     this.footer = this.footer.bind(this);
+    this.toNum = this.toNum.bind(this);
   }
   componentDidMount() {
     this.props.fetchCurrentCity(this.props.params.city_id);
@@ -21,6 +22,13 @@ class CityShow extends React.Component {
     if (currentId != newProps.params.city_id) {
       this.props.fetchCurrentCity(newProps.params.city_id);
     }
+  }
+
+  toNum(n) {
+    let words = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight',
+    'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen',
+    'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen', 'Twenty', 'Twenty-One'];
+    return words[n] ? words[n] : n;
   }
 
   footer() {
@@ -77,7 +85,11 @@ class CityShow extends React.Component {
   }
 
   renderEvent(event, idx) {
-    const spaceLeft = (event.capacity - event.attending);
+    let spaceArray = [];
+    for (var i = 0; i < event.capacity; i++) {
+      let current = i < event.attending ? "▰" : "▱";
+      spaceArray.push(current);
+    }
     return (
       <li key={idx}>
         <h3>{event.title}</h3>
@@ -88,8 +100,8 @@ class CityShow extends React.Component {
         <p>{event.sport}</p>
         <p>{moment(event.time).format('LLL')}</p>
         <p>{event.address}</p>
-        <p><b>Attending: </b>{event.attending}</p>
-        <p><b>Spaces Available: </b>{spaceLeft}</p>
+        <p>{this.toNum(event.attending)} Members Attending</p>
+        <p><b>{spaceArray.join('')}</b></p>
         {this.renderButton(event, idx)}
       </li>
     );
