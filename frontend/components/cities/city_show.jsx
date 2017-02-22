@@ -26,9 +26,9 @@ class CityShow extends React.Component {
   footer() {
     return (
       <div className='city-footer'>
-        <h1>Meetup with fellow fans to watch a game.</h1>
-        <h1>You and some others meet a host at a bar restaurant, or venue.</h1>
-        <h1>Eat, drink, hangout! Sports can really bring people together.</h1>
+        <h1>Join any {`${this.props.city.name}`} events you would like to attend.</h1>
+        <h1>Visit your dashboard to view your upcoming events and edit your personal information.</h1>
+        <h1>Become a host by creating a new event from the hosting page.</h1>
       </div>
     );
   }
