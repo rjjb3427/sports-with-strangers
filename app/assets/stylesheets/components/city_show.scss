@@ -26,12 +26,12 @@
   top: 20%;
 }
 
-.tagline {
-  bottom: -50%;
-  top: 50%;
+.city-tagline {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  font-family: 'Oswald';
   font-size: 28px;
-  position: relative;
-  color: white;
+  color: black;
   text-align: center;
 }
 
@@ -48,5 +48,5 @@
 }
 
 .city-footer > h1 {
-  margin: 20px;
+  margin-left: 10px;
 }
