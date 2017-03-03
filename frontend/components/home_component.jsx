@@ -49,7 +49,9 @@ class HomeComponent extends React.Component {
     return (
       <section className='home-main'>
       <div className="home-wrapper" >
-        {this.homeTagline()}
+        <div className='tagline'>
+          {this.homeTagline()}
+        </div>
       </div>
         {this.footer()}
       </section>

@@ -13,6 +13,7 @@
   bottom: -5%;
 }
 .dashboard-wrapper span {
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   margin-left: auto;
@@ -20,14 +21,12 @@
 }
 
 .plus > span {
-  margin-left: auto;
+  margin: 0 auto;
   text-align: center;
   height: 50%;
   border: 10px solid #9c9c9c;
   border-radius: 20px;
   width: 260px;
-  margin-top: auto;
-  margin-bottom: auto;
   font-family: 'Russo One', sans-serif;
   color: #9c9c9c;
   font-size: 300px;
