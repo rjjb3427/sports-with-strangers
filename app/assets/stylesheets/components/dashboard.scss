@@ -20,19 +20,17 @@
   margin-right: auto;
 }
 
-.plus > span {
-  margin: 0 auto;
-  text-align: center;
-  height: 50%;
-  border: 10px solid #9c9c9c;
+.plus {
   border-radius: 20px;
+  border: 10px solid #9c9c9c;
+  text-align: center;
   width: 260px;
   font-family: 'Russo One', sans-serif;
   color: #9c9c9c;
   font-size: 300px;
 }
 
-.plus > span:hover {
+.plus:hover {
   cursor: pointer;
   color: white;
   border-color: white;
