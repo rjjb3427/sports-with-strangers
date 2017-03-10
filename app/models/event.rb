@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
   validates :city, :host, :title, :address, :sport, :time, presence: true
-  validates :title, length: { minimum: 4, maximum: 40}
-  validates :address, length: {maximum: 40}
+  validates :title, length: { minimum: 4, maximum: 30}
+  validates :address, length: {maximum: 60}
   validate :capacity_range
   validate :valid_address
   validates :title, uniqueness: true
@@ -18,7 +18,7 @@ class Event < ActiveRecord::Base
   source: :user
   def capacity_range
     capacity = self.capacity
-    errors.add(:capacity, "cannot be zero") unless capacity > 0
+    errors.add(:capacity, "cannot must be at least 3") unless capacity > 2
     errors.add(:capacity, "is too large") if capacity > 20
   end
 
@@ -28,6 +28,6 @@ class Event < ActiveRecord::Base
     chars = address.scan(/\w+/)
     if nums.length.zero? || chars.length.zero?
       errors.add(:address, "must be valid")
-    end 
+    end
   end
 end
