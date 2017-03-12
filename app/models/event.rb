@@ -19,7 +19,7 @@ class Event < ActiveRecord::Base
   def capacity_range
     capacity = self.capacity
     if capacity.nil? || capacity < 2
-    errors.add(:capacity, "cannot must be at least 3")
+    errors.add(:capacity, "must be at least 3")
     elsif capacity > 20
     errors.add(:capacity, "is too large") if capacity > 20
     end
